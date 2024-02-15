@@ -1,0 +1,22 @@
+footer {
+    background-color: #4CAF50;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    color: #fff;
+}
+
+footer .link-email,
+.link-phone,
+.link-privacy,
+.link-terms {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+//footer .link-email:hover {
+//color: #19441b;
+//}
