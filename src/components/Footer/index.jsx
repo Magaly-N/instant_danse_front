@@ -1,26 +1,23 @@
 import { NavLink, Link } from 'react-router-dom';
-import './footer.scss';
+import './footer.css';
+import Mailto from '../Mailto';
 
 const Footer = () => {
     return (
         <footer>
-            <p>
-                Contactez-nous :{' '}
-                <NavLink to="mailto:instantdanse@hotmail.fr" className="link-email">
-                    instantdanse@hotmail.fr
-                </NavLink> | Téléphone :{' '}
-                <NavLink to="tel:+33 57 68 95 02" className="link-phone">
-                    05 57 68 95 02
-                </NavLink>
-            </p>
-            <p>
-                <NavLink to="/politique-confidentialite" className="link-privacy">
-                    Politique de confidentialité
-                </NavLink>
-                <NavLink to="/conditions-utilisation" className="link-terms">
-                    Conditions d utilisation
-                </NavLink>
-            </p>
+            <h3>Contactez-nous</h3>
+            <Mailto label="Email:instantdanse@hotmail.fr" mailto="mailto:no-reply@example.com" className="link-email" />
+            <br />
+            <Link to="tel:9876543210" className="link-phone">Tél : 9876543210</Link>
+            <br />
+            <NavLink to="/privacy" className="link-privacy">
+                Politique de confidentialité
+            </NavLink>
+            <br />
+            <NavLink to="/terms" className="link-terms">
+                Conditions d&apos; utilisation
+            </NavLink>
+            <br />
             <p>&copy; 2024 Instant Danse. Tous droits réservés.</p>
         </footer>
     );

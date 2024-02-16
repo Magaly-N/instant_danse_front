@@ -30,24 +30,25 @@
             <h2>Tous les ateliers en cours</h2>
         
             <form action="#" method="get">
-                <label for="ville">Ville</label>
-                <select id="ville" name="ville">
-                  <option value="">Sélectionnez une ville</option>
-                  <option value="paris">Paris</option>
-                  <option value="londres">Londres</option>
-                  <option value="new-york">New York</option>
-                  <!-- Ajoutez d'autres options au besoin -->
-                </select>
-                <button type="submit">Rechercher</button>
-          
-                <label for="date">Date</label>
-                <select id="date" name="date">
-                  <option value="">Sélectionnez une date</option>
-                  <option value="2022-02-15">15 février 2022</option>
-                  <option value="2022-03-05">5 mars 2022</option>
-                  <option value="2022-04-20">20 avril 2022</option>
-                  <!-- Ajoutez d'autres options au besoin -->
-                </select>
+              <select name="city" id="city">
+                <optgroup label="Nouvelle-Aquitaine">
+                    <option value="berson">Berson</option>
+                    <option value="cars">Cars</option>
+                    <option value="cavignac" selected>Cavignac</option>
+                </optgroup>
+                <optgroup label="Poitou-Charente">
+                    <option value="niort">Niort</option>
+                    <option value="angouleme">Angoulême</option>
+                </optgroup>
+              </select>
+                
+            <select id="date" name="date">
+              <option value="">Sélectionnez une date</option>
+              <option value="2022-02-15">15 février 2022</option>
+              <option value="2022-03-05">5 mars 2022</option>
+              <option value="2022-04-20">20 avril 2022</option>   
+            </select>
+            
                 <button type="submit">Rechercher</button>
 
             <div class="bloc-container">

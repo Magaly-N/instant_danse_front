@@ -1,0 +1,30 @@
+.dancers {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.dancers source,
+.dancers img {
+  width: 33.33%;
+  max-width: 100%;
+  height: auto;
+}
+
+.slide-container {
+  display: none;
+}
+
+@media only screen and (max-width: 975px) {
+  .dancers {
+    display: none;
+  }
+  .slide-container {
+    display: block;
+    height: auto;
+  }
+  .slide-container .divStyle {
+    height: auto;
+  }
+}/*# sourceMappingURL=gallery.css.map */

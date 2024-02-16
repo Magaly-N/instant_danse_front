@@ -1,37 +1,46 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import './header.scss';
+import './header.css';
+import { FaBars } from "react-icons/fa";
 
 const Header = () => {
+    const [isMenuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setMenuOpen(!isMenuOpen);
+    };
+
     return (
-        <header>
-            <h1>Instant Danse</h1>
-            <nav>
-                <NavLink
-                    to={"/"}
-                    className={(nav) => (nav.isActive ? "nav active" : "nav")}>
-                </NavLink>
-                <NavLink
-                    to={"/ateliers"}
-                    className={(ateliers) => (ateliers.isActive ? "ateliers active" : "ateliers")}>Ateliers
-                </NavLink>
-                <NavLink
-                    to={"/inscriptions"}
-                    className={(inscriptions) => (inscriptions.isActive ? "inscriptions active" : "inscriptions")}>Mes inscriptions
-                </NavLink>
-                <NavLink
-                    to={"/messages"}
-                    className={(messages) => (messages.isActive ? "messages active" : "messages")}>Messages
-                </NavLink>
-                <NavLink
-                    to={"/compte"}
-                    className={(compte) => (compte.isActive ? "compte active" : "compte")}>Mon compte
-                </NavLink>
-                <NavLink
-                    to={"/connexion"}
-                    className={(connexion) => (connexion.isActive ? "connexion active" : "connexion")}>Connexion
-                </NavLink>
-            </nav>
-        </header>
+        <div className="header">
+            <div className="header-left">
+                <h1>Instant Danse</h1>
+            </div>
+            <div className={`header-right ${isMenuOpen ? 'active' : ''}`}>
+                <div className="menu-icon" onClick={toggleMenu}><FaBars /></div>
+                <nav>
+                    <NavLink
+                        to={"/ateliers"}
+                        className={(ateliers) => (ateliers.isActive ? "ateliers active" : "ateliers")}>Ateliers
+                    </NavLink>
+                    <NavLink
+                        to={"/inscriptions"}
+                        className={(inscriptions) => (inscriptions.isActive ? "inscriptions active" : "inscriptions")}>Mes inscriptions
+                    </NavLink>
+                    <NavLink
+                        to={"/messages"}
+                        className={(messages) => (messages.isActive ? "messages active" : "messages")}>Messages
+                    </NavLink>
+                    <NavLink
+                        to={"/compte"}
+                        className={(compte) => (compte.isActive ? "compte active" : "compte")}>Mon compte
+                    </NavLink>
+                    <NavLink
+                        to={"/connexion"}
+                        className={(connexion) => (connexion.isActive ? "connexion active" : "connexion")}>Connexion
+                    </NavLink>
+                </nav>
+            </div>
+        </div>
     )
 }
 
