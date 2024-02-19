@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  background-color: #4CAF50;
+  background-color: #22A32F;
   padding: 15px 0;
   text-align: center;
   display: flex;
@@ -11,6 +11,11 @@
 .header-left {
   color: #fff;
   margin-bottom: 10px;
+}
+
+.header-right {
+  width: 70%;
+  margin: 0 auto;
 }
 
 .header-right nav {

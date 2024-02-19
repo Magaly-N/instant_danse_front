@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"mailto.css"}
+{"version":3,"sources":["mailto.scss","mailto.css"],"names":[],"mappings":"AAAA;EACI,SAAA;EACA,WAAA;ACCJ;;ADEA;EACI,WAAA;EACA,SAAA;EACA,qBAAA;EACA,eAAA;ACCJ;ADCI;EACI,0BAAA;ACCR","file":"mailto.css"}

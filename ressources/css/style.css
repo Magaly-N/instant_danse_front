@@ -30,8 +30,8 @@ h2 {
 }
 
 button {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #273996;
+    color:#fff;
     padding: 10px 15px;
     margin-bottom:20px;
     border: none;
@@ -40,15 +40,16 @@ button {
 }
 
   .button:hover {
-    background-color: #45a049;
+    background-color: #22a32f;
+    color:#1D1B1B;
   }
 
 /*-------------------------BANNER-----------------*/
 
 header,
 footer {
-    background-color: #4CAF50; 
-    color: #fff;
+    background-color: #22a32f; 
+    color:#fff;
     text-align: center;
     padding: 20px;
 }
@@ -60,14 +61,14 @@ nav {
     margin-top: 0.3rem;
     padding-top: 1rem;
     padding-bottom: 1.5rem;
-    font-size: 15.5px;
+    font-size: 20px;
     color: hsl(219, 9%, 45%);
     text-decoration: none;
 }
 
 nav a {
     text-decoration: none;
-    color: #fff;
+    color:#fff;
     padding: .3rem .5rem;
 }
 
@@ -121,21 +122,7 @@ main {
 
 /*-----WORKSHOP FORM------*/
 
-.button-lien {
-    display: inline-block;
-    padding: 8px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    background-color: #007BFF; 
-    color: #fff; 
-    border-radius: 5px; 
-    transition: background-color 0.3s ease;
-}
-.button-lien:hover {
-    background-color: #0056b3;
-}
+
 
 /*-------WORKSHOP STYLE DANCE AND CITY------*/
 
@@ -171,13 +158,13 @@ select {
 
 
 footer a {
-    color: #555; 
+    color:#1D1B1B; 
     text-decoration: none; 
     transition: color 0.3s ease; 
   }
   
   footer a:hover {
-    color: #19441b; 
+    text-decoration:underline; 
   }
   
   /*----------------------WORSHOP_FORM----------------------*/

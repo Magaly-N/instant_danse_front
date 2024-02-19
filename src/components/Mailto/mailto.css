@@ -1,1 +1,14 @@
-/*# sourceMappingURL=mailto.css.map */
+h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.mailto-link {
+  color: #fff;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+}
+.mailto-link:hover {
+  text-decoration: underline;
+}/*# sourceMappingURL=mailto.css.map */

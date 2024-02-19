@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import "./mailto.scss"
 
 const Mailto = ({ mailto, label }) => {
     const handleClick = (e) => {
@@ -8,7 +9,7 @@ const Mailto = ({ mailto, label }) => {
     };
 
     return (
-        <Link to="#" onClick={handleClick}>
+        <Link to="#" className="mailto-link" onClick={handleClick}>
             {label}
         </Link>
     );

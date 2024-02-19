@@ -1,22 +1,41 @@
-footer {
-    background-color: #4CAF50;
+.footer {
+    width: 100%;
+    background-color: #22A32F;
+    padding: 15px 0;
     text-align: center;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-footer p {
-    color: #fff;
-}
 
-footer .link-email,
+
+.link-email,
 .link-phone,
 .link-privacy,
 .link-terms {
-    color: #555;
+    color: #fff;
     text-decoration: none;
-    transition: color 0.3s ease;
+    display: block;
+    margin-bottom: 5px;
 }
 
-//footer .link-email:hover {
-//color: #19441b;
-//}
+.link-email:hover,
+.link-phone:hover,
+.link-privacy:hover,
+.link-terms:hover {
+    text-decoration: underline;
+}
+
+/* Media query for screens with a width up to 600 pixels (adjust as needed) */
+@media only screen and (max-width: 600px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer div {
+        flex: none;
+        width: 100%;
+    }
+}

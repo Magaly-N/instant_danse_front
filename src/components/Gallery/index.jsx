@@ -6,7 +6,7 @@ const Gallery = () => {
         <>
             <div className="dancers">
                 <source srcSet="img\img1.webp" type="image/webp" alt="Quatres femmes qui danse dans un studio de danse" title="4 femmes qui danse dans un studio de danse" />
-                <img src="img\img1.jpg" alt="Quatres femmes qui dansent dans un studio de danse" title="4 femmes qui danse dans un studio de danse" />
+                <img src="img\img1compressé.jpg" alt="Quatres femmes qui dansent dans un studio de danse" title="4 femmes qui danse dans un studio de danse" />
 
                 <source srcSet="img\img2.webp" type="image/webp" alt="Un homme et une femme qui dansent dans la rue" title="Un homme et une femme qui dansent dans la rue" />
                 <img src="img\img2.jpg" alt="Un homme et une femme qui dansent dans la rue" title="Un homme et une femme qui dansent dans la rue" />
