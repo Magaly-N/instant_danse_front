@@ -1,13 +1,14 @@
 import "./home.css";
 import Gallery from "../../components/Gallery";
-import Workshop from "../../components/Workshop";
+import Search_create_workshop from "../../components/Search_create_workshop";
 import Listing_workshop from "../../components/Listing_workshop";
+
 
 const Home = () => {
     return (
         <div className="container">
             <Gallery />
-            <Workshop />
+            <Search_create_workshop />
             <Listing_workshop />
         </div>
     );

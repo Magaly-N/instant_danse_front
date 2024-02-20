@@ -1,6 +1,6 @@
 import convertDate from "../../utils/convertDate";
 
-const Workshop_detail = ({ workshop }) => {
+const Workshop_detail = (workshop) => {
     const { title, city, hour, date } = workshop;
 
     const extractedDate = convertDate(date);
