@@ -20,18 +20,19 @@ const Listing_workshop = () => {
 
         axios.request(config)
             .then((response) => {
-                setWorkshops(JSON.stringify(response.data));
+                console.log(response.data);
+                setWorkshops(response.data.dancerWorkshops);
             })
             .catch((error) => {
                 console.log(error);
             });
 
-    }, [workshops])
+    }, [])
 
-    if (workshops) {
+    if (workshops && workshops.length > 0) {
         return (
             workshops && workshops.map((item) => {
-                return <Workshop_detail key={item.id} workshop={item} />
+                return <Workshop_detail key={item.dancer_workshop_id} workshop={item} />
 
             })
         )

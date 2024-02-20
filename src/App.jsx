@@ -7,8 +7,6 @@ import Terms from "./pages/terms";
 import "./App.css";
 
 function App() {
-
-
   return (
     <Router>
       <Header />

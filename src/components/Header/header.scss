@@ -1,6 +1,6 @@
 .header {
     width: 100%;
-    background-color: #22A32F;
+    background-color: #2E7C03;
     padding: 15px 0;
     text-align: center;
     display: flex;
@@ -8,32 +8,32 @@
     align-items: center;
 }
 
-.header-left {
+.header-top {
     color: #fff;
     margin-bottom: 10px;
 }
 
-.header-right {
+.header-bottom {
     width: 70%;
     margin: 0 auto;
 }
 
-
-.header-right nav {
+.header-bottom nav {
     display: flex;
     justify-content: space-around;
 }
 
-.header-right nav a {
+.header-bottom nav a {
     text-decoration: none;
     color: #fff;
     padding: 8px 15px;
     border-radius: 5px;
 }
 
-.header-right nav a:hover,
-.header-right nav a.active {
+.header-bottom nav a:hover,
+.header-bottom nav a.active {
     background-color: #ddd;
+    color: #1D1B1B;
 }
 
 .menu-icon {
@@ -41,13 +41,13 @@
 }
 
 @media only screen and (max-width: 975px) {
-    .header-right nav {
+    .header-bottom nav {
         flex-direction: column;
         align-items: center;
         display: none;
     }
 
-    .header-right.active nav {
+    .header-bottom.active nav {
         display: flex;
     }
 

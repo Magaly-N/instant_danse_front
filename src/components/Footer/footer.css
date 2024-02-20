@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  background-color: #22A32F;
+  background-color: #2E7C03;
   padding: 15px 0;
   text-align: center;
   display: flex;
@@ -8,21 +8,25 @@
   align-items: center;
 }
 
-.link-email,
-.link-phone,
-.link-privacy,
-.link-terms {
+.email,
+.phone,
+.privacy,
+.terms {
   color: #fff;
   text-decoration: none;
   display: block;
   margin-bottom: 5px;
 }
-
-.link-email:hover,
-.link-phone:hover,
-.link-privacy:hover,
-.link-terms:hover {
+.email:hover,
+.phone:hover,
+.privacy:hover,
+.terms:hover {
   text-decoration: underline;
+}
+
+.privacy,
+.terms {
+  color: #333;
 }
 
 /* Media query for screens with a width up to 600 pixels (adjust as needed) */

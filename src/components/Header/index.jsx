@@ -12,12 +12,16 @@ const Header = () => {
 
     return (
         <div className="header">
-            <div className="header-left">
+            <div className="header-top">
                 <h1>Instant Danse</h1>
             </div>
-            <div className={`header-right ${isMenuOpen ? 'active' : ''}`}>
+            <div className={`header-bottom ${isMenuOpen ? 'active' : ''}`}>
                 <div className="menu-icon" onClick={toggleMenu}><FaBars /></div>
                 <nav>
+                    <NavLink
+                        to={"/"}
+                        className={(accueil) => (accueil.isActive ? "accueil active" : "accueil")}>Accueil
+                    </NavLink>
                     <NavLink
                         to={"/ateliers"}
                         className={(ateliers) => (ateliers.isActive ? "ateliers active" : "ateliers")}>Ateliers
