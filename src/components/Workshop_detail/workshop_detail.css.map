@@ -1,1 +1,1 @@
-{"version":3,"sources":["workshop_detail.scss","workshop_detail.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,8BAAA;EACA,iBAAA;ACCJ;;ADEA;;EAEI,UAAA;EACA,kBAAA;EACA,wCAAA;ACCJ","file":"workshop_detail.css"}
+{"version":3,"sources":["workshop_detail.scss","workshop_detail.css"],"names":[],"mappings":"AAAA;EACI,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,cAAA;EACA,gBAAA;EACA,UAAA;EACA,kBAAA;EACA,wCAAA;ACCJ;ADCI;EACI,eAAA;EACA,YAAA;EACA,kBAAA;EACA,YAAA;ACCR;ADEI;EACI,uBAAA;EACA,YAAA;ACAR","file":"workshop_detail.css"}

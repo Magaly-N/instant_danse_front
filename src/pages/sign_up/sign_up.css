@@ -1,0 +1,63 @@
+.container_formul {
+  margin: 0.5rem 0;
+  background-color: rgba(232, 232, 232, 0.869);
+}
+
+.main {
+  padding: 1rem;
+}
+
+.inputGroup {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 7rem auto;
+}
+
+.inputLabel {
+  text-align: left;
+}
+
+.inputField {
+  height: 6rem;
+  border-radius: 10px;
+  border: 2px solid orange;
+  padding: 1rem;
+}
+
+.textarea {
+  height: 12rem;
+  border-radius: 10px;
+  border: 2px solid orange;
+  padding: 1rem;
+}
+
+.submitButton {
+  background-color: #1717A6;
+  color: #fff;
+  font-size: 25px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.submitButton:hover {
+  background-color: #2E7C03;
+}
+
+/*.submitButton {
+    height: 6rem;
+    width: 10rem;
+    border-radius: 10px;
+    color: white;
+    background-color: orange;
+    border: none;
+    margin: 0.5rem auto;
+}
+
+.submitButton:hover {
+    border: 2px solid orange;
+    color: orange;
+    background-color: white;
+}*//*# sourceMappingURL=sign_up.css.map */
