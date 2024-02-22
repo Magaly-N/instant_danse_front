@@ -5,27 +5,30 @@ import { FaBars } from "react-icons/fa";
 
 const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
+    let navBar =
+        [
+            { to: "/", label: "Accueil" },
+            { to: "/ateliers", label: "Ateliers" },
+            { to: "/inscriptions", label: "Mes inscriptions" },
+            { to: "/messages", label: "Messages" },
+            { to: "/compte", label: "Mon compte" },
+            { to: "/connexion", label: "Connexion" },
+            { to: "/sign_up", label: "Inscription" }
+        ];
 
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     };
 
     return (
-        <div className="header">
+        <div className="header" >
             <div className="header-top">
                 <h1>Instant Danse</h1>
             </div>
             <div className={`header-bottom ${isMenuOpen ? 'active' : ''}`}>
                 <div className="menu-icon" onClick={toggleMenu}><FaBars /></div>
                 <nav>
-                    {[
-                        { to: "/", label: "Accueil" },
-                        { to: "/ateliers", label: "Ateliers" },
-                        { to: "/inscriptions", label: "Mes inscriptions" },
-                        { to: "/messages", label: "Messages" },
-                        { to: "/compte", label: "Mon compte" },
-                        { to: "/connexion", label: "Connexion" },
-                    ].map((item) => (
+                    {navBar.map((item) => (
                         <NavLink
                             key={item.to}
                             to={item.to}
@@ -37,7 +40,7 @@ const Header = () => {
                 </nav>
 
             </div>
-        </div>
+        </div >
     )
 }
 
