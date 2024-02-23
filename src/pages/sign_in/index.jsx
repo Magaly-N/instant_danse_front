@@ -9,13 +9,12 @@ const Sign_in = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const role = "user";
 
     let navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let data = { email, password, role }
+        let data = { email, password }
         data = JSON.stringify(data);
 
         let config = {
@@ -32,6 +31,8 @@ const Sign_in = () => {
             .then((response) => {
                 if (response.status === 200) {
                     console.log("Response succeeded!");
+                    localStorage.setItem('role', response.data.role);
+                    localStorage.setItem('token', response.data.token);
                     setEmail("");
                     setPassword("");
                     toast.success("Connecté");

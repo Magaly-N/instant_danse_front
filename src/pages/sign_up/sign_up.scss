@@ -48,18 +48,82 @@ h2 {
     }
 }
 
-/*.submitButton {
-    height: 6rem;
-    width: 10rem;
-    border-radius: 10px;
-    color: white;
-    background-color: orange;
-    border: none;
-    margin: 0.5rem auto;
+@media only screen and (min-width: 975px) {
+    .main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+    }
+
+    .inputField {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .submitButton {
+        display: block;
+        margin: auto;
+    }
 }
 
-.submitButton:hover {
-    border: 2px solid orange;
-    color: orange;
-    background-color: white;
-}*/
+/*.container_formul {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .inputGroup {
+    margin-bottom: 15px;
+  }
+  
+  .inputLabel {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  */
+
+
+/* Aligner les champs sur la même ligne */
+/*
+  .inputGroup:nth-child(1),
+  .inputGroup:nth-child(2) {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .inputGroup:nth-child(3),
+  .inputGroup:nth-child(4) {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .inputGroup:nth-child(5),
+  .inputGroup:nth-child(6) {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .inputGroup:nth-child(7),
+  .inputGroup:nth-child(8) {
+    display: flex;
+    gap: 10px;
+  }
+  */
+
+/* Centrer le bouton de soumission */
+/*.submitButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  */

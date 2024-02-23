@@ -12,7 +12,7 @@ const Header = () => {
             { to: "/inscriptions", label: "Mes inscriptions" },
             { to: "/messages", label: "Messages" },
             { to: "/compte", label: "Mon compte" },
-            { to: "/connexion", label: "Connexion" },
+            { to: "/sign_in", label: "Connexion" },
             { to: "/sign_up", label: "Inscription" }
         ];
 

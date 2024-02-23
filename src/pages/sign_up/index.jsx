@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-//import { UploadImage } from "./components/Upload_image";
+//import UploadImage from "./components/Upload_image";
 import { toast } from "react-toastify";
 import "./sign_up.css";
 
@@ -50,7 +50,7 @@ const Sign_up = () => {
                     setDance_Level("");
                     setEmail("");
                     setPassword("");
-                    toast.success("Message envoyé");
+                    toast.success("Inscription validée");
                     setTimeout(() => {
                         navigate("/");
                     }, 3000);
