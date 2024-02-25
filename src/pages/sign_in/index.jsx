@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
-import "./sign_in.css";
+
 
 const Sign_in = () => {
     //const { email, password }

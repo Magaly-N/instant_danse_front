@@ -5,43 +5,48 @@ import { FaBars } from "react-icons/fa";
 
 const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
-    let navBar =
-        [
-            { to: "/", label: "Accueil" },
-            { to: "/ateliers", label: "Ateliers" },
-            { to: "/inscriptions", label: "Mes inscriptions" },
-            { to: "/messages", label: "Messages" },
-            { to: "/compte", label: "Mon compte" },
-            { to: "/sign_in", label: "Connexion" },
-            { to: "/sign_up", label: "Inscription" }
-        ];
-
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     };
 
     return (
-        <div className="header" >
+        <div className="header">
             <div className="header-top">
                 <h1>Instant Danse</h1>
             </div>
             <div className={`header-bottom ${isMenuOpen ? 'active' : ''}`}>
                 <div className="menu-icon" onClick={toggleMenu}><FaBars /></div>
                 <nav>
-                    {navBar.map((item) => (
-                        <NavLink
-                            key={item.to}
-                            to={item.to}
-                            className={(isActive) => (isActive.isActive ? `${item.label.toLowerCase()} active` : item.label.toLowerCase())}
-                        >
-                            {item.label}
-                        </NavLink>
-                    ))}
+                    <NavLink
+                        to={"/"}
+                        className={(isActive) => (isActive ? "active" : "")}>Accueil
+                    </NavLink>
+                    <NavLink
+                        to={"/ateliers"}
+                        className={(isActive) => (isActive ? "active" : "")}>Ateliers
+                    </NavLink>
+                    <NavLink
+                        to={"/inscriptions"}
+                        className={(isActive) => (isActive ? "active" : "")}>Mes inscriptions
+                    </NavLink>
+                    <NavLink
+                        to={"/messages"}
+                        className={(isActive) => (isActive ? "active" : "")}>Messages
+                    </NavLink>
+                    <NavLink
+                        to={"/compte"}
+                        className={(isActive) => (isActive ? "active" : "")}>Mon compte
+                    </NavLink>
+                    <NavLink
+                        to={"/sign_in"}
+                        className={(isActive) => (isActive ? "active" : "")}>Connection
+                    </NavLink>
+                    <NavLink
+                        to={"/sign_up"}
+                        className={(isActive) => (isActive ? "active" : "")}><div className="nav-item">Inscription</div>
+                    </NavLink>
                 </nav>
-
             </div>
-        </div >
-    )
+        </div>)
 }
-
 export default Header;

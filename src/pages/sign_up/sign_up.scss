@@ -1,69 +1,68 @@
 .container_formul {
-    margin: 2rem 0;
-}
-
-.main {
-    padding: 1rem;
+  margin: 2rem 0;
 }
 
 .inputGroup {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    margin: 3rem auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem auto;
 }
 
 h2 {
-    text-align: center;
-    padding: 2rem;
-    color: black;
+  text-align: center;
+  padding: 2rem;
+  color: black;
 }
 
 .inputLabel {
-    text-align: left;
-    font-size: 3.3rem;
+  text-align: left;
+  font-size: 3.3rem;
 }
 
 .inputField {
-    height: 6rem;
-    padding: 1rem;
-    font-size: 2.6rem;
-    border-radius: 10px;
-    border-color: #BA3525;
-    box-shadow: 2px 2px 8px 1px #BA3525;
+  height: 6rem;
+  padding: 1rem;
+  font-size: 2.6rem;
+  border-radius: 10px;
+  border-color: #BA3525;
+  box-shadow: 2px 2px 8px 1px #BA3525;
 }
 
 .submitButton {
-    background-color: #1717A6;
-    color: #fff;
-    font-size: 25px;
-    padding: 10px 15px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
+  background-color: #1717A6;
+  color: #fff;
+  font-size: 25px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 
-    &:hover {
-        background-color: #2E7C03;
-    }
+  &:hover {
+    background-color: #2E7C03;
+  }
 }
 
 @media only screen and (min-width: 975px) {
-    .main {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 10px;
-    }
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .inputField {
-        width: 100%;
-        padding: 8px;
-    }
+  .inputGroup {
+    align-items: center;
+  }
 
-    .submitButton {
-        display: block;
-        margin: auto;
-    }
+  .inputField {
+    width: 70%;
+    padding: 8px;
+  }
+
+  .submitButton {
+    display: block;
+    margin: auto;
+  }
 }
 
 /*.container_formul {

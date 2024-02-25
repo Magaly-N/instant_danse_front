@@ -3,10 +3,6 @@
   margin: 2rem 0;
 }
 
-.main {
-  padding: 1rem;
-}
-
 .inputGroup {
   width: 50%;
   display: flex;
@@ -50,12 +46,14 @@ h2 {
 
 @media only screen and (min-width: 975px) {
   .main {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .inputGroup {
+    align-items: center;
   }
   .inputField {
-    width: 100%;
+    width: 70%;
     padding: 8px;
   }
   .submitButton {

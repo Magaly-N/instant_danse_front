@@ -102,7 +102,7 @@ const Sign_up = () => {
                         type="text"
                         /*value=""*/
                         name="birthday"
-                        placeholder="Entrez votre date de naissance"
+                        placeholder="Entrez votre date de naissance au format 0000-00-00"
                         onChange={(e) => {
                             setBirthday(e.target.value);
                         }}
