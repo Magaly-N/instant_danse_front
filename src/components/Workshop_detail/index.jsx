@@ -1,6 +1,8 @@
 import convertDate from "../../utils/convertDate";
 import "./workshop_detail.css";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
 
 const Workshop_detail = ({ workshop }) => {
     const { title, city, hour, date, dancer_workshop_id } = workshop;
@@ -13,6 +15,11 @@ const Workshop_detail = ({ workshop }) => {
             <Link to={`/workshop/${dancer_workshop_id}`}><button className="button">Plus de détails</button></Link>
         </div >
     )
-}
+};
+
 
 export default Workshop_detail
+
+Workshop_detail.propTypes = {
+    workshop: PropTypes.string.isRequired,
+};

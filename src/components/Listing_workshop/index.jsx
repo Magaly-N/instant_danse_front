@@ -39,8 +39,6 @@ const Listing_workshop = () => {
             })
         )
     }
-
-
 }
 
 export default Listing_workshop

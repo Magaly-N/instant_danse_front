@@ -15,9 +15,9 @@ const Mailto = ({ mailto, label }) => {
     );
 };
 
+export default Mailto;
+
 Mailto.propTypes = {
     mailto: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,
 };
-
-export default Mailto;
