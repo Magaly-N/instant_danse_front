@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const Workshop = () => {
     const id = useParams();
@@ -49,6 +50,7 @@ const Workshop = () => {
             ) : (
                 <p>Loading workshop details...</p>
             )}
+            <Link to={`/form_register`}><button className="button">Inscrivez-vous</button></Link>
         </div>
     );
 };

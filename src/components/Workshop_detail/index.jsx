@@ -13,13 +13,13 @@ const Workshop_detail = ({ workshop }) => {
         <div className="workshop_card">
             <p>{title + " à " + city + " à " + hour + " le " + day + "/" + month + "/" + year}</p>
             <Link to={`/workshop/${dancer_workshop_id}`}><button className="button">Plus de détails</button></Link>
-        </div >
+        </div>
     )
 };
-
-
-export default Workshop_detail
 
 Workshop_detail.propTypes = {
     workshop: PropTypes.string.isRequired,
 };
+
+export default Workshop_detail;
+

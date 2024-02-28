@@ -1,35 +1,35 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-//import UploadImage from "./components/Upload_image";
 import { toast } from "react-toastify";
-import "./sign_up.css";
+import "./form_workshop.css";
 
-const Sign_up = () => {
-    //const { first_name, last_name, birthday, address, postcode, city, phone_number, dance_level, email, password, role }
-    const [first_name, setFirst_Name] = useState("");
-    const [last_name, setLast_Name] = useState("");
-    const [birthday, setBirthday] = useState("");
-    const [address, setAddress] = useState("");
-    const [postcode, setPost_Code] = useState("");
+const Form_workshop = () => {
+    //const { title, description, date, hour, duration, city, price, requiredDanceLevel, personMax } = req.body;
+
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [date, setDate] = useState("");
+    const [hour, setHour] = useState("");
+    const [duration, setDuration] = useState("");
     const [city, setCity] = useState("");
-    const [phone_number, setPhone_Number] = useState("");
-    const [dance_level, setDance_Level] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const role = "user";
+    const [price, setPrice] = useState("");
+    const [requiredDanceLevel, setRequiredDanceLevel] = useState("");
+    const [personMax, setPersonMax] = useState("");
+    const role = "admin";
 
     let navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let data = { first_name, last_name, birthday, address, postcode, city, phone_number, dance_level, email, password, role }
+
+        let data = { title, description, date, hour, duration, city, price, requiredDanceLevel, personMax, role }
         data = JSON.stringify(data);
 
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:3000/users/sign-up',
+            url: 'http://localhost:3000/dancer_workshop/create',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -40,17 +40,16 @@ const Sign_up = () => {
             .then((response) => {
                 if (response.status === 200) {
                     console.log("Response succeeded!");
-                    setFirst_Name("");
-                    setLast_Name("");
-                    setBirthday("");
-                    setAddress("");
-                    setPost_Code("");
+                    setTitle("");
+                    setDescription("");
+                    setDate("");
+                    setHour("");
+                    setDuration("");
                     setCity("");
-                    setPhone_Number("");
-                    setDance_Level("");
-                    setEmail("");
-                    setPassword("");
-                    toast.success("Inscription validée");
+                    setPrice("");
+                    setRequiredDanceLevel("");
+                    setPersonMax("");
+                    toast.success("Stage/atelier crée");
                     setTimeout(() => {
                         navigate("/");
                     }, 3000);
@@ -64,73 +63,70 @@ const Sign_up = () => {
     }
     return (
         <div className="container_formul">
-            <h2>Formulaire d&apos;inscription</h2>
-
-            {/*<Upload_image/>*/}
+            <h2>Formulaire de création de stage ou d&apo;atelier</h2>
 
             <form className="main" onSubmit={handleSubmit}>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="first_name" htmlFor="first_name">Nom</label>
+                    <label className="inputLabel" id="title" htmlFor="title">Titre du stage ou de l&apo;atelier</label>
                     <input
                         className="inputField"
                         type="text"
-                        name="first_name"
-                        placeholder="Entrez votre nom"
+                        name="title"
+                        placeholder="Précisez s'il s'agit d'un stage ou un atelier et le style de danse"
                         onChange={(e) => {
-                            setFirst_Name(e.target.value);
+                            setTitle(e.target.value);
                         }}
                         required="required"
                     />
                 </formGroup>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="last_name" htmlFor="last_name">Prénom</label>
-                    <input
-                        className="inputField"
+                    <label className="inputLabel" id="description" htmlFor="description">Description du stage ou de l&apo;atelier</label>
+                    <textarea
+                        className="textarea"
                         type="text"
-                        name="last_name"
-                        placeholder="Entrez votre prénom"
+                        name="description"
+                        placeholder="Décrivez brièvement le contenu du stage ou de l'atelier"
                         onChange={(e) => {
-                            setLast_Name(e.target.value);
+                            setDescription(e.target.value);
                         }}
                         required="required"
                     />
                 </formGroup>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="birthday" htmlFor="birthday">Date de naissance</label>
+                    <label className="inputLabel" id="date" htmlFor="date">Date</label>
                     <input
                         className="inputField"
                         type="text"
-                        /*value=""*/
-                        name="birthday"
-                        placeholder="Entrez votre date de naissance au format 0000-00-00"
+                        name="date"
+                        placeholder="Entrez la date"
                         onChange={(e) => {
-                            setBirthday(e.target.value);
+                            setDate(e.target.value);
                         }}
                         required="required"
                     />
                 </formGroup>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="address" htmlFor="address">Adresse</label>
+                    <label className="inputLabel" id="hour" htmlFor="hour">Heure du stage ou de l&apo;atelier</label>
                     <input
                         className="inputField"
                         type="text"
-                        name="address"
-                        placeholder="Entrez votre adresse"
+                        name="hour"
+                        placeholder="Entrer l'heure du stage ou de l'atelier"
                         onChange={(e) => {
-                            setAddress(e.target.value);
+                            setHour(e.target.value);
                         }}
                         required="required"
                     />
                 </formGroup>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="postcode" htmlFor="postcode">CP</label>
+                    <label className="inputLabel" id="duration" htmlFor="duration">Durée du stage ou de l&apo;atelier</label>
                     <input
                         className="inputField"
                         type="text"
-                        name="postcode"
-                        placeholder="Entrez votre code postal"
+                        name="duration"
+                        placeholder="Indiquez la durée du stage ou de l'atelier"
                         onChange={(e) => {
-                            setPost_Code(e.target.value);
+                            setDuration(e.target.value);
                         }}
                         required="required"
                     />
@@ -141,7 +137,7 @@ const Sign_up = () => {
                         className="inputField"
                         type="text"
                         name="city"
-                        placeholder="Entrez votre ville"
+                        placeholder="Indiquez le lieu du stage ou de l'atelier"
                         onChange={(e) => {
                             setCity(e.target.value);
                         }}
@@ -149,27 +145,26 @@ const Sign_up = () => {
                     />
                 </formGroup>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="phone_number" htmlFor="phone_number">Numéro de téléphone</label>
+                    <label className="inputLabel" id="price" htmlFor="price">Prix</label>
                     <input
                         className="inputField"
-                        type="tel"
-                        name="phone_number"
-                        placeholder="Entrez votre numéro de téléphone"
-                        pattern="^(\+\d{1,2}\s?)?(\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}$"
+                        type="text"
+                        name="price"
+                        placeholder="Indiquez le coût du stage ou de l'atelier"
                         onChange={(e) => {
-                            setPhone_Number(e.target.value);
+                            setPrice(e.target.value);
                         }}
                         required="required"
                     />
                 </formGroup>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="dance_level" htmlFor="dance_level">Niveau de danse</label>
+                    <label className="inputLabel" id="requiredDanceLevel" htmlFor="requiredDanceLevel">Niveau de danse</label>
                     <select
                         className="inputField"
                         type="text"
-                        name="dance_level"
+                        name="requiredDanceLevel"
                         onChange={(e) => {
-                            setDance_Level(e.target.value);
+                            setRequiredDanceLevel(e.target.value);
                         }}
                         required>
                         <option value="defaultValue">Choisissez un niveau</option>
@@ -179,27 +174,14 @@ const Sign_up = () => {
                     </select>
                 </formGroup>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="email" htmlFor="email">Email</label>
+                    <label className="inputLabel" id="personMax" htmlFor="personMax">Nombre de personnes maximum</label>
                     <input
                         className="inputField"
-                        type="email"
-                        name="email"
-                        placeholder="Entrez votre adresse email"
+                        type="text"
+                        name="text"
+                        placeholder="Indiquez le nombre maximum de participants au stage ou à l'atelier"
                         onChange={(e) => {
-                            setEmail(e.target.value);
-                        }}
-                        required="required"
-                    />
-                </formGroup>
-                <formGroup className="inputGroup">
-                    <label className="inputLabel" id="password" htmlFor="password">Mot de passe</label>
-                    <input
-                        className="inputField"
-                        type="password"
-                        name="password"
-                        placeholder="Entrez un mot de passe"
-                        onChange={(e) => {
-                            setPassword(e.target.value);
+                            setPersonMax(e.target.value);
                         }}
                         required="required"
                     />
@@ -210,7 +192,7 @@ const Sign_up = () => {
             </form>
         </div >
 
-    );
-};
+    )
+}
 
-export default Sign_up;
+export default Form_workshop;
