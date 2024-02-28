@@ -18,35 +18,38 @@ const Header = () => {
                 <div className="menu-icon" onClick={toggleMenu}><FaBars /></div>
                 <nav>
                     <NavLink
+                        exact
                         to={"/"}
-                        className={(isActive) => (isActive ? "active" : "")}>Accueil
+                        activeClassName="active">Accueil
                     </NavLink>
                     <NavLink
                         to={"/ateliers"}
-                        className={(isActive) => (isActive ? "active" : "")}>Ateliers
+                        activeClassName="active">Ateliers
                     </NavLink>
                     <NavLink
                         to={"/inscriptions"}
-                        className={(isActive) => (isActive ? "active" : "")}>Mes inscriptions
+                        activeClassName="active">Mes inscriptions
                     </NavLink>
                     <NavLink
                         to={"/messages"}
-                        className={(isActive) => (isActive ? "active" : "")}>Messages
+                        activeClassName="active">Messages
                     </NavLink>
                     <NavLink
                         to={"/compte"}
-                        className={(isActive) => (isActive ? "active" : "")}>Mon compte
+                        activeClassName="active">Mon compte
                     </NavLink>
                     <NavLink
                         to={"/sign_in"}
-                        className={(isActive) => (isActive ? "active" : "")}>Connection
+                        activeClassName="active">Connection
                     </NavLink>
                     <NavLink
                         to={"/sign_up"}
-                        className={(isActive) => (isActive ? "active" : "")}><div className="nav-item">Inscription</div>
+                        activeClassName="active">Inscription
                     </NavLink>
                 </nav>
             </div>
-        </div>)
+        </div>
+    );
 }
+
 export default Header;

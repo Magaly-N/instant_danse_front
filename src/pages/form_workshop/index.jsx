@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -16,14 +16,41 @@ const Form_workshop = () => {
     const [price, setPrice] = useState("");
     const [requiredDanceLevel, setRequiredDanceLevel] = useState("");
     const [personMax, setPersonMax] = useState("");
-    const role = "admin";
+    const [category_workshop_id, setCategory] = useState("");
+    const [listCategory, setListcategory] = useState("");
 
     let navigate = useNavigate();
+
+    useEffect(() => {
+        let data;
+
+        let config = {
+            method: 'get',
+            maxBodyLength: Infinity,
+            url: 'http://localhost:3000/category_workshop/read',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: data
+        };
+
+        axios.request(config)
+            .then((response) => {
+                setListcategory(response.data.categoryWorkshops);
+                console.log(listCategory);
+
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+    }, [listCategory])
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        let data = { title, description, date, hour, duration, city, price, requiredDanceLevel, personMax, role }
+        let data = { title, description, date, hour, duration, city, price, requiredDanceLevel, personMax, category_workshop_id }
         data = JSON.stringify(data);
 
         let config = {
@@ -49,6 +76,7 @@ const Form_workshop = () => {
                     setPrice("");
                     setRequiredDanceLevel("");
                     setPersonMax("");
+                    setCategory("");
                     toast.success("Stage/atelier crée");
                     setTimeout(() => {
                         navigate("/");
@@ -63,16 +91,16 @@ const Form_workshop = () => {
     }
     return (
         <div className="container_formul">
-            <h2>Formulaire de création de stage ou d&apo;atelier</h2>
+            <h2>Formulaire de création de stage ou d&apos;atelier</h2>
 
             <form className="main" onSubmit={handleSubmit}>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="title" htmlFor="title">Titre du stage ou de l&apo;atelier</label>
+                    <label className="inputLabel" id="title" htmlFor="title">Titre du stage ou de l&apos;atelier</label>
                     <input
                         className="inputField"
                         type="text"
                         name="title"
-                        placeholder="Précisez s'il s'agit d'un stage ou un atelier et le style de danse"
+                        placeholder="Précisez s'il s'agit d'un stage ou un atelier"
                         onChange={(e) => {
                             setTitle(e.target.value);
                         }}
@@ -80,9 +108,29 @@ const Form_workshop = () => {
                     />
                 </formGroup>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="description" htmlFor="description">Description du stage ou de l&apo;atelier</label>
+                    <label className="inputLabel" htmlFor="workshopSelect">Sélectionner une catégorie de danse</label>
+                    <select className="inputSelect"
+                        id="workshopSelect"
+                        onChange={(e) => {
+                            setCategory(e.target.value);
+                        }}>
+                        {listCategory && listCategory.length > 0 ? (
+                            <>
+                                {listCategory.map(category => (
+                                    <option key={category.category_workshop_id} value={category.category_workshop_id}>
+                                        {category.name}
+                                    </option>
+                                ))}
+                            </>
+                        ) : (
+                            <option value="">Aucune catégorie disponible</option>
+                        )}
+                    </select>
+                </formGroup>
+                <formGroup className="inputGroup">
+                    <label className="inputLabel" id="description" htmlFor="description">Description du stage ou de l&apos;atelier</label>
                     <textarea
-                        className="textarea"
+                        className="inputTextarea"
                         type="text"
                         name="description"
                         placeholder="Décrivez brièvement le contenu du stage ou de l'atelier"
@@ -106,7 +154,7 @@ const Form_workshop = () => {
                     />
                 </formGroup>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="hour" htmlFor="hour">Heure du stage ou de l&apo;atelier</label>
+                    <label className="inputLabel" id="hour" htmlFor="hour">Heure du stage ou de l&apos;atelier</label>
                     <input
                         className="inputField"
                         type="text"
@@ -119,7 +167,7 @@ const Form_workshop = () => {
                     />
                 </formGroup>
                 <formGroup className="inputGroup">
-                    <label className="inputLabel" id="duration" htmlFor="duration">Durée du stage ou de l&apo;atelier</label>
+                    <label className="inputLabel" id="duration" htmlFor="duration">Durée du stage ou de l&apos;atelier</label>
                     <input
                         className="inputField"
                         type="text"

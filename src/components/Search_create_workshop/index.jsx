@@ -8,7 +8,7 @@ const Workshop = () => {
             <div className="left-block">
                 <h2>Je propose un atelier</h2>
 
-                <Link to={`/form_workshop}`}><button className="button">Cliquer ici pour créer un stage ou un atelier de danse</button></Link>
+                <Link to={`/form_workshop`}><button className="button">Cliquer ici pour créer un stage ou un atelier de danse</button></Link>
             </div>
             <div className="right-block">
                 <h2>Je cherche un atelier</h2>
@@ -19,4 +19,4 @@ const Workshop = () => {
     )
 }
 
-export default Workshop
+export default Workshop;
