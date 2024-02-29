@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import 'react-responsive-modal/styles.css';
+//import 'react-responsive-modal/styles.css'; // à utiliser avec le code en commentaire
 
-const Modal_register = () => {
-    const [modal, setModal] = useState(false);
+const Modal_register = ({ showModal }) => {
+    const [modal, setModal] = useState(showModal);
 
     const toggleModal = () => {
         setModal(!modal);
@@ -15,11 +15,6 @@ const Modal_register = () => {
     }
     return (
         <div>
-            <button
-                className="btn-modal"
-                onClick={toggleModal}>Open
-            </button>
-
             {modal && <div className="modal">
                 <div className="overlay"></div>
                 <div className="modal-content">

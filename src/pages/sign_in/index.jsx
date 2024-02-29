@@ -33,6 +33,7 @@ const Sign_in = () => {
                     console.log("Response succeeded!");
                     localStorage.setItem('role', response.data.role);
                     localStorage.setItem('token', response.data.token);
+                    localStorage.setItem('userId', response.data.userId)
                     setEmail("");
                     setPassword("");
                     toast.success("Connecté");

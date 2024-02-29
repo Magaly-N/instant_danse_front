@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom";
+import Modal_register from "../../components/Modal_register";
 
 const Workshop = () => {
     const id = useParams();
     const [workshop, setWorkshop] = useState(null);
     let workshopId = id.dancer_workshop_id;
+
+    const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         let data = "";
@@ -30,6 +32,28 @@ const Workshop = () => {
     }, [workshopId])
     console.log(workshop);
 
+    const handleRegister = () => {
+        const userId = localStorage.getItem("userId");
+
+        let data = "";
+
+        let config = {
+            method: "get",
+            maxBodyLength: Infinity,
+            url: `http://localhost:3000/users/sign-up-workshop?userId=${userId}&workshopId=${workshopId}`,
+            headers: {},
+            data: data,
+        };
+
+        axios.request(config)
+            .then(() => {
+                setShowModal(true);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+
+    };
 
     return (
         <div>
@@ -50,8 +74,10 @@ const Workshop = () => {
             ) : (
                 <p>Loading workshop details...</p>
             )}
-            <Link to={`/form_register`}><button className="button">Inscrivez-vous</button></Link>
+            <button className="button" onClick={() => handleRegister()}>Inscrivez-vous</button>
+            <Modal_register showModal={showModal} />
         </div>
+
     );
 };
 

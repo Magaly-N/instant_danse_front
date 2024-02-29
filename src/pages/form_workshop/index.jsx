@@ -44,7 +44,7 @@ const Form_workshop = () => {
                 console.log(error);
             });
 
-    }, [listCategory])
+    }, [])
 
 
     const handleSubmit = (e) => {
