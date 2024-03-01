@@ -31,9 +31,9 @@ const Sign_in = () => {
             .then((response) => {
                 if (response.status === 200) {
                     console.log("Response succeeded!");
-                    localStorage.setItem('role', response.data.role);
-                    localStorage.setItem('token', response.data.token);
-                    localStorage.setItem('userId', response.data.userId)
+                    localStorage.setItem('role', response.data.user.role);
+                    localStorage.setItem('token', response.data.user.token);
+                    localStorage.setItem('userId', response.data.user.userId)
                     setEmail("");
                     setPassword("");
                     toast.success("Connecté");

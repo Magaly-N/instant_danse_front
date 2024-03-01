@@ -9,13 +9,9 @@ const Modal_register = ({ showModal }) => {
         setModal(!modal);
     };
 
-    if (modal) {
-        document.body.classList.add('active-modal')
-    } else {
-        document.body.classList.remove('active-modal')
-    }
     return (
-        <div>
+
+        <div className={`modal${modal ? "active-modal" : ""}`}>
             {modal && <div className="modal">
                 <div className="overlay"></div>
                 <div className="modal-content">
@@ -28,9 +24,9 @@ const Modal_register = ({ showModal }) => {
     );
 };
 
-Modal_register.propTypes = {
-    showModal: PropTypes.string.isRequired,
-};
+/*Modal_register.propTypes = {
+                showModal: PropTypes.boolean,
+};*/
 export default Modal_register;
 
 
