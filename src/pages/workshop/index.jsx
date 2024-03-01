@@ -56,26 +56,28 @@ const Workshop = () => {
     };
 
     return (
-        <div>
-            {workshop ? (
-                <>
-                    {/* Display workshop details using workshop data */}
-                    <h1>{workshop.title}</h1>
-                    <p>{workshop.description}</p>
-                    <p>{workshop.date}</p>
-                    <p>{workshop.hour}</p>
-                    <p>{workshop.duration}</p>
-                    <p>{workshop.city}</p>
-                    <p>{workshop.price}</p>
-                    <p>{workshop.required_dance_level}</p>
-                    <p>{workshop.person_max}</p>
-                    {/* ... other details */}
-                </>
-            ) : (
-                <p>Loading workshop details...</p>
-            )}
-            <button className="button" onClick={() => handleRegister()}>Inscrivez-vous</button>
-            <Modal_register showModal={showModal} />
+        <div className="container">
+            <div className="cards">
+                {workshop ? (
+                    <>
+                        {/* Display workshop details using workshop data */}
+                        <h2>{workshop.title}</h2>
+                        <p>{workshop.description}</p>
+                        <p>{workshop.date}</p>
+                        <p>{workshop.hour}</p>
+                        <p>{workshop.duration}</p>
+                        <p>{workshop.city}</p>
+                        <p>{workshop.price}</p>
+                        <p>{workshop.required_dance_level}</p>
+                        <p>{workshop.person_max}</p>
+                        {/* ... other details */}
+                    </>
+                ) : (
+                    <p>Loading workshop details...</p>
+                )}
+                <button className="button" onClick={() => handleRegister()}>Inscrivez-vous</button>
+                <Modal_register showModal={showModal} />
+            </div>
         </div>
 
     );

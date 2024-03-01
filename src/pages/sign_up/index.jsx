@@ -63,7 +63,7 @@ const Sign_up = () => {
             )
     }
     return (
-        <div className="container_formul">
+        <div className="container">
             <h2>Formulaire d&apos;inscription</h2>
 
             {/*<Upload_image/>*/}

@@ -10,11 +10,11 @@ const Header = () => {
     };
 
     return (
-        <div className="header">
-            <div className="header-top">
+        <div className="nav">
+            <div>
                 <h1>Instant Danse</h1>
             </div>
-            <div className={`header-bottom ${isMenuOpen ? 'active' : ''}`}>
+            <div className={`navbar ${isMenuOpen ? 'active' : ''}`}>
                 <div className="menu-icon" onClick={toggleMenu}><FaBars /></div>
                 <nav>
                     <NavLink

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from "prop-types";
 //import 'react-responsive-modal/styles.css'; // à utiliser avec le code en commentaire
 
 const Modal_register = ({ showModal }) => {
@@ -27,6 +28,9 @@ const Modal_register = ({ showModal }) => {
     );
 };
 
+Modal_register.propTypes = {
+    showModal: PropTypes.string.isRequired,
+};
 export default Modal_register;
 
 

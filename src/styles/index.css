@@ -1,0 +1,144 @@
+:root {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  --primary: #2E7C03;
+  --secondary: #eeedf0;
+  --text-color: #333;
+  --bg-color: rgb(243, 218, 201);
+  --font-family-default: "Open Sans", sans-serif;
+  --font-family: "Economica", sans-serif;
+  --font-size-default: 1.8rem;
+  --gradient-bg: linear-gradient(113deg,
+          rgba(138, 149, 248, 0.2) 0%,
+          rgba(191, 155, 249, 0.11) 100%);
+  --green: #2E7C03;
+  --blue: #1717A6;
+  --shadow-color: rgba(0, 0, 0, 0.7);
+  --small-radius: 4px;
+  --basic-radius: 10px;
+  --padding-xs: 0.8rem;
+  --padding-s: 1.6rem;
+  --padding-m: 2.4rem;
+  --padding-l: 3.2rem;
+  --padding-xl: 4.8rem;
+  --padding-xxl: 6.4rem;
+  --container-width: 96.4rem;
+  --container-padding: var(--padding-l);
+  --font-size-tiny: calc(0.8rem + 0.6vmin);
+  --font-size-small: calc(1rem + 0.6vmin);
+  --font-size-medium: calc(1.2rem + 0.6vmin);
+  --font-size-large: calc(1.4rem + 0.6vmin);
+  --font-size-big: calc(1.8rem + 0.6vmin);
+  --font-size-huge: calc(2.4rem + 0.6vmin);
+  --font-weight-thin: 100;
+  --font-weight-extra-light: 200;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+  --font-weight-black: 900;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size-default);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  line-height: 1.5;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  min-width: 480px;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+h1,
+nav,
+button,
+a {
+  font-family: var(--font-family);
+  color: var(--secondary);
+}
+
+h2 {
+  color: var(--text-color);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+/*main {
+    max-width: 25rem;
+    margin: 5rem auto;
+    padding: 2rem;
+    border: 1px solid var(--primary);
+}*/
+@media only screen and (min-width: 780px) {
+  :root {
+    --font-size-default: 1rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  :root {
+    --font-size-default: 1.6rem;
+  }
+}
+/*
+.button,
+.input {
+    font-size: var(--font-size-small);
+}
+
+.label {
+    font-size: var(--font-size-small);
+}
+
+.card {
+    border-radius: var(--basic-radius);
+    box-shadow: 6px 6px 0 var(--shadow-color), 0 0 0 2px var(--shadow-color);
+}
+
+.padding-s {
+    padding: var(--padding-s);
+}
+
+.padding-m {
+    padding: var(--padding-m);
+}
+
+.padding-l {
+    padding: var(--padding-l);
+}
+
+.padding-xl {
+    padding: var(--padding-xl);
+}
+
+.padding-xxl {
+    padding: var(--padding-xxl);
+}*//*# sourceMappingURL=index.css.map */

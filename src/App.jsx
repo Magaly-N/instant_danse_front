@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./styles/index.scss";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/home";
@@ -8,7 +9,7 @@ import Privacy from "./pages/privacy";
 import Terms from "./pages/terms";
 import Form_workshop from "./pages/form_workshop";
 import Workshop from "./pages/workshop";
-import Form_register from "./pages/form_register";
+import Form_register from "./pages/form_register_not_use";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";

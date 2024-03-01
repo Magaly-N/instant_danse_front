@@ -49,8 +49,8 @@ const Sign_in = () => {
             )
     }
     return (
-        <div className="container_formul">
-            <h3>Formulaire de connexion</h3>
+        <div className="container">
+            <h2>Formulaire de connexion</h2>
             <form className="main" onSubmit={handleSubmit}>
                 <formGroup className="inputGroup">
                     <label className="inputLabel" id="email" htmlFor="email">Email</label>

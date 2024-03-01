@@ -1,41 +1,66 @@
 .footer {
     width: 100%;
-    background-color: #2E7C03;
-    padding: 15px 0;
-    text-align: center;
+    background-color: var(--primary);
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    text-align: center;
 
-.email,
-.phone,
-.privacy,
-.terms {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    margin-bottom: 5px;
+    .email,
+    .phone,
+    .privacy,
+    .terms {
+        text-decoration: none;
+        display: block;
+        margin-bottom: 5px;
 
-    &:hover {
-        text-decoration: underline;
+        &:hover {
+            text-decoration: underline;
+        }
     }
-}
 
-.privacy,
-.terms {
-    color: #333;
-}
+    .privacy,
+    .terms {
+        color: var(--text-color);
+    }
 
-/* Media query for screens with a width up to 600 pixels (adjust as needed) */
-@media only screen and (max-width: 600px) {
-    .footer {
+    p {
+        font-size: var(--font-size-small);
+    }
+
+    .barre {
+        font-weight: bold;
+        color: var(--text-color);
+    }
+
+    // VERSION TABLETTE
+    @media only screen and (min-width: 780px) {
         flex-direction: column;
         align-items: center;
+
+        .privacy-terms {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: .2rem;
+        }
+
+        .email,
+        .phone,
+        .privacy,
+        .terms {
+            margin-right: 8px;
+        }
     }
 
-    .footer div {
-        flex: none;
-        width: 100%;
+    // VERSION DESKTOP
+    @media only screen and (min-width: 1200px) {
+        p {
+            display: flex;
+            flex-direction: flex-end;
+        }
     }
 }
