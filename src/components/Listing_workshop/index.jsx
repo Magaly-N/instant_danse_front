@@ -48,4 +48,4 @@ const Listing_workshop = () => {
 
 export default Listing_workshop;
 
-// Si le workshopstableau existe, comporte des éléments et que le Workshop_detail composant est défini, ce code parcourt chaque atelier, crée un Workshop_detailcomposant pour chacun et renvoie le tableau résultant d'éléments JSX.
+// Si le workshops tableau existe, comporte des éléments et que le Workshop_detail composant est défini, ce code parcourt chaque atelier, crée un Workshop_detailcomposant pour chacun et renvoie le tableau résultant d'éléments JSX.

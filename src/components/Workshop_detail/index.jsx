@@ -7,8 +7,10 @@ import PropTypes from "prop-types";
 const Workshop_detail = ({ workshop }) => {
     const { title, city, hour, date, dancer_workshop_id } = workshop;
     console.log(date);
+
     const extractedDate = convertDate(date);
     const { day, month, year } = extractedDate;
+
     return (
         <div className="workshop_card">
             <p>{title + " à " + city + " à " + hour + " le " + day + "/" + month + "/" + year}</p>
@@ -18,7 +20,7 @@ const Workshop_detail = ({ workshop }) => {
 };
 
 Workshop_detail.propTypes = {
-    workshop: PropTypes.string.isRequired,
+    workshop: PropTypes.object.isRequired,
 };
 
 export default Workshop_detail;

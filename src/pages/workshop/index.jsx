@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Modal from "../../components/Modal";
 import useModal from "../../utils/useModal";
 
@@ -11,8 +11,7 @@ const Workshop = () => {
 
     const { isShowing, toggle } = useModal();
 
-    const [isRegistered, setIsRegistered] = useState(null);
-
+    const [isRegistered, setIsRegistered] = useState(false);
 
     useEffect(() => {
         let data = "";
@@ -25,15 +24,15 @@ const Workshop = () => {
             data: data,
         };
 
-        axios.request(config)
+        axios
+            .request(config)
             .then((response) => {
                 setWorkshop(response.data.dancerWorkshop);
             })
             .catch((error) => {
                 console.log(error);
             });
-
-    }, [workshopId])
+    }, [workshopId]);
 
     useEffect(() => {
         let data = "";
@@ -47,17 +46,15 @@ const Workshop = () => {
             data: data,
         };
 
-        axios.request(config)
+        axios
+            .request(config)
             .then((response) => {
                 console.log(response);
-
             })
             .catch((error) => {
-                console.log(error);
+                setIsRegistered(true);
             });
-
-    }, [workshopId])
-
+    }, [workshopId]);
 
     const handleRegister = () => {
         const userId = localStorage.getItem("userId");
@@ -73,14 +70,14 @@ const Workshop = () => {
             data: data,
         };
 
-        axios.request(config)
+        axios
+            .request(config)
             .then(() => {
                 toggle();
             })
             .catch((error) => {
                 console.log(error);
             });
-
     };
 
     return (
@@ -103,11 +100,17 @@ const Workshop = () => {
                 ) : (
                     <p>Loading workshop details...</p>
                 )}
-                <button className="button" onClick={() => handleRegister()}>Inscrivez-vous</button>
+                {isRegistered ? (
+                    <button className="button">Vous êtes déja inscrit(e).</button>
+                ) : (
+                    <button className="button" onClick={() => handleRegister()}>
+                        Inscrivez-vous
+                    </button>
+                )}
+
                 <Modal isShowing={isShowing} hide={toggle} />
             </div>
         </div>
-
     );
 };
 

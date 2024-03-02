@@ -97,6 +97,7 @@ const Form_workshop = () => {
                 <formGroup className="inputGroup">
                     <label className="inputLabel" id="title" htmlFor="title">Titre du stage ou de l&apos;atelier</label>
                     <input
+                        aria-labelledby="title"
                         className="inputField"
                         type="text"
                         name="title"
@@ -130,6 +131,7 @@ const Form_workshop = () => {
                 <formGroup className="inputGroup">
                     <label className="inputLabel" id="description" htmlFor="description">Description du stage ou de l&apos;atelier</label>
                     <textarea
+                        aria-labelledby="descriptionLabel"
                         className="inputTextarea"
                         type="text"
                         name="description"

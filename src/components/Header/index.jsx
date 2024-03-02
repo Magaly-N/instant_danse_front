@@ -9,6 +9,10 @@ const Header = () => {
         setMenuOpen(!isMenuOpen);
     };
 
+    const isUserAuthenticated = () => {
+        return localStorage.getItem('token') !== null;
+    };
+
     return (
         <div className="nav">
             <div>
@@ -17,35 +21,20 @@ const Header = () => {
             <div className={`navbar ${isMenuOpen ? 'active' : ''}`}>
                 <div className="menu-icon" onClick={toggleMenu}><FaBars /></div>
                 <nav>
-                    <NavLink
-                        exact
-                        to={"/"}
-                        activeClassName="active">Accueil
-                    </NavLink>
-                    <NavLink
-                        to={"/ateliers"}
-                        activeClassName="active">Ateliers
-                    </NavLink>
-                    <NavLink
-                        to={"/inscriptions"}
-                        activeClassName="active">Mes inscriptions
-                    </NavLink>
-                    <NavLink
-                        to={"/messages"}
-                        activeClassName="active">Messages
-                    </NavLink>
-                    <NavLink
-                        to={"/compte"}
-                        activeClassName="active">Mon compte
-                    </NavLink>
-                    <NavLink
-                        to={"/sign_in"}
-                        activeClassName="active">Connection
-                    </NavLink>
-                    <NavLink
-                        to={"/sign_up"}
-                        activeClassName="active">Inscription
-                    </NavLink>
+                    <NavLink exact={"true"} to={"/"} activeClassName="active">Accueil</NavLink>
+                    <NavLink to={"/ateliers"} activeClassName="active">Ateliers</NavLink>
+                    <NavLink to={"/inscriptions"} activeClassName="active">Mes inscriptions</NavLink>
+                    <NavLink to={"/messages"} activeClassName="active">Messages</NavLink>
+                    <NavLink to={"/compte"} activeClassName="active">Mon compte</NavLink>
+                    {/* Conditionally render the button based on authentication status */}
+                    {isUserAuthenticated() ? (
+                        <NavLink to={"/sign_out"} activeClassName="active">Déconnexion</NavLink>
+                    ) : (
+                        <>
+                            <NavLink to={"/sign_in"} activeClassName="active">Connexion</NavLink>
+                            <NavLink to={"/sign_up"} activeClassName="active">Inscription</NavLink>
+                        </>
+                    )}
                 </nav>
             </div>
         </div>
