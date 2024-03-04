@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Sign_out = () => {
@@ -12,22 +12,19 @@ const Sign_out = () => {
 
         toast.success('Déconnecté'); // Affiche une notification de déconnexion réussie
         setTimeout(() => {
-            navigate("/"); // Redirige vers la page d'accueil ou la page de connexion après la déconnexion
+            navigate("/"); // Redirige vers la page d'accueil après la déconnexion
         }, 3000);
     };
 
     return (
-        <div className="container" role="button" aria-label="Confirmation de déconnexion">
-            <h2>Confirmation de déconnexion</h2>
-            <p>Êtes-vous sûr de vouloir vous déconnecter ?</p>
-            <button
-                className="submitButton"
+        <div>
+            <NavLink
+                to={"sign_out"}
+                className="active"
                 onClick={handleSignOut}
-                role="button"
-                aria-label="Bouton de déconnexion"
             >
                 Déconnexion
-            </button>
+            </NavLink>
         </div>
     );
 };

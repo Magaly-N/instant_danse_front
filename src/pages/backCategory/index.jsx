@@ -1,18 +1,17 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./backUser.css";
+import "./backCategory.css";
 
-const BackUser = () => {
-    const [users, setUsers] = useState(null);
-    console.log(users);
+const BackCategory = () => {
+    const [categories, setCategories] = useState(null);
     useEffect(() => {
         let data;
 
         let config = {
             method: "get",
             maxBodyLength: Infinity,
-            url: "http://localhost:3000/users/read",
+            url: "http://localhost:3000/category_workshop/read",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -22,7 +21,7 @@ const BackUser = () => {
         axios
             .request(config)
             .then((response) => {
-                setUsers(response.data.users);
+                setCategories(response.data.categoryWorkshops);
             })
             .catch((error) => {
                 console.log(error);
@@ -34,34 +33,29 @@ const BackUser = () => {
             <thead>
                 <tr>
                     <th style={{ width: "5%" }}>Id</th>
-                    <th style={{ width: "15%" }}>Prenom</th>
-                    <th style={{ width: "15%" }}>Nom</th>
-                    <th style={{ width: "15%" }}>Email</th>
-                    <th style={{ width: "15%" }}>Niveau</th>
-                    <th style={{ width: "25%" }}>Action </th>
+                    <th style={{ width: "15%" }}>Name</th>
+                    <th style={{ width: "50%" }}>Description</th>
                 </tr>
             </thead>
             <tbody>
-                {users &&
-                    users.map((user) => (
-                        <tr key={user.user_id}>
-                            <td>{user.user_id}</td>
-                            <td>{user.first_name}</td>
-                            <td>{user.last_name}</td>
-                            <td>{user.email}</td>
-                            <td>{user.dance_level}</td>
+                {categories &&
+                    categories.map((category) => (
+                        <tr key={category.category_workshop_id}>
+                            <td>{category.category_workshop_id}</td>
+                            <td>{category.name}</td>
+                            <td>{category.description}</td>
                             <td style={{ whiteSpace: "nowrap" }}>
-                                <Link to={`/editUser/${user.user_id}`} className="submitButton">
+                                <Link to={`/editCategory/${category.category_workshop_id}`} className="submitButton">
                                     Editer
                                 </Link>
                             </td>
                         </tr>
                     ))}
 
-                {users && !users.length && (
+                {categories && !categories.length && (
                     <tr>
                         <td colSpan="4" className="text-center">
-                            <div className="p-2">Pas de membres à afficher</div>
+                            <div className="p-2">Pas de catégories à afficher</div>
                         </td>
                     </tr>
                 )}
@@ -70,4 +64,4 @@ const BackUser = () => {
     );
 };
 
-export default BackUser;
+export default BackCategory;
