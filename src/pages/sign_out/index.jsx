@@ -5,23 +5,27 @@ const Sign_out = () => {
     const navigate = useNavigate();
 
     const handleSignOut = () => {
-        // Implement your sign-out logic here, e.g., clear localStorage
+        // Efface les données du localStorage
         localStorage.removeItem('role');
         localStorage.removeItem('token');
         localStorage.removeItem('userId');
-        // Additional logic if needed...
 
-        toast.success('Déconnecté'); // Show a success toast
+        toast.success('Déconnecté'); // Affiche une notification de déconnexion réussie
         setTimeout(() => {
-            navigate("/"); // Redirect to the home page or login page after sign-out
+            navigate("/"); // Redirige vers la page d'accueil ou la page de connexion après la déconnexion
         }, 3000);
     };
 
     return (
-        <div className="container">
+        <div className="container" role="button" aria-label="Confirmation de déconnexion">
             <h2>Confirmation de déconnexion</h2>
-            <p>Êtes-vous sûr de vouloir vous déconnecter?</p>
-            <button className="submitButton" onClick={handleSignOut}>
+            <p>Êtes-vous sûr de vouloir vous déconnecter ?</p>
+            <button
+                className="submitButton"
+                onClick={handleSignOut}
+                role="button"
+                aria-label="Bouton de déconnexion"
+            >
                 Déconnexion
             </button>
         </div>

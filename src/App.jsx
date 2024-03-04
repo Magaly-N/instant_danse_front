@@ -11,6 +11,9 @@ import Privacy from "./pages/privacy";
 import Terms from "./pages/terms";
 import Form_workshop from "./pages/form_workshop";
 import Workshop from "./pages/workshop";
+import BackOffice from "./pages/backOffice";
+import BackUser from "./pages/backUser";
+import EditUser from "./pages/editUser";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -29,6 +32,9 @@ function App() {
         <Route path="/account" element={<User_profile />} />
         <Route path="/form_workshop" element={<Form_workshop />} />
         <Route path="/workshop/:dancer_workshop_id" element={<Workshop />} />
+        <Route path="/backOffice" element={<BackOffice />} />
+        <Route path="/backUser" element={<BackUser />} />
+        <Route path={`/editUser/:user_id`} element={<EditUser />} />
       </Routes>
       <Footer />
       <ToastContainer position="top-center"

@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import './header.css';
 import { FaBars } from "react-icons/fa";
 
 const Header = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const [connected, setConnected] = useState(false);
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     };
 
-    const isUserAuthenticated = () => {
-        return localStorage.getItem('token') !== null;
-    };
+    function isUserAuthenticated() {
+        let result = localStorage.getItem('token') !== null;
+        setConnected(result);
+    }
+
+    useEffect(() => { isUserAuthenticated() }, [])
 
     return (
         <div className="nav">
@@ -27,7 +31,7 @@ const Header = () => {
                     <NavLink to={"/messages"} activeClassName="active">Messages</NavLink>
                     <NavLink to={"/compte"} activeClassName="active">Mon compte</NavLink>
                     {/* Conditionally render the button based on authentication status */}
-                    {isUserAuthenticated() ? (
+                    {connected && connected == true ? (
                         <NavLink to={"/sign_out"} activeClassName="active">Déconnexion</NavLink>
                     ) : (
                         <>
