@@ -20,11 +20,15 @@ h2 {
 .inputSelect,
 .inputTextarea {
   height: 6rem;
-  padding: 1rem;
-  font-size: 2.6rem;
-  border-radius: 10px;
-  border-color: #BA3525;
-  box-shadow: 2px 2px 8px 1px #BA3525;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+  border: 5px solid #2E7C03;
+  border-radius: 11px;
+  background: rgba(45, 45, 45, 1);
+}
+
+.colorValue {
+  color: var(--secondary);
 }
 
 .submitButton {

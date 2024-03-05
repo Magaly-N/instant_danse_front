@@ -172,10 +172,10 @@ const Sign_up = () => {
                             setDance_Level(e.target.value);
                         }}
                         required>
-                        <option value="defaultValue">Choisissez un niveau</option>
-                        <option value="débutant">Débutant</option>
-                        <option value="intermédiaire">Intermédiaire</option>
-                        <option value="avancé">Avancé</option>
+                        <option value="defaultValue" className="colorValue">Choisissez un niveau</option>
+                        <option value="débutant" className="colorValue">Débutant</option>
+                        <option value="intermédiaire" className="colorValue">Intermédiaire</option>
+                        <option value="avancé" className="colorValue">Avancé</option>
                     </select>
                 </formGroup>
                 <formGroup className="inputGroup">

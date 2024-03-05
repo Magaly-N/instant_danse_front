@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DarkMode from '../../components/DarkMode';
 
 const User_profile = () => {
     // Sample user data, replace with actual user data from your application
@@ -74,6 +75,7 @@ const User_profile = () => {
                     </button>
                 )}
             </form>
+            <DarkMode />
         </div>
     );
 };

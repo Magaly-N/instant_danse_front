@@ -33,7 +33,7 @@ const BackCategory = () => {
             <thead>
                 <tr>
                     <th style={{ width: "5%" }}>Id</th>
-                    <th style={{ width: "15%" }}>Name</th>
+                    <th style={{ width: "15%" }}>Nom</th>
                     <th style={{ width: "50%" }}>Description</th>
                 </tr>
             </thead>

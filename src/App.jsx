@@ -13,8 +13,10 @@ import Form_workshop from "./pages/form_workshop";
 import Workshop from "./pages/workshop";
 import BackOffice from "./pages/backOffice";
 import BackUser from "./pages/backUser";
-import BackCategory from "./pages/backCategory";
 import EditUser from "./pages/editUser";
+import BackCategory from "./pages/backCategory";
+import BackWorkshop from "./pages/backWorkshop";
+import BackMessage from "./pages/backMessage";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -35,8 +37,10 @@ function App() {
         <Route path="/workshop/:dancer_workshop_id" element={<Workshop />} />
         <Route path="/backOffice" element={<BackOffice />} />
         <Route path="/backUser" element={<BackUser />} />
-        <Route path="/backCategory" element={<BackCategory />} />
         <Route path={`/editUser/:user_id`} element={<EditUser />} />
+        <Route path="/backCategory" element={<BackCategory />} />
+        <Route path="/backWorkshop" element={<BackWorkshop />} />
+        <Route path="/backMessage" element={<BackMessage />} />
       </Routes>
       <Footer />
       <ToastContainer position="top-center"

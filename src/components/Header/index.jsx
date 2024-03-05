@@ -55,7 +55,7 @@ const Header = () => {
                     <NavLink to={"/inscriptions"} className="active">Mes inscriptions</NavLink>
                     <NavLink to={"/messages"} className="active">Messages</NavLink>
                     <NavLink to={"/compte"} className="active">Mon compte</NavLink>
-                    {/* Rendu conditionnel du bouton en fonction de l'état d'authentification */}
+                    {/* Condition affichant le bouton en fonction de l'état d'authentification */}
                     {connected && connected === true ? (
                         <Sign_out />
                     ) : (
