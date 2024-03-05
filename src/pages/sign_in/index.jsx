@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
+import { userService } from "../../utils/userService";
 
 
 const Sign_in = () => {
@@ -31,9 +32,7 @@ const Sign_in = () => {
             .then((response) => {
                 if (response.status === 200) {
                     console.log("Response succeeded!");
-                    localStorage.setItem('role', response.data.user.role);
-                    localStorage.setItem('token', response.data.user.token);
-                    localStorage.setItem('userId', response.data.user.userId)
+                    userService.login(response.data.user);
                     setEmail("");
                     setPassword("");
                     toast.success("Connecté");

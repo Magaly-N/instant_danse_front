@@ -13,6 +13,7 @@ const Workshop = () => {
 
     const [isRegistered, setIsRegistered] = useState(false);
 
+
     useEffect(() => {
         let data = "";
 
@@ -36,8 +37,8 @@ const Workshop = () => {
 
     useEffect(() => {
         let data = "";
-        const userId = localStorage.getItem("userId");
-
+        let user = JSON.parse(localStorage.getItem("user"));
+        const userId = user.userId;
         let config = {
             method: "post",
             maxBodyLength: Infinity,
@@ -52,6 +53,7 @@ const Workshop = () => {
                 console.log(response);
             })
             .catch((error) => {
+                console.log(error);
                 setIsRegistered(true);
             });
     }, [workshopId]);
