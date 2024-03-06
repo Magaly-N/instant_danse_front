@@ -22,10 +22,10 @@ const slideImages = [
 
 const Slideshow = () => {
     return (
-        <div className="slide-container">
+        <div className="slide-container" role="group" aria-label="Carrousel d'images">
             <Slide>
                 {slideImages.map((slideImage, index) => (
-                    <div key={index}>
+                    <div key={index} aria-hidden={index !== 0}>
                         <div style={{ ...divStyle, 'backgroundImage': `url(${slideImage.url})` }}>
                         </div>
                     </div>

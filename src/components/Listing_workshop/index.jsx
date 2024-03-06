@@ -30,16 +30,21 @@ const Listing_workshop = () => {
             });
 
     }, [])
-    // structure conditionnelle pour véfifier si il y a un atelier et si le nombre d'atelier est supérieur à 0
+    // Structure conditionnelle pour véfifier si il y a un atelier et si le nombre d'atelier est supérieur à 0
     if (workshops && workshops.length > 0) {
         console.log(workshops);
-        //utilisation de la méthode .map pour parcourir chaque élément(item) du tableau workshops
+        //Utilisation de la méthode .map pour parcourir chaque élément(item) du tableau workshops
+
         return (
             workshops && workshops.map((item) => {
-                //renvoie un élément JSX soit le composant nommé Workshop_detail
+                //Renvoie un élément JSX soit le composant nommé Workshop_detail
+                return <Workshop_detail
+                    key={item.dancer_workshop_id}
+                    workshop={item}
+                    aria-label={`Détails de l'atelier ${item.dancer_workshop_id}`}
+                />
                 // key={item.dancer_workshop_id} :attribution d'un key accessoire unique au composant Workshop_detail
                 // workshop={item} :  Cela transmet le courant item(données d'atelier) comme accessoire au Workshop_detailcomposant
-                return <Workshop_detail key={item.dancer_workshop_id} workshop={item} />
 
             })
         )

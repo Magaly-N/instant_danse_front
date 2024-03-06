@@ -15,7 +15,6 @@ body {
     width: 100%;
     margin: 0 auto;
     min-width: 480px;
-
 }
 
 h1,
@@ -26,7 +25,6 @@ p {
 
 h1,
 nav,
-button,
 a {
     font-family: var(--font-family);
     color: var(--secondary);
@@ -41,14 +39,7 @@ img {
     height: auto;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-}
 
-ul li {
-    list-style: none;
-}
 
 /*main {
     max-width: 25rem;

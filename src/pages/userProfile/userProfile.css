@@ -8,6 +8,7 @@
 h2 {
   text-align: center;
   padding: 2rem;
+  color: black;
 }
 
 .inputLabel {
@@ -20,23 +21,15 @@ h2 {
 .inputTextarea {
   height: 6rem;
   font-size: 2rem;
-  background-color: rgba(45, 45, 45, 1);
+  background-color: rgb(45, 45, 45);
   padding: 1rem 2rem;
   border: 20px outset linear-gradient(40deg, #9c3, #fc3, #f63);
   border-radius: 11px;
+  color: #fff;
 }
 
 .submitButton {
-  background: linear-gradient(15deg,
-      #880088,
-      #aa2068,
-      #cc3f47,
-      #de6f3d,
-      #f09f33,
-      #de6f3d,
-      #cc3f47,
-      #aa2068,
-      #880088);
+  background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088);
   font-size: 25px;
   padding: 10px 15px;
   margin-bottom: 20px;
@@ -50,18 +43,15 @@ h2 {
     display: flex;
     flex-wrap: wrap;
   }
-
   .inputGroup {
     align-items: center;
   }
-
   .inputField {
     width: 70%;
     padding: 8px;
   }
-
   .submitButton {
     display: block;
     margin: auto;
   }
-}
+}/*# sourceMappingURL=userProfile.css.map */

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-//import UploadImage from "./components/Upload_image";
 import { toast } from "react-toastify";
 import "./sign_up.css";
 
@@ -66,9 +65,7 @@ const Sign_up = () => {
         <div className="container">
             <h2>Formulaire d&apos;inscription</h2>
 
-            {/*<Upload_image/>*/}
-
-            <form className="main" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <formGroup className="inputGroup">
                     <label className="inputLabel" id="first_name" htmlFor="first_name">Nom</label>
                     <input
@@ -172,10 +169,10 @@ const Sign_up = () => {
                             setDance_Level(e.target.value);
                         }}
                         required>
-                        <option value="defaultValue" className="colorValue">Choisissez un niveau</option>
-                        <option value="débutant" className="colorValue">Débutant</option>
-                        <option value="intermédiaire" className="colorValue">Intermédiaire</option>
-                        <option value="avancé" className="colorValue">Avancé</option>
+                        <option value="defaultValue" >Choisissez un niveau</option>
+                        <option value="débutant" >Débutant</option>
+                        <option value="intermédiaire" >Intermédiaire</option>
+                        <option value="avancé" >Avancé</option>
                     </select>
                 </formGroup>
                 <formGroup className="inputGroup">

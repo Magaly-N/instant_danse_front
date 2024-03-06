@@ -1,18 +1,19 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Modal from "../../components/Modal";
-import useModal from "../../utils/useModal";
+import "./workshop.css";
+//import Modal from "../../components/Modal";
+//import useModal from "../../utils/useModal";
 
 const Workshop = () => {
     const id = useParams();
     const [workshop, setWorkshop] = useState(null);
     let workshopId = id.dancer_workshop_id;
-
-    const { isShowing, toggle } = useModal();
+    let user = JSON.parse(localStorage.getItem("user"));
+    const userId = user.userId;
+    //const { isShowing, toggle } = useModal();
 
     const [isRegistered, setIsRegistered] = useState(false);
-
 
     useEffect(() => {
         let data = "";
@@ -37,8 +38,7 @@ const Workshop = () => {
 
     useEffect(() => {
         let data = "";
-        let user = JSON.parse(localStorage.getItem("user"));
-        const userId = user.userId;
+
         let config = {
             method: "post",
             maxBodyLength: Infinity,
@@ -59,7 +59,7 @@ const Workshop = () => {
     }, [workshopId]);
 
     const handleRegister = () => {
-        const userId = localStorage.getItem("userId");
+
 
         let data = "";
 
@@ -74,8 +74,8 @@ const Workshop = () => {
 
         axios
             .request(config)
-            .then(() => {
-                toggle();
+            .then((response) => {
+                console.log(response);
             })
             .catch((error) => {
                 console.log(error);
@@ -84,10 +84,9 @@ const Workshop = () => {
 
     return (
         <div className="container">
-            <div className="cards">
+            <div className="workshop_card">
                 {workshop ? (
                     <>
-                        {/* Display workshop details using workshop data */}
                         <h2>{workshop.title}</h2>
                         <p>{workshop.description}</p>
                         <p>{workshop.date}</p>
@@ -97,7 +96,7 @@ const Workshop = () => {
                         <p>{workshop.price}</p>
                         <p>{workshop.required_dance_level}</p>
                         <p>{workshop.person_max}</p>
-                        {/* ... other details */}
+
                     </>
                 ) : (
                     <p>Loading workshop details...</p>
@@ -110,7 +109,7 @@ const Workshop = () => {
                     </button>
                 )}
 
-                <Modal isShowing={isShowing} hide={toggle} />
+                {/*<Modal isShowing={isShowing} hide={toggle} />*/}
             </div>
         </div>
     );

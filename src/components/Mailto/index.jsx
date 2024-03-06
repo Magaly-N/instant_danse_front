@@ -9,7 +9,10 @@ const Mailto = ({ mailto, label }) => {
     };
 
     return (
-        <Link to="#" className="mailto-link" onClick={handleClick}>
+        <Link to="#"
+            className="mailto-link"
+            onClick={handleClick}
+            aria-label="Envoyer un e-mail à Instant Danse">
             {label}
         </Link>
     );

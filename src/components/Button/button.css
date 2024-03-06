@@ -1,5 +1,5 @@
 button {
-  font-size: 18px;
+  font-size: 1.5rem;
   background-color: #1717A6;
   color: #fff;
   text-shadow: 0 2px 0 rgba(0, 0, 0, 0.25);
@@ -7,19 +7,15 @@ button {
   align-items: center;
   justify-content: center;
   position: relative;
-  border: 0;
   z-index: 1;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   cursor: pointer;
   text-transform: uppercase;
   letter-spacing: 1px;
-  white-space: unset;
   padding: 0.8rem 1.5rem;
   text-decoration: none;
   font-weight: 900;
   transition: all 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
+  border: 5px inset linear-gradient(40deg, #9c3, #fc3, #f63);
 }
 
 button:before {
@@ -33,7 +29,6 @@ button:before {
   content: "";
   transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
   z-index: -1;
-  box-shadow: 0 -4px rgba(21, 108, 0, 0.5) inset, 0 4px rgba(100, 253, 31, 0.99) inset, -4px 0 rgba(100, 253, 31, 0.5) inset, 4px 0 rgba(21, 108, 0, 0.5) inset;
 }
 
 button:after {

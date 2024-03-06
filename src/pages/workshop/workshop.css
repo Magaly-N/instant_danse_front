@@ -1,1 +1,23 @@
-/*# sourceMappingURL=workshop.css.map */
+.workshop_card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 60%;
+  padding: 10px 30px;
+  background-image: linear-gradient(40deg, #9c3, #fc3, #f63);
+  border: 16px outset #1C6EA4;
+  border-radius: 13px;
+}
+.workshop_card p {
+  font-size: 22px;
+  margin: 15px;
+  text-align: center;
+  color: black;
+}
+.workshop_card .button {
+  justify-content: center;
+  margin: 15px;
+}/*# sourceMappingURL=workshop.css.map */

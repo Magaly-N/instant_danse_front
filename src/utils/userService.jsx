@@ -1,37 +1,41 @@
 import { BehaviorSubject } from "rxjs";
 
+// Création d'un sujet observable (BehaviorSubject) pour suivre l'état de l'utilisateur
 const userSubject = new BehaviorSubject(
   typeof window !== "undefined" && JSON.parse(localStorage.getItem("user"))
 );
 
+// Fonction pour mettre à jour le userSubject avec les informations de l'utilisateur et et pour stocker l'utilisateur dans le localStorage
 function login(user) {
-  // met à jour le sujet observable userSubject avec les informations de l'utilisateur et stocke l'utilisateur dans le localStorage
-  // convertit une variable javascript en string JSON
   userSubject.next(user);
+  // Convertion d'une variable javascript en string JSON
   localStorage.setItem("user", JSON.stringify(user));
 }
+
+// Variable pour stocker la fonction de navigation
 let navigateFunction;
 
+// Fonction pour définir la fonction de navigation
 function setNavigate(navigate) {
   navigateFunction = navigate;
 }
 
+// Fonction de déconnexion de l'utilisateur 
 function logout() {
-  // retire l'utilisateur du stockage local, publie une valeur null et redirige vers la page de connexion
-
-  localStorage.removeItem("user");
-  userSubject.next(null);
-  navigateFunction("/");
+  localStorage.removeItem("user");// retrait du user du localStorage
+  userSubject.next(null);// le sujet observable redevient null
+  navigateFunction("/");// redirection vers la page de connexion
 }
 
+// Export d'un objet contenant les méthodes et propriétés du service utilisateur
 export const userService = {
-  //  propriété d'accès pour obtenir la valeur actuelle de l'utilisateur.
+  // Propriété d'accès pour obtenir la valeur actuelle de l'utilisateur.
   user: userSubject.asObservable(),
-  // methode pour interagir avec l api
+  // Méthode pour interagir avec l api et obtenir la valeur actuelle de l'utilisateur
   get userValue() {
     return userSubject.value;
   },
   login,
   logout,
- setNavigate,
+  setNavigate,
 };
