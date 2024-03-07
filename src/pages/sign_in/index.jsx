@@ -49,10 +49,10 @@ const Sign_in = () => {
             )
     }
     return (
-        <div className="container">
+        <div className="main">
             <h2>Formulaire de connexion</h2>
-            <form className="main" onSubmit={handleSubmit}>
-                <formGroup className="inputGroup">
+            <form onSubmit={handleSubmit}>
+                <div className="inputGroup">
                     <label className="inputLabel" id="email" htmlFor="email">Email</label>
                     <input
                         className="inputField"
@@ -64,8 +64,8 @@ const Sign_in = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="password" htmlFor="password">Mot de passe</label>
                     <input
                         className="inputField"
@@ -77,10 +77,10 @@ const Sign_in = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <input className="submitButton" type="submit" />
-                </formGroup>
+                </div>
             </form>
         </div>
 

@@ -49,13 +49,14 @@ const UserProfile = () => {
     };
 
     return (
-        <div className="container">
+        <div className="main">
+
             <h2>Mes informations personnelles</h2>
 
             {/*<Upload_image/>*/}
 
             <form onSubmit={handleSubmit}>
-                <formGroup className="inputGroup">
+                <div className="inputGroup">
                     <label className="inputLabel" id="address" htmlFor="address">Adresse</label>
                     <input
                         className="inputField"
@@ -65,9 +66,9 @@ const UserProfile = () => {
                         onChange={handleInputChange}
 
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
-                    <label className="inputLabel" id="postcode" htmlFor="postcode">CP</label>
+                </div>
+                <div className="inputGroup">
+                    <label className="inputLabel" id="postCode" htmlFor="postCode">CP</label>
                     <input
                         className="inputField"
                         type="text"
@@ -76,8 +77,8 @@ const UserProfile = () => {
                         onChange={handleInputChange}
 
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="city" htmlFor="city">Ville</label>
                     <input
                         className="inputField"
@@ -87,8 +88,8 @@ const UserProfile = () => {
                         onChange={handleInputChange}
 
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="phoneNumber" htmlFor="phoneNumber">Numéro de téléphone</label>
                     <input
                         className="inputField"
@@ -98,8 +99,8 @@ const UserProfile = () => {
                         onChange={handleInputChange}
 
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="danceLevel" htmlFor="danceLevel">Niveau de danse</label>
                     <select
                         className="inputField"
@@ -112,8 +113,8 @@ const UserProfile = () => {
                         <option value="intermédiaire" >Intermédiaire</option>
                         <option value="avancé" >Avancé</option>
                     </select>
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="email" htmlFor="email">Email</label>
                     <input
                         className="inputField"
@@ -123,7 +124,7 @@ const UserProfile = () => {
                         onChange={handleInputChange}
                         required
                     />
-                </formGroup>
+                </div>
 
                 {isEditing ? (
                     <button type="submit">Save Changes</button>

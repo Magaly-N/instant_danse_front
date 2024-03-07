@@ -1,36 +1,20 @@
 :root {
-    scroll-behavior: smooth;
-    font-size: 62.5%;
-
-    --primary: #596BA8;
-    --secondary: #eeedf0;
-    --text-color: #333;
-    --bg-color: #EFDECD;
-    --font-family-default: "Open Sans", sans-serif;
-    --font-family: 'Economica', sans-serif;
-    --font-size-default: 1.8rem;
-
-    // Colors
-    --gradient-bg: linear-gradient(113deg,
-            rgba(138, 149, 248, 0.2) 0%,
-            rgba(191, 155, 249, 0.11) 100%);
-    --shadow-color: rgba(0, 0, 0, 0.7);
-
-    // Radius
-    --small-radius: 4px;
-    --basic-radius: 10px;
-
-    // Padding
-    --padding-xs: 0.8rem;
-    --padding-s: 1.6rem;
-    --padding-m: 2.4rem;
-    --padding-l: 3.2rem;
-    --padding-xl: 4.8rem;
-    --padding-xxl: 6.4rem;
-
     // Container
     --container-width: 96.4rem;
     --container-padding: var(--padding-l);
+
+    //font-family
+    --font-family-default: "Open Sans", sans-serif;
+    --font-family: 'Economica', sans-serif;
+
+    // Colors
+    --bg-light-beige: #EFDECD;
+    --bg-blue: #596BA8;
+    --grey-brown: #7d7474;
+    --text-color-default: #333;
+    --text-color: #eeedf0;
+    --text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+    --icon-color: #eeedf0;
 
     // Fonts
     --font-size-tiny: calc(0.8rem + 0.6vmin);
@@ -49,4 +33,29 @@
     --font-weight-bold: 700;
     --font-weight-extra-bold: 800;
     --font-weight-black: 900;
+
+    // Radius
+    --small-radius: 4px;
+    --basic-radius: 10px;
+
+    /* Margin */
+    --margin-xxs: 0.25rem;
+    --margin-xs: 0.8rem;
+    --margin-s: 1.6rem;
+    --margin-m: 2.4rem;
+    --margin-l: 3.2rem;
+    --margin-xl: 4.8rem;
+    --margin-xxl: 6.4rem;
+
+    // Padding
+    --padding-xxs: 0.25rem;
+    --padding-xs: 0.8rem;
+    --padding-s: 1.6rem;
+    --padding-m: 2.4rem;
+    --padding-l: 3.2rem;
+    --padding-xl: 4.8rem;
+    --padding-xxl: 6.4rem;
+
+
+
 }

@@ -5,7 +5,6 @@ import Footer from "./components/Footer";
 import Home from "./pages/home";
 import Sign_up from "./pages/sign_up";
 import Sign_in from "./pages/sign_in";
-import Sign_out from "./components/Sign_out";
 import UserProfile from "./pages/userProfile";
 import Privacy from "./pages/privacy";
 import Terms from "./pages/terms";
@@ -32,7 +31,6 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/sign_up" element={<Sign_up />} />
         <Route path="/sign_in" element={<Sign_in />} />
-        <Route path="/sign_out" element={<Sign_out />} />
         <Route path="/userProfile" element={<UserProfile />} />
         <Route path="/form_workshop" element={<Form_workshop />} />
         <Route path="/workshop/:dancer_workshop_id" element={<Workshop />} />
@@ -46,7 +44,7 @@ function App() {
       </Routes>
       <Footer />
       <ToastContainer position="top-center"
-        autoClose={3000}
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

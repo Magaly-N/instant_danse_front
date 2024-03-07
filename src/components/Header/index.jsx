@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import "./header.css";
 import { FaBars } from "react-icons/fa";
 import { userService } from "../../utils/userService";
 import { useNavigate } from "react-router-dom";
+import "./header.css";
 
 const Header = () => {
     // Utilisation de l'état local pour gérer l'ouverture/fermeture du menu
@@ -36,7 +36,7 @@ const Header = () => {
     }, []);
 
     return (
-        <div className="nav" role="navigation" aria-label="Navigation principale">
+        <div className="header" role="navigation" aria-label="Navigation principale">
             <div>
                 <h1>Instant Danse</h1>
             </div>

@@ -6,7 +6,7 @@ import Listing_workshop from "../../components/Listing_workshop";
 
 const Home = () => {
     return (
-        <div className="container">
+        <div className="main">
             <Gallery />
             <Search_create_workshop />
             <Listing_workshop />

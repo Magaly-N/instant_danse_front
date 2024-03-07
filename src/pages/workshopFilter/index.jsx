@@ -64,9 +64,10 @@ const WorkshopFilter = () => {
 
     return (
         <>
-            <div className="container">
-                <label htmlFor="dateFilter">Sélectionner une date:</label>
+            <div className="main">
+                <label className="inputLabel" htmlFor="dateFilter">Sélectionner une date:</label>
                 <select
+                    className="inputSelect"
                     id="dateFilter"
                     value={dateFilter}
                     onChange={(e) => setDateFilter(e.target.value)}
@@ -79,8 +80,9 @@ const WorkshopFilter = () => {
                     ))}
                 </select>
 
-                <label htmlFor="cityFilter">Sélectionner une ville</label>
+                <label className="inputLabel" htmlFor="cityFilter">Sélectionner une ville</label>
                 <select
+                    className="inputSelect"
                     id="cityFilter"
                     value={cityFilter}
                     onChange={(e) => setCityFilter(e.target.value)}
@@ -109,7 +111,7 @@ const WorkshopFilter = () => {
                         </div>
                     ))
                 ) : (
-                    <p>No workshops match the filters.</p>
+                    <p>Workshops loading...</p>
                 )}
             </div>
         </>

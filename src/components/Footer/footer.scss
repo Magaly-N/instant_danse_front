@@ -1,9 +1,5 @@
 .footer {
-    width: 100%;
-    background-color: var(--primary);
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
+    padding: var(--padding-xs);
     align-items: center;
     text-align: center;
 
@@ -13,7 +9,6 @@
     .terms {
         text-decoration: none;
         display: block;
-        margin-bottom: 5px;
 
         &:hover {
             text-decoration: underline;
@@ -26,7 +21,7 @@
     }
 
     p {
-        font-size: var(--font-size-small);
+        font-size: var(--font-size-medium);
     }
 
     .barre {
@@ -36,16 +31,13 @@
 
     // VERSION TABLETTE
     @media only screen and (min-width: 780px) {
-        flex-direction: column;
-        align-items: center;
-
         .privacy-terms {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
             margin: 0;
-            padding: .2rem;
+            padding: var(--padding-xxs);
         }
 
         .email,

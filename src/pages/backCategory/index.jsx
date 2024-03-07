@@ -29,38 +29,41 @@ const BackCategory = () => {
     }, []);
 
     return (
-        <table className="table">
-            <thead>
-                <tr>
-                    <th style={{ width: "5%" }}>Id</th>
-                    <th style={{ width: "15%" }}>Nom</th>
-                    <th style={{ width: "50%" }}>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                {categories &&
-                    categories.map((category) => (
-                        <tr key={category.category_workshop_id}>
-                            <td>{category.category_workshop_id}</td>
-                            <td>{category.name}</td>
-                            <td>{category.description}</td>
-                            <td style={{ whiteSpace: "nowrap" }}>
-                                <Link to={`/editCategory/${category.category_workshop_id}`} className="submitButton">
-                                    Editer
-                                </Link>
+        <div className="main" >
+
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th style={{ width: "5%" }}>Id</th>
+                        <th style={{ width: "15%" }}>Nom</th>
+                        <th style={{ width: "50%" }}>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {categories &&
+                        categories.map((category) => (
+                            <tr key={category.category_workshop_id}>
+                                <td>{category.category_workshop_id}</td>
+                                <td>{category.name}</td>
+                                <td>{category.description}</td>
+                                <td style={{ whiteSpace: "nowrap" }}>
+                                    <Link to={`/editCategory/${category.category_workshop_id}`} className="submitButton">
+                                        Editer
+                                    </Link>
+                                </td>
+                            </tr>
+                        ))}
+
+                    {categories && !categories.length && (
+                        <tr>
+                            <td colSpan="4" className="text-center">
+                                <div className="p-2">Pas de catégories à afficher</div>
                             </td>
                         </tr>
-                    ))}
-
-                {categories && !categories.length && (
-                    <tr>
-                        <td colSpan="4" className="text-center">
-                            <div className="p-2">Pas de catégories à afficher</div>
-                        </td>
-                    </tr>
-                )}
-            </tbody>
-        </table >
+                    )}
+                </tbody>
+            </table >
+        </div >
     );
 };
 

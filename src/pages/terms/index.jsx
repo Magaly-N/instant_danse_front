@@ -1,6 +1,8 @@
 const Terms = () => {
     return (
-        <div>Terms</div>
+        <div className="main">
+            <div>Terms</div>
+        </div>
     )
 }
 

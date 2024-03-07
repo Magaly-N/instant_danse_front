@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import "./button.scss";
 
 const Button = (props) => {
-    const { onClick, text, type, color } = props;
+    const { onClick, text, type } = props;
 
     useEffect(() => {
         return () => {
@@ -16,7 +16,6 @@ const Button = (props) => {
             type={type || "button"}
             className="button"
             onClick={onClick}
-        //style={{ [`--btn-bg`]: color }}
         >
             {text}
         </button>

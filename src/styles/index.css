@@ -1,27 +1,15 @@
 :root {
-  scroll-behavior: smooth;
-  font-size: 62.5%;
-  --primary: #596BA8;
-  --secondary: #eeedf0;
-  --text-color: #333;
-  --bg-color: #EFDECD;
-  --font-family-default: "Open Sans", sans-serif;
-  --font-family: "Economica", sans-serif;
-  --font-size-default: 1.8rem;
-  --gradient-bg: linear-gradient(113deg,
-          rgba(138, 149, 248, 0.2) 0%,
-          rgba(191, 155, 249, 0.11) 100%);
-  --shadow-color: rgba(0, 0, 0, 0.7);
-  --small-radius: 4px;
-  --basic-radius: 10px;
-  --padding-xs: 0.8rem;
-  --padding-s: 1.6rem;
-  --padding-m: 2.4rem;
-  --padding-l: 3.2rem;
-  --padding-xl: 4.8rem;
-  --padding-xxl: 6.4rem;
   --container-width: 96.4rem;
   --container-padding: var(--padding-l);
+  --font-family-default: "Open Sans", sans-serif;
+  --font-family: "Economica", sans-serif;
+  --bg-light-beige: #EFDECD;
+  --bg-blue: #596BA8;
+  --grey-brown: #7d7474;
+  --text-color-default: #333;
+  --text-color: #eeedf0;
+  --text-shadow: 0 2px 0 rgb(0 0 0 / 25%);
+  --icon-color: #eeedf0;
   --font-size-tiny: calc(0.8rem + 0.6vmin);
   --font-size-small: calc(1rem + 0.6vmin);
   --font-size-medium: calc(1.2rem + 0.6vmin);
@@ -37,25 +25,56 @@
   --font-weight-bold: 700;
   --font-weight-extra-bold: 800;
   --font-weight-black: 900;
+  --small-radius: 4px;
+  --basic-radius: 10px;
+  /* Margin */
+  --margin-xxs: 0.25rem;
+  --margin-xs: 0.8rem;
+  --margin-s: 1.6rem;
+  --margin-m: 2.4rem;
+  --margin-l: 3.2rem;
+  --margin-xl: 4.8rem;
+  --margin-xxl: 6.4rem;
+  --padding-xxs: 0.25rem;
+  --padding-xs: 0.8rem;
+  --padding-s: 1.6rem;
+  --padding-m: 2.4rem;
+  --padding-l: 3.2rem;
+  --padding-xl: 4.8rem;
+  --padding-xxl: 6.4rem;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  display: flex;
+  font-size: 62.5%;
+  min-height: 100%;
+  flex-direction: column;
+  scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
-  font-family: var(--font-family);
-  font-size: var(--font-size-default);
-  color: var(--text-color);
-  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family-default);
+  font-size: var(--font-size-big);
+  color: var(--text-color-default);
+  background-color: var(--bg-light-beige);
   line-height: 1.5;
 }
 
-.container {
+.header,
+.footer {
+  width: 100%;
+  background-color: var(--bg-blue);
+}
+
+.main {
   width: 100%;
   margin: 0 auto;
-  min-width: 480px;
 }
 
 h1,
@@ -68,11 +87,13 @@ h1,
 nav,
 a {
   font-family: var(--font-family);
-  color: var(--secondary);
+  color: var(--text-color);
 }
 
 h2 {
-  color: var(--text-color);
+  color: var(--text-color-default);
+  font-size: var(--font-size-huge);
+  text-align: center;
 }
 
 img {
@@ -80,53 +101,51 @@ img {
   height: auto;
 }
 
-/*main {
-    max-width: 25rem;
-    margin: 5rem auto;
-    padding: 2rem;
-    border: 1px solid var(--primary);
-}*/
-@media only screen and (min-width: 780px) {
-  :root {
-    --font-size-default: 1rem;
-  }
-}
-@media only screen and (min-width: 1200px) {
-  :root {
-    --font-size-default: 1.6rem;
-  }
-}
-/*
-.button,
-.input {
-    font-size: var(--font-size-small);
+.button {
+  font-size: var(--font-size-medium);
+  background-color: var(--grey-brown);
+  color: var(--text-color);
+  text-shadow: var(--text-shadow);
+  font-weight: var(--font-weight-black);
+  border-radius: var(--small-radius);
+  padding: var(--padding-xs);
 }
 
-.label {
-    font-size: var(--font-size-small);
+.inputGroup {
+  max-width: 70%;
+  font-size: var(--font-size-big);
+  display: flex;
+  flex-direction: column;
+  margin: var(--margin-xxl);
+}
+
+.inputLabel {
+  font-size: var(--font-size-large);
+}
+
+.inputField,
+.inputSelect,
+.inputTextarea {
+  font-size: var(--font-size-large);
+  padding: var(--padding-s);
+  border-radius: var(--basic-radius);
 }
 
 .card {
-    border-radius: var(--basic-radius);
-    box-shadow: 6px 6px 0 var(--shadow-color), 0 0 0 2px var(--shadow-color);
+  border-radius: var(--basic-radius);
+  box-shadow: 6px 6px 0 var(--shadow-color), 0 0 0 2px var(--shadow-color);
 }
 
-.padding-s {
-    padding: var(--padding-s);
+/*// VERSION TABLETTE
+@media only screen and (min-width: 780px) {
+    :root {
+        --font-size-default: 1rem;
+    }
 }
 
-.padding-m {
-    padding: var(--padding-m);
-}
-
-.padding-l {
-    padding: var(--padding-l);
-}
-
-.padding-xl {
-    padding: var(--padding-xl);
-}
-
-.padding-xxl {
-    padding: var(--padding-xxl);
+// VERSION DESKTOP
+@media only screen and (min-width: 1200px) {
+    :root {
+        --font-size-default: 1.6rem;
+    }
 }*//*# sourceMappingURL=index.css.map */

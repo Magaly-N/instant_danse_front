@@ -62,9 +62,9 @@ const Sign_up = () => {
             )
     }
     return (
-        <div className="container">
+        <div className="main">
             <h2>Formulaire d&apos;inscription</h2>
-            <form className="main" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className="inputGroup">
                     <label className="inputLabel" id="first_name" htmlFor="first_name">Nom</label>
                     <input
@@ -95,10 +95,9 @@ const Sign_up = () => {
                     <label className="inputLabel" id="birthday" htmlFor="birthday">Date de naissance</label>
                     <input
                         className="inputField"
-                        type="text"
-                        /*value=""*/
+                        type="date"
                         name="birthday"
-                        placeholder="Entrez votre date de naissance au format 0000-00-00"
+                        placeholder="Entrez votre date de naissance"
                         onChange={(e) => {
                             setBirthday(e.target.value);
                         }}
@@ -205,7 +204,6 @@ const Sign_up = () => {
                 </div>
             </form>
         </div >
-
     );
 };
 

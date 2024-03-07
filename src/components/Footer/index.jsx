@@ -12,9 +12,8 @@ const Footer = () => {
             </div>
             <div className="privacy-terms">
                 <Link to="/privacy" className="privacy" aria-label="Consulter la politique de confidentialité d'Instant Danse">
-                    Politique de confidentialité
+                    Politique de confidentialité -
                 </Link>
-                <div className="barre" aria-hidden="true">|</div>
                 <Link to="/terms" className="terms" aria-label="Consulter les conditions d'utilisation d'Instant Danse">
                     Conditions d&apos;utilisation
                 </Link>

@@ -56,7 +56,7 @@ const Workshop = () => {
                 console.log(error);
                 setIsRegistered(true);
             });
-    }, [workshopId]);
+    }, [workshopId, userId]);
 
     const handleRegister = () => {
         let data = "";
@@ -81,7 +81,7 @@ const Workshop = () => {
     };
 
     return (
-        <div className="container">
+        <div className="main">
             <div className="workshop_card">
                 {workshop ? (
                     <>
@@ -97,7 +97,7 @@ const Workshop = () => {
 
                     </>
                 ) : (
-                    <p>Loading workshop details...</p>
+                    <p>Workshops loading...</p>
                 )}
                 {isRegistered ? (
                     <button className="button">Vous êtes déja inscrit(e).</button>
@@ -109,7 +109,7 @@ const Workshop = () => {
 
                 <Modal isShowing={isShowing} hide={toggle} />
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -44,7 +44,7 @@ const Form_workshop = () => {
                 console.log(error);
             });
 
-    }, [])
+    }, [listCategory])
 
 
     const handleSubmit = (e) => {
@@ -93,11 +93,12 @@ const Form_workshop = () => {
             )
     }
     return (
-        <div className="container_formul">
+
+        <div className="main">
             <h2>Formulaire de création de stage ou d&apos;atelier</h2>
 
             <form className="main" onSubmit={handleSubmit}>
-                <formGroup className="inputGroup">
+                <div className="inputGroup">
                     <label className="inputLabel" id="title" htmlFor="title">Titre du stage ou de l&apos;atelier</label>
                     <input
                         aria-labelledby="title"
@@ -110,8 +111,8 @@ const Form_workshop = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" htmlFor="workshopSelect">Sélectionner une catégorie de danse</label>
                     <select className="inputSelect"
                         id="workshopSelect"
@@ -130,8 +131,8 @@ const Form_workshop = () => {
                             <option value="">Aucune catégorie disponible</option>
                         )}
                     </select>
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="description" htmlFor="description">Description du stage ou de l&apos;atelier</label>
                     <textarea
                         aria-labelledby="descriptionLabel"
@@ -144,8 +145,8 @@ const Form_workshop = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="date" htmlFor="date">Date</label>
                     <input
                         className="inputField"
@@ -157,8 +158,8 @@ const Form_workshop = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="hour" htmlFor="hour">Heure du stage ou de l&apos;atelier</label>
                     <input
                         className="inputField"
@@ -170,8 +171,8 @@ const Form_workshop = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="duration" htmlFor="duration">Durée du stage ou de l&apos;atelier</label>
                     <input
                         className="inputField"
@@ -183,8 +184,8 @@ const Form_workshop = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="city" htmlFor="city">Ville</label>
                     <input
                         className="inputField"
@@ -196,8 +197,8 @@ const Form_workshop = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="price" htmlFor="price">Prix</label>
                     <input
                         className="inputField"
@@ -210,11 +211,11 @@ const Form_workshop = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="requiredDanceLevel" htmlFor="requiredDanceLevel">Niveau de danse</label>
                     <select
-                        className="inputField"
+                        className="inputSelect"
                         type="text"
                         name="requiredDanceLevel"
                         onChange={(e) => {
@@ -226,12 +227,12 @@ const Form_workshop = () => {
                         <option value="intermédiaire">Intermédiaire</option>
                         <option value="avancé">Avancé</option>
                     </select>
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="personMax" htmlFor="personMax">Nombre de personnes maximum</label>
                     <input
                         className="inputField"
-                        type="text"
+                        type="number"
                         name="text"
                         placeholder="Indiquez le nombre maximum de participants au stage ou à l'atelier"
                         onChange={(e) => {
@@ -239,13 +240,12 @@ const Form_workshop = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <input className="submitButton" type="submit" />
-                </formGroup>
+                </div>
             </form>
-        </div >
-
+        </div>
     )
 }
 

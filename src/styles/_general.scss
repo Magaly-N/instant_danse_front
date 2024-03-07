@@ -2,19 +2,33 @@
     box-sizing: border-box;
 }
 
+html {
+    display: flex;
+    font-size: 62.5%;
+    min-height: 100%;
+    flex-direction: column;
+    scroll-behavior: smooth;
+}
+
 body {
-    margin: 0;
-    font-family: var(--font-family);
-    font-size: var(--font-size-default);
-    color: var(--text-color);
-    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-family-default);
+    font-size: var(--font-size-big);
+    color: var(--text-color-default);
+    background-color: var(--bg-light-beige);
     line-height: 1.5;
 }
 
-.container {
+.header,
+.footer {
+    width: 100%;
+    background-color: var(--bg-blue);
+}
+
+.main {
     width: 100%;
     margin: 0 auto;
-    min-width: 480px;
 }
 
 h1,
@@ -27,29 +41,59 @@ h1,
 nav,
 a {
     font-family: var(--font-family);
-    color: var(--secondary);
+    color: var(--text-color);
 }
 
 h2 {
-    color: var(--text-color);
+    color: var(--text-color-default);
+    font-size: var(--font-size-huge);
+    text-align: center;
 }
+
 
 img {
     width: 100%;
     height: auto;
 }
 
+.button {
+    font-size: var(--font-size-medium);
+    background-color: var(--grey-brown);
+    color: var(--text-color);
+    text-shadow: var(--text-shadow);
+    font-weight: var(--font-weight-black);
+    border-radius: var(--small-radius);
+    padding: var(--padding-xs);
+}
 
 
-/*main {
-    max-width: 25rem;
-    margin: 5rem auto;
-    padding: 2rem;
-    border: 1px solid var(--primary);
-}*/
+.inputGroup {
+    max-width: 70%;
+    font-size: var(--font-size-big);
+    display: flex;
+    flex-direction: column;
+    margin: var(--margin-xxl);
+}
 
+.inputLabel {
+    font-size: var(--font-size-large);
+}
 
-// VERSION TABLETTE
+.inputField,
+.inputSelect,
+.inputTextarea {
+    font-size: var(--font-size-large);
+    padding: var(--padding-s);
+    border-radius: var(--basic-radius);
+
+}
+
+.card {
+    border-radius: var(--basic-radius);
+    box-shadow: 6px 6px 0 var(--shadow-color), 0 0 0 2px var(--shadow-color);
+}
+
+/*// VERSION TABLETTE
 @media only screen and (min-width: 780px) {
     :root {
         --font-size-default: 1rem;
@@ -61,39 +105,4 @@ img {
     :root {
         --font-size-default: 1.6rem;
     }
-}
-
-/*
-.button,
-.input {
-    font-size: var(--font-size-small);
-}
-
-.label {
-    font-size: var(--font-size-small);
-}
-
-.card {
-    border-radius: var(--basic-radius);
-    box-shadow: 6px 6px 0 var(--shadow-color), 0 0 0 2px var(--shadow-color);
-}
-
-.padding-s {
-    padding: var(--padding-s);
-}
-
-.padding-m {
-    padding: var(--padding-m);
-}
-
-.padding-l {
-    padding: var(--padding-l);
-}
-
-.padding-xl {
-    padding: var(--padding-xl);
-}
-
-.padding-xxl {
-    padding: var(--padding-xxl);
 }*/

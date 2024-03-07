@@ -30,41 +30,44 @@ const BackMessage = () => {
     }, []);
 
     return (
-        <table className="table">
-            <thead>
-                <tr>
-                    <th style={{ width: "10%" }}>Id</th>
-                    <th style={{ width: "10%" }}>Expéditeur</th>
-                    <th style={{ width: "10%" }}>Destinataire</th>
-                    <th style={{ width: "50%" }}>Contenu</th>
-                    <th style={{ width: "5%" }}>Date</th>
-                </tr>
-            </thead>
-            <tbody>
-                {messages &&
-                    messages.map((message) => (
-                        <tr key={message.message_id}>
-                            <td>{message.sender}</td>
-                            <td>{message.receiver}</td>
-                            <td>{message.content}</td>
-                            <td>{message.date}</td>
-                            <td style={{ whiteSpace: "nowrap" }}>
-                                <Link to={`/editMessage/${message.message_id}`} className="submitButton">
-                                    Editer
-                                </Link>
+        <div className="main">
+
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th style={{ width: "10%" }}>Id</th>
+                        <th style={{ width: "10%" }}>Expéditeur</th>
+                        <th style={{ width: "10%" }}>Destinataire</th>
+                        <th style={{ width: "50%" }}>Contenu</th>
+                        <th style={{ width: "5%" }}>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {messages &&
+                        messages.map((message) => (
+                            <tr key={message.message_id}>
+                                <td>{message.sender}</td>
+                                <td>{message.receiver}</td>
+                                <td>{message.content}</td>
+                                <td>{message.date}</td>
+                                <td style={{ whiteSpace: "nowrap" }}>
+                                    <Link to={`/editMessage/${message.message_id}`} className="submitButton">
+                                        Editer
+                                    </Link>
+                                </td>
+                            </tr>
+                        ))}
+
+                    {messages && !messages.length && (
+                        <tr>
+                            <td colSpan="4" className="text-center">
+                                <div className="p-2">Pas de message à afficher</div>
                             </td>
                         </tr>
-                    ))}
-
-                {messages && !messages.length && (
-                    <tr>
-                        <td colSpan="4" className="text-center">
-                            <div className="p-2">Pas de message à afficher</div>
-                        </td>
-                    </tr>
-                )}
-            </tbody>
-        </table >
+                    )}
+                </tbody>
+            </table >
+        </div>
     );
 };
 

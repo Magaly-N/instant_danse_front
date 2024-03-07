@@ -7,9 +7,9 @@
   margin-bottom: 20px;
   width: 60%;
   padding: 10px 30px;
-  background: radial-gradient(ellipse at center, #596BA8 0%, #596BA8 42%, #DEB887 100%);
-  box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(89, 107, 168, 0);
+  background-color: #fff;
   border-radius: 13px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
 }
 .workshop_card p {
   font-size: 22px;

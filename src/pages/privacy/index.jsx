@@ -1,7 +1,10 @@
 
 const Privacy = () => {
     return (
-        <div>Privacy</div>
+        <div className="main">
+            <div>Privacy</div>
+        </div>
+
     )
 }
 
