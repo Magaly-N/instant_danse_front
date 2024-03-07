@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
 //import UploadImage from "./components/Upload_image";
-import DarkMode from '../../components/DarkMode';
 import "./userProfile.css";
 
 const UserProfile = () => {
@@ -32,8 +31,6 @@ const UserProfile = () => {
                 console.log(error);
             });
     }, []);
-
-
 
     // Handle input changes
     const handleInputChange = (e) => {
@@ -136,7 +133,6 @@ const UserProfile = () => {
                     </button>
                 )}
             </form>
-            <DarkMode />
         </div >
     );
 };

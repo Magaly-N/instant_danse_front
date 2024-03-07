@@ -28,16 +28,6 @@ h2 {
   color: #fff;
 }
 
-.submitButton {
-  background: linear-gradient(15deg, #880088, #aa2068, #cc3f47, #de6f3d, #f09f33, #de6f3d, #cc3f47, #aa2068, #880088);
-  font-size: 25px;
-  padding: 10px 15px;
-  margin-bottom: 20px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
 @media only screen and (min-width: 975px) {
   .main {
     display: flex;

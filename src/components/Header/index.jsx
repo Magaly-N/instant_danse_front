@@ -52,7 +52,7 @@ const Header = () => {
                     <NavLink exact={"true"} to={"/"} activeClassName="active" role="menuitem">
                         Accueil
                     </NavLink>
-                    <NavLink to={"/ateliers"} activeClassName="active" role="menuitem">
+                    <NavLink to={"/workshopFilter"} activeClassName="active" role="menuitem">
                         Ateliers
                     </NavLink>
                     <NavLink to={"/inscriptions"} activeClassName="active" role="menuitem">

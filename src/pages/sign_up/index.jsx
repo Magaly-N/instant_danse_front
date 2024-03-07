@@ -64,9 +64,8 @@ const Sign_up = () => {
     return (
         <div className="container">
             <h2>Formulaire d&apos;inscription</h2>
-
-            <form onSubmit={handleSubmit}>
-                <formGroup className="inputGroup">
+            <form className="main" onSubmit={handleSubmit}>
+                <div className="inputGroup">
                     <label className="inputLabel" id="first_name" htmlFor="first_name">Nom</label>
                     <input
                         className="inputField"
@@ -78,8 +77,8 @@ const Sign_up = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="last_name" htmlFor="last_name">Prénom</label>
                     <input
                         className="inputField"
@@ -91,8 +90,8 @@ const Sign_up = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="birthday" htmlFor="birthday">Date de naissance</label>
                     <input
                         className="inputField"
@@ -105,8 +104,8 @@ const Sign_up = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="address" htmlFor="address">Adresse</label>
                     <input
                         className="inputField"
@@ -118,8 +117,8 @@ const Sign_up = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="postcode" htmlFor="postcode">CP</label>
                     <input
                         className="inputField"
@@ -131,8 +130,8 @@ const Sign_up = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="city" htmlFor="city">Ville</label>
                     <input
                         className="inputField"
@@ -144,8 +143,8 @@ const Sign_up = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="phone_number" htmlFor="phone_number">Numéro de téléphone</label>
                     <input
                         className="inputField"
@@ -158,8 +157,8 @@ const Sign_up = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="dance_level" htmlFor="dance_level">Niveau de danse</label>
                     <select
                         className="inputField"
@@ -174,8 +173,8 @@ const Sign_up = () => {
                         <option value="intermédiaire" >Intermédiaire</option>
                         <option value="avancé" >Avancé</option>
                     </select>
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="email" htmlFor="email">Email</label>
                     <input
                         className="inputField"
@@ -187,8 +186,8 @@ const Sign_up = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <label className="inputLabel" id="password" htmlFor="password">Mot de passe</label>
                     <input
                         className="inputField"
@@ -200,10 +199,10 @@ const Sign_up = () => {
                         }}
                         required="required"
                     />
-                </formGroup>
-                <formGroup className="inputGroup">
+                </div>
+                <div className="inputGroup">
                     <input className="submitButton" type="submit" />
-                </formGroup>
+                </div>
             </form>
         </div >
 

@@ -2,8 +2,8 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./workshop.css";
-//import Modal from "../../components/Modal";
-//import useModal from "../../utils/useModal";
+import Modal from "../../components/Modal";
+import useModal from "../../utils/useModal";
 
 const Workshop = () => {
     const id = useParams();
@@ -11,7 +11,7 @@ const Workshop = () => {
     let workshopId = id.dancer_workshop_id;
     let user = JSON.parse(localStorage.getItem("user"));
     const userId = user.userId;
-    //const { isShowing, toggle } = useModal();
+    const { isShowing, toggle } = useModal();
 
     const [isRegistered, setIsRegistered] = useState(false);
 
@@ -59,8 +59,6 @@ const Workshop = () => {
     }, [workshopId]);
 
     const handleRegister = () => {
-
-
         let data = "";
 
         let config = {
@@ -109,7 +107,7 @@ const Workshop = () => {
                     </button>
                 )}
 
-                {/*<Modal isShowing={isShowing} hide={toggle} />*/}
+                <Modal isShowing={isShowing} hide={toggle} />
             </div>
         </div>
     );

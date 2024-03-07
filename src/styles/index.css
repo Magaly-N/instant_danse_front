@@ -1,18 +1,16 @@
 :root {
   scroll-behavior: smooth;
   font-size: 62.5%;
-  --primary: #2E7C03;
+  --primary: #596BA8;
   --secondary: #eeedf0;
   --text-color: #333;
-  --bg-color: #F5EA81;
+  --bg-color: #EFDECD;
   --font-family-default: "Open Sans", sans-serif;
   --font-family: "Economica", sans-serif;
   --font-size-default: 1.8rem;
   --gradient-bg: linear-gradient(113deg,
           rgba(138, 149, 248, 0.2) 0%,
           rgba(191, 155, 249, 0.11) 100%);
-  --green: #2E7C03;
-  --blue: #1717A6;
   --shadow-color: rgba(0, 0, 0, 0.7);
   --small-radius: 4px;
   --basic-radius: 10px;
