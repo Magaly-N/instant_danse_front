@@ -29,7 +29,7 @@ const Form_workshop = () => {
             maxBodyLength: Infinity,
             url: 'http://localhost:3000/category_workshop/read',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             data: data
         };
@@ -52,13 +52,16 @@ const Form_workshop = () => {
 
         let data = { title, description, date, hour, duration, city, price, requiredDanceLevel, personMax, category_workshop_id }
         data = JSON.stringify(data);
+        let user = JSON.parse(localStorage.getItem("user"));
+        const token = user.token;
 
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
             url: 'http://localhost:3000/dancer_workshop/create',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
             },
             data: data
         };
@@ -116,7 +119,7 @@ const Form_workshop = () => {
                             setCategory(e.target.value);
                         }}>
                         {listCategory && listCategory.length > 0 ? (
-                            <>
+                            <> <option value="0">Sélectionner une catégorie</option>
                                 {listCategory.map(category => (
                                     <option key={category.category_workshop_id} value={category.category_workshop_id}>
                                         {category.name}
@@ -146,7 +149,7 @@ const Form_workshop = () => {
                     <label className="inputLabel" id="date" htmlFor="date">Date</label>
                     <input
                         className="inputField"
-                        type="text"
+                        type="date"
                         name="date"
                         placeholder="Entrez la date"
                         onChange={(e) => {
@@ -159,7 +162,7 @@ const Form_workshop = () => {
                     <label className="inputLabel" id="hour" htmlFor="hour">Heure du stage ou de l&apos;atelier</label>
                     <input
                         className="inputField"
-                        type="text"
+                        type="time"
                         name="hour"
                         placeholder="Entrer l'heure du stage ou de l'atelier"
                         onChange={(e) => {
@@ -172,7 +175,7 @@ const Form_workshop = () => {
                     <label className="inputLabel" id="duration" htmlFor="duration">Durée du stage ou de l&apos;atelier</label>
                     <input
                         className="inputField"
-                        type="text"
+                        type="number"
                         name="duration"
                         placeholder="Indiquez la durée du stage ou de l'atelier"
                         onChange={(e) => {
@@ -198,7 +201,8 @@ const Form_workshop = () => {
                     <label className="inputLabel" id="price" htmlFor="price">Prix</label>
                     <input
                         className="inputField"
-                        type="text"
+                        type="number"
+                        step="any"
                         name="price"
                         placeholder="Indiquez le coût du stage ou de l'atelier"
                         onChange={(e) => {
