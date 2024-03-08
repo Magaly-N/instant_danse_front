@@ -11,6 +11,7 @@ import Terms from "./pages/terms";
 import Form_workshop from "./pages/form_workshop";
 import Workshop from "./pages/workshop";
 import WorkshopFilter from "./pages/workshopFilter";
+import RegisteredWorkshop from "./pages/registeredWorkshop";
 import BackOffice from "./pages/backOffice";
 import BackUser from "./pages/backUser";
 import EditUser from "./pages/editUser";
@@ -35,6 +36,7 @@ function App() {
         <Route path="/form_workshop" element={<Form_workshop />} />
         <Route path="/workshop/:dancer_workshop_id" element={<Workshop />} />
         <Route path="/workshopFilter" element={<WorkshopFilter />} />
+        <Route path="/registeredWorkshop" element={<RegisteredWorkshop />} />
         <Route path="/backOffice" element={<BackOffice />} />
         <Route path="/backUser" element={<BackUser />} />
         <Route path={`/editUser/:user_id`} element={<EditUser />} />

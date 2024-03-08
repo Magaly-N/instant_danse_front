@@ -9,8 +9,8 @@ const WorkshopFilter = () => {
     const [cityFilter, setCityFilter] = useState("");
     const [uniqueDates, setUniqueDates] = useState([]);
     const [uniqueCities, setUniqueCities] = useState([]);
-
-
+    console.log(uniqueDates);
+    console.log(uniqueCities);
     useEffect(() => {
         let data = "";
 
@@ -25,7 +25,6 @@ const WorkshopFilter = () => {
         axios
             .request(config)
             .then((response) => {
-                console.log(response);
                 setWorkshops(response.data.dancerWorkshop || []);
 
                 const dates = [...new Set(workshops.map((workshop) => workshop.date))];

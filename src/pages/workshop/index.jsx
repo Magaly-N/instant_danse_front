@@ -2,53 +2,35 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./workshop.css";
-import Modal from "../../components/Modal";
-import useModal from "../../utils/useModal";
 
 const Workshop = () => {
-    const id = useParams();
+    const { dancer_workshop_id } = useParams();
+    const [userId, setUserId] = useState(null);
     const [workshop, setWorkshop] = useState(null);
-    let workshopId = id.dancer_workshop_id;
-    let user = JSON.parse(localStorage.getItem("user"));
-    const userId = user.userId;
-    const { isShowing, toggle } = useModal();
-
     const [isRegistered, setIsRegistered] = useState(false);
 
     useEffect(() => {
-        let data = "";
-
-        let config = {
-            method: "get",
-            maxBodyLength: Infinity,
-            url: `http://localhost:3000/dancer_workshop/readOne?id=${workshopId}`,
-            headers: {},
-            data: data,
-        };
+        const actualUser = JSON.parse(localStorage.getItem("user"));
+        if (actualUser && actualUser !== undefined) {
+            setUserId(actualUser.userId);
+            console.log(actualUser);
+        }
 
         axios
-            .request(config)
+            .get(
+                `http://localhost:3000/dancer_workshop/readOne?id=${dancer_workshop_id}`
+            )
             .then((response) => {
                 setWorkshop(response.data.dancerWorkshop);
             })
             .catch((error) => {
                 console.log(error);
             });
-    }, [workshopId]);
-
-    useEffect(() => {
-        let data = "";
-
-        let config = {
-            method: "post",
-            maxBodyLength: Infinity,
-            url: `http://localhost:3000/users/isRegistered?userId=${userId}&workshopId=${workshopId}`,
-            headers: {},
-            data: data,
-        };
 
         axios
-            .request(config)
+            .post(
+                `http://localhost:3000/users/isRegistered?userId=${userId}&workshopId=${dancer_workshop_id}`
+            )
             .then((response) => {
                 console.log(response);
             })
@@ -56,24 +38,16 @@ const Workshop = () => {
                 console.log(error);
                 setIsRegistered(true);
             });
-    }, [workshopId, userId]);
+    }, [userId, dancer_workshop_id, isRegistered]);
 
     const handleRegister = () => {
-        let data = "";
-
-        let config = {
-            method: "post",
-            maxBodyLength: Infinity,
-            url: `http://localhost:3000/users/sign-up-workshop?userId=${userId}&workshopId=${workshopId}`,
-            //http://localhost:3000/users/sign-up-workshop?userId=23&workshopId=1
-            headers: {},
-            data: data,
-        };
-
         axios
-            .request(config)
+            .post(
+                `http://localhost:3000/users/sign-up-workshop?userId=${userId}&workshopId=${dancer_workshop_id}`
+            )
             .then((response) => {
                 console.log(response);
+                setIsRegistered(true);
             })
             .catch((error) => {
                 console.log(error);
@@ -81,7 +55,7 @@ const Workshop = () => {
     };
 
     return (
-        <div className="main">
+        <div className="container">
             <div className="workshop_card">
                 {workshop ? (
                     <>
@@ -94,22 +68,20 @@ const Workshop = () => {
                         <p>{workshop.price}</p>
                         <p>{workshop.required_dance_level}</p>
                         <p>{workshop.person_max}</p>
-
                     </>
                 ) : (
-                    <p>Workshops loading...</p>
+                    <p>Loading workshop details...</p>
                 )}
-                {isRegistered ? (
-                    <button className="button">Vous êtes déja inscrit(e).</button>
-                ) : (
-                    <button className="button" onClick={() => handleRegister()}>
+                {userId && userId > 0 && !isRegistered && (
+                    <button className="button" onClick={handleRegister}>
                         Inscrivez-vous
                     </button>
                 )}
-
-                <Modal isShowing={isShowing} hide={toggle} />
+                {userId && userId > 0 && isRegistered && (
+                    <button className="button">Vous êtes déjà inscrit(e).</button>
+                )}
             </div>
-        </div >
+        </div>
     );
 };
 

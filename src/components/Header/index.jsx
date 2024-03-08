@@ -55,21 +55,22 @@ const Header = () => {
                     <NavLink to={"/workshopFilter"} activeClassName="active" role="menuitem">
                         Ateliers
                     </NavLink>
-                    <NavLink to={"/inscriptions"} activeClassName="active" role="menuitem">
-                        Mes inscriptions
-                    </NavLink>
-                    <NavLink to={"/messages"} activeClassName="active" role="menuitem">
-                        Messages
-                    </NavLink>
-                    <NavLink to={"/userProfile"} activeClassName="active" role="menuitem">
-                        Mon compte
-                    </NavLink>
+
 
                     {/* Affichage conditionnel du bouton de déconnexion ou des liens de connexion/inscription */}
-                    {user ? (
+                    {user ? (<><NavLink to={"/registeredWorkshop"} activeClassName="active" role="menuitem">
+                        Mes inscriptions
+                    </NavLink>
+                        <NavLink to={"/messages"} activeClassName="active" role="menuitem">
+                            Messages
+                        </NavLink>
+                        <NavLink to={"/userProfile"} activeClassName="active" role="menuitem">
+                            Mon compte
+                        </NavLink>
                         <NavLink to="/" onClick={logout} className="active" role="menuitem">
                             Se déconnecter
                         </NavLink>
+                    </>
                     ) : (
                         <>
                             <NavLink to={"/sign_in"} activeClassName="active" role="menuitem">
