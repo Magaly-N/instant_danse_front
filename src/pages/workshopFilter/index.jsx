@@ -94,10 +94,10 @@ const WorkshopFilter = () => {
                     ))}
                 </select>
             </div>
-            <div>
+            <div aria-live="polite">
                 {filteredWorkshops.length > 0 ? (
                     filteredWorkshops.map((workshop) => (
-                        <div key={workshop.id} className="workshopCard">
+                        <div key={workshop.id} className="workshopCard" aria-label="Détails de l'atelier">
                             <h2>{workshop.title}</h2>
                             <p>{workshop.description}</p>
                             <p>{workshop.date}</p>
@@ -107,12 +107,12 @@ const WorkshopFilter = () => {
                             <p>{workshop.price}</p>
                             <p>{workshop.required_dance_level}</p>
                             <p>{workshop.person_max}</p>
-                        </div>
+                        </div >
                     ))
                 ) : (
                     <p>Workshops loading...</p>
                 )}
-            </div>
+            </div >
         </>
     );
 };

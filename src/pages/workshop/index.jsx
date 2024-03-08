@@ -56,32 +56,40 @@ const Workshop = () => {
 
     return (
         <div className="main">
-            <div className="workshopCard">
+            <div className="workshopCard" aria-label="Détails de l'atelier">
                 {workshop ? (
                     <>
                         <h2>{workshop.title}</h2>
+                        <label className="inputLabel" aria-label="Description de l'atelier">Description</label>
                         <p>{workshop.description}</p>
+                        <label className="inputLabel" aria-label="Date de l'atelier">Date</label>
                         <p>{workshop.date}</p>
+                        <label className="inputLabel" aria-label="Heure de l'atelier">Heure</label>
                         <p>{workshop.hour}</p>
+                        <label className="inputLabel" aria-label="Durée de l'atelier">Durée</label>
                         <p>{workshop.duration}</p>
+                        <label className="inputLabel" aria-label="Ville de l'atelier">Ville</label>
                         <p>{workshop.city}</p>
+                        <label className="inputLabel" aria-label="Prix de l'atelier">Prix</label>
                         <p>{workshop.price}</p>
+                        <label className="inputLabel" aria-label="Niveau de danse">Niveau de danse</label>
                         <p>{workshop.required_dance_level}</p>
+                        <label className="inputLabel" aria-label="Nombre de personnes maximum">Nombre de personnes maximum</label>
                         <p>{workshop.person_max}</p>
                     </>
                 ) : (
                     <p>Loading workshop details...</p>
                 )}
                 {userId && userId > 0 && !isRegistered && (
-                    <button className="button" onClick={handleRegister}>
+                    <button className="button" onClick={handleRegister} aria-label="Inscrivez-vous à cet atelier">
                         Inscrivez-vous
                     </button>
                 )}
                 {userId && userId > 0 && isRegistered && (
-                    <button className="button">Vous êtes déjà inscrit(e).</button>
+                    <button className="button" aria-label="Vous êtes déjà inscrit(e)">Vous êtes déjà inscrit(e)</button>
                 )}
             </div>
-        </div>
+        </div >
     );
 };
 

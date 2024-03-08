@@ -5,15 +5,15 @@ import { toast } from "react-toastify";
 import "./signUp.css";
 
 const SignUp = () => {
-    //const { first_name, last_name, birthday, address, postcode, city, phone_number, dance_level, email, password, role }
-    const [first_name, setFirst_Name] = useState("");
-    const [last_name, setLast_Name] = useState("");
+    //const { firstName, lastName, birthday, address, postCode, city, phoneNumber, danceLevel, email, password, role } = req.body;
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
     const [birthday, setBirthday] = useState("");
     const [address, setAddress] = useState("");
-    const [postcode, setPost_Code] = useState("");
+    const [postCode, setPostCode] = useState("");
     const [city, setCity] = useState("");
-    const [phone_number, setPhone_Number] = useState("");
-    const [dance_level, setDance_Level] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [danceLevel, setDanceLevel] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const role = "user";
@@ -22,9 +22,9 @@ const SignUp = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let data = { first_name, last_name, birthday, address, postcode, city, phone_number, dance_level, email, password, role }
+        let data = { firstName, lastName, birthday, address, postCode, city, phoneNumber, danceLevel, email, password, role }
         data = JSON.stringify(data);
-
+        console.log(data);
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
@@ -37,17 +37,17 @@ const SignUp = () => {
 
         axios.request(config)
             .then((response) => {
-                console.log();
+                console.log(response);
                 if (response.status === 200) {
                     console.log("Response succeeded!");
-                    setFirst_Name("");
-                    setLast_Name("");
+                    setFirstName("");
+                    setLastName("");
                     setBirthday("");
                     setAddress("");
-                    setPost_Code("");
+                    setPostCode("");
                     setCity("");
-                    setPhone_Number("");
-                    setDance_Level("");
+                    setPhoneNumber("");
+                    setDanceLevel("");
                     setEmail("");
                     setPassword("");
                     toast.success("Inscription validée");
@@ -67,27 +67,29 @@ const SignUp = () => {
             <h2>Formulaire d&apos;inscription</h2>
             <form onSubmit={handleSubmit}>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="first_name" htmlFor="first_name">Nom</label>
+                    <label className="inputLabel" id="first_name" htmlFor="firstName">Nom</label>
                     <input
+                        aria-label="Entrez votre nom"
                         className="inputField"
                         type="text"
-                        name="first_name"
+                        name="firstName"
                         placeholder="Entrez votre nom"
                         onChange={(e) => {
-                            setFirst_Name(e.target.value);
+                            setFirstName(e.target.value);
                         }}
                         required="required"
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="last_name" htmlFor="last_name">Prénom</label>
+                    <label className="inputLabel" id="last_name" htmlFor="lastName">Prénom</label>
                     <input
+                        aria-label="Entrez votre Prénom"
                         className="inputField"
                         type="text"
-                        name="last_name"
+                        name="lastName"
                         placeholder="Entrez votre prénom"
                         onChange={(e) => {
-                            setLast_Name(e.target.value);
+                            setLastName(e.target.value);
                         }}
                         required="required"
                     />
@@ -95,6 +97,7 @@ const SignUp = () => {
                 <div className="inputGroup">
                     <label className="inputLabel" id="birthday" htmlFor="birthday">Date de naissance</label>
                     <input
+                        aria-label="Entrez votre date de naissance"
                         className="inputField"
                         type="date"
                         name="birthday"
@@ -108,6 +111,7 @@ const SignUp = () => {
                 <div className="inputGroup">
                     <label className="inputLabel" id="address" htmlFor="address">Adresse</label>
                     <input
+                        aria-label="Entrez votre adresse"
                         className="inputField"
                         type="text"
                         name="address"
@@ -121,12 +125,13 @@ const SignUp = () => {
                 <div className="inputGroup">
                     <label className="inputLabel" id="postcode" htmlFor="postcode">CP</label>
                     <input
+                        aria-label="Entrez votre code postal"
                         className="inputField"
                         type="text"
                         name="postcode"
                         placeholder="Entrez votre code postal"
                         onChange={(e) => {
-                            setPost_Code(e.target.value);
+                            setPostCode(e.target.value);
                         }}
                         required="required"
                     />
@@ -134,6 +139,7 @@ const SignUp = () => {
                 <div className="inputGroup">
                     <label className="inputLabel" id="city" htmlFor="city">Ville</label>
                     <input
+                        aria-label="Entrez votre ville"
                         className="inputField"
                         type="text"
                         name="city"
@@ -145,27 +151,29 @@ const SignUp = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="phone_number" htmlFor="phone_number">Numéro de téléphone</label>
+                    <label className="inputLabel" id="phoneNumber" htmlFor="phoneNumber">Numéro de téléphone</label>
                     <input
+                        aria-label="Entrez votre numéro de téléphone"
                         className="inputField"
                         type="tel"
-                        name="phone_number"
+                        name="phoneNumber"
                         placeholder="Entrez votre numéro de téléphone"
                         pattern="^(\+\d{1,2}\s?)?(\(\d{3}\)|\d{3})[-.\s]?\d{3}[-.\s]?\d{4}$"
                         onChange={(e) => {
-                            setPhone_Number(e.target.value);
+                            setPhoneNumber(e.target.value);
                         }}
                         required="required"
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="dance_level" htmlFor="dance_level">Niveau de danse</label>
+                    <label className="inputLabel" id="dance_level" htmlFor="danceLevel">Niveau de danse</label>
                     <select
+                        aria-label="Entrez votre niveau de danse"
                         className="inputField"
                         type="text"
-                        name="dance_level"
+                        name="danceLevel"
                         onChange={(e) => {
-                            setDance_Level(e.target.value);
+                            setDanceLevel(e.target.value);
                         }}
                         required>
                         <option value="defaultValue" >Choisissez un niveau</option>
@@ -177,6 +185,7 @@ const SignUp = () => {
                 <div className="inputGroup">
                     <label className="inputLabel" id="email" htmlFor="email">Email</label>
                     <input
+                        aria-label="Entrez votre adresse email"
                         className="inputField"
                         type="email"
                         name="email"
@@ -190,6 +199,7 @@ const SignUp = () => {
                 <div className="inputGroup">
                     <label className="inputLabel" id="password" htmlFor="password">Mot de passe</label>
                     <input
+                        aria-label="Entrez votre mot de passe"
                         className="inputField"
                         type="password"
                         name="password"
@@ -201,7 +211,21 @@ const SignUp = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <input className="submitButton" type="submit" />
+                    <label className="inputLabel" id="password" htmlFor="password">Confirmation du mot de passe</label>
+                    <input
+                        aria-label="Confirmez votre mot de passe"
+                        className="inputField"
+                        type="password"
+                        name="password"
+                        placeholder="Confirmez votre mot de passe"
+                        onChange={(e) => {
+                            setPassword(e.target.value);
+                        }}
+                        required="required"
+                    />
+                </div>
+                <div className="inputGroup">
+                    <input className="submitButton" type="submit" aria-label="S'inscrire" />
                 </div>
             </form>
         </div >

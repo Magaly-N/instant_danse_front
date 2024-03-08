@@ -59,6 +59,7 @@ const UserProfile = () => {
                 <div className="inputGroup">
                     <label className="inputLabel" id="address" htmlFor="address">Adresse</label>
                     <input
+                        aria-label="Entrez votre adresse"
                         className="inputField"
                         type="text"
                         name="address"
@@ -68,11 +69,12 @@ const UserProfile = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="postCode" htmlFor="postCode">CP</label>
+                    <label className="inputLabel" id="postcode" htmlFor="postCode">CP</label>
                     <input
+                        aria-label="Entrez votre code postal"
                         className="inputField"
                         type="text"
-                        name="postCode"
+                        name="postcode"
                         value={user && user.postCode}
                         onChange={handleInputChange}
 
@@ -81,6 +83,7 @@ const UserProfile = () => {
                 <div className="inputGroup">
                     <label className="inputLabel" id="city" htmlFor="city">Ville</label>
                     <input
+                        aria-label="Entrez votre ville"
                         className="inputField"
                         type="text"
                         name="city"
@@ -92,6 +95,7 @@ const UserProfile = () => {
                 <div className="inputGroup">
                     <label className="inputLabel" id="phoneNumber" htmlFor="phoneNumber">Numéro de téléphone</label>
                     <input
+                        aria-label="Entrez votre numéro de téléphone"
                         className="inputField"
                         type="tel"
                         name="phoneNumber"
@@ -103,6 +107,7 @@ const UserProfile = () => {
                 <div className="inputGroup">
                     <label className="inputLabel" id="danceLevel" htmlFor="danceLevel">Niveau de danse</label>
                     <select
+                        aria-label="Entrez votre niveau de danse"
                         className="inputField"
                         type="text"
                         name="danceLevel"
@@ -117,6 +122,7 @@ const UserProfile = () => {
                 <div className="inputGroup">
                     <label className="inputLabel" id="email" htmlFor="email">Email</label>
                     <input
+                        aria-label="Entrez votre adresse email"
                         className="inputField"
                         type="email"
                         name="email"
