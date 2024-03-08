@@ -14,7 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: var(--font-family-default);
-    font-size: var(--font-size-big);
+    font-size: var(--font-size-medium);
     color: var(--text-color-default);
     background-color: var(--bg-light-beige);
     line-height: 1.5;
@@ -27,7 +27,7 @@ body {
 }
 
 .main {
-    width: 100%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -55,6 +55,22 @@ img {
     width: 100%;
     height: auto;
 }
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 50px auto;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
 
 .button {
     font-size: var(--font-size-medium);
@@ -89,9 +105,23 @@ img {
 }
 
 .card {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
     border-radius: var(--basic-radius);
     box-shadow: 6px 6px 0 var(--shadow-color), 0 0 0 2px var(--shadow-color);
 }
+
+.workshopCard {
+    width: 60%;
+    margin: var(--margin-xs);
+    padding: var(--padding-s);
+    text-align: center;
+    border-radius: var(--basic-radius);
+    background-color: var(--bg-white);
+    box-shadow: 6px 6px 0 var(--shadow-color), 0 0 0 2px var(--shadow-color);
+}
+
 
 /*// VERSION TABLETTE
 @media only screen and (min-width: 780px) {

@@ -1,5 +1,5 @@
 import Slideshow from "../Slideshow";
-import "./gallery.css";
+import "./gallery.scss";
 
 const Gallery = () => {
     return (

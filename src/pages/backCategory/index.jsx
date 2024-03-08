@@ -30,13 +30,13 @@ const BackCategory = () => {
 
     return (
         <div className="main" >
-
             <table className="table">
                 <thead>
                     <tr>
-                        <th style={{ width: "5%" }}>Id</th>
-                        <th style={{ width: "15%" }}>Nom</th>
-                        <th style={{ width: "50%" }}>Description</th>
+                        <th style={{ width: "5%" }} aria-label="Identifiant de l'utilisateur">Id</th>
+                        <th style={{ width: "15%" }} aria-label="Nom de l'utilisateur">Nom</th>
+                        <th style={{ width: "50%" }} aria-label="Description de l'utilisateur">Description</th>
+                        <th style={{ width: "30%" }} aria-label="Actions">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -46,8 +46,8 @@ const BackCategory = () => {
                                 <td>{category.category_workshop_id}</td>
                                 <td>{category.name}</td>
                                 <td>{category.description}</td>
-                                <td style={{ whiteSpace: "nowrap" }}>
-                                    <Link to={`/editCategory/${category.category_workshop_id}`} className="submitButton">
+                                <td>
+                                    <Link to={`/editCategory/${category.category_workshop_id}`} className="submitButton" aria-label="Editer la catégorie">
                                         Editer
                                     </Link>
                                 </td>
@@ -56,8 +56,8 @@ const BackCategory = () => {
 
                     {categories && !categories.length && (
                         <tr>
-                            <td colSpan="4" className="text-center">
-                                <div className="p-2">Pas de catégories à afficher</div>
+                            <td>
+                                <p>Pas de catégorie à afficher</p>
                             </td>
                         </tr>
                     )}

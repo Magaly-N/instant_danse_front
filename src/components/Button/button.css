@@ -9,7 +9,6 @@ button {
   letter-spacing: 1px;
   text-decoration: none;
 }
-
 button:before {
   position: absolute;
   pointer-events: none;
@@ -22,7 +21,6 @@ button:before {
   transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
   z-index: -1;
 }
-
 button:after {
   position: absolute;
   pointer-events: none;
@@ -35,19 +33,15 @@ button:after {
   box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.15);
   transition: 0.7s cubic-bezier(0, 0.8, 0.26, 0.99);
 }
-
 button:hover:before {
   box-shadow: 0 -4px rgba(0, 0, 0, 0.5) inset, 0 4px rgba(255, 255, 255, 0.2) inset, -4px 0 rgba(255, 255, 255, 0.2) inset, 4px 0 rgba(0, 0, 0, 0.5) inset;
 }
-
 button:hover:after {
   box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.15);
 }
-
 button:active {
   transform: translateY(4px);
 }
-
 button:active:after {
   box-shadow: 0 0px 0 0 rgba(0, 0, 0, 0.15);
 }/*# sourceMappingURL=button.css.map */

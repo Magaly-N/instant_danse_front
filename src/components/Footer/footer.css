@@ -36,10 +36,10 @@
     margin: 0;
     padding: var(--padding-xxs);
   }
-  .footer .email,
-  .footer .phone,
-  .footer .privacy,
-  .footer .terms {
+  .footer .privacy-terms .email,
+  .footer .privacy-terms .phone,
+  .footer .privacy-terms .privacy,
+  .footer .privacy-terms .terms {
     margin-right: 8px;
   }
 }

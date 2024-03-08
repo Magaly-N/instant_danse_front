@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './modal.css';
+import './modal.scss';
 
 const Modal = ({ isShowing, hide }) => {
     return isShowing

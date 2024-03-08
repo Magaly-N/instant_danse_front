@@ -3,19 +3,20 @@
     justify-content: space-evenly;
     gap: 10px;
     margin-top: 20px;
-}
 
-.dancers source,
-.dancers img {
-    width: 33.33%;
-    height: auto;
+    source,
+    img {
+        width: 33.33%;
+        height: auto;
+    }
 }
 
 .slide-container {
     display: none;
 }
 
-@media only screen and (max-width: 975px) {
+
+@media only screen and (max-width: 980px) {
     .dancers {
         display: none;
     }

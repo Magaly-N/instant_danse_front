@@ -1,26 +1,6 @@
-.workshop_card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 60%;
-    padding: 10px 30px;
-    background-color: #fff;
-    border-radius: 13px;
-    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+// VERSION TABLETTE
+@media only screen and (min-width: 980px) {}
 
 
-    & p {
-        font-size: 22px;
-        margin: 15px;
-        text-align: center;
-        color: black;
-    }
-
-    & .button {
-        justify-content: center;
-        margin: 15px;
-    }
-}
+// VERSION DESKTOP
+@media only screen and (min-width: 1200px) {}

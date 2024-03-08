@@ -34,12 +34,12 @@ const BackUser = () => {
             <table className="table">
                 <thead>
                     <tr>
-                        <th style={{ width: "5%" }}>Id</th>
-                        <th style={{ width: "15%" }}>Prenom</th>
-                        <th style={{ width: "15%" }}>Nom</th>
-                        <th style={{ width: "15%" }}>Email</th>
-                        <th style={{ width: "15%" }}>Niveau</th>
-                        <th style={{ width: "25%" }}>Action </th>
+                        <th style={{ width: "5%" }} aria-label="Identifiant de l'utilisateur">Id</th>
+                        <th style={{ width: "15%" }} aria-label="Prénom de l'utilisateur">Prénom</th>
+                        <th style={{ width: "15%" }} aria-label="Nom de l'utilisateur">Nom</th>
+                        <th style={{ width: "15%" }} aria-label="Email de l'utilisateur">Email</th>
+                        <th style={{ width: "15%" }} aria-label="Niveau de l'utilisateur">Niveau</th>
+                        <th style={{ width: "25%" }} aria-label="Actions">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,8 +51,8 @@ const BackUser = () => {
                                 <td>{user.last_name}</td>
                                 <td>{user.email}</td>
                                 <td>{user.dance_level}</td>
-                                <td style={{ whiteSpace: "nowrap" }}>
-                                    <Link to={`/editUser/${user.user_id}`} className="submitButton">
+                                <td >
+                                    <Link to={`/editUser/${user.user_id}`} className="submitButton" aria-label="Editer les utilisateurs">
                                         Editer
                                     </Link>
                                 </td>
@@ -61,8 +61,8 @@ const BackUser = () => {
 
                     {users && !users.length && (
                         <tr>
-                            <td colSpan="4" className="text-center">
-                                <div className="p-2">Pas de membres à afficher</div>
+                            <td>
+                                <p>Pas de membres à afficher</p>
                             </td>
                         </tr>
                     )}

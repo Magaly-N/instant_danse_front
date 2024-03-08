@@ -94,10 +94,10 @@ const WorkshopFilter = () => {
                     ))}
                 </select>
             </div>
-            <div className="workshop_card">
+            <div>
                 {filteredWorkshops.length > 0 ? (
                     filteredWorkshops.map((workshop) => (
-                        <div key={workshop.id} className="workshop_item">
+                        <div key={workshop.id} className="workshopCard">
                             <h2>{workshop.title}</h2>
                             <p>{workshop.description}</p>
                             <p>{workshop.date}</p>

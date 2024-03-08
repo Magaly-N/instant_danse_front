@@ -55,8 +55,8 @@ const Workshop = () => {
     };
 
     return (
-        <div className="container">
-            <div className="workshop_card">
+        <div className="main">
+            <div className="workshopCard">
                 {workshop ? (
                     <>
                         <h2>{workshop.title}</h2>

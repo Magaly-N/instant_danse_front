@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { userService } from "../../utils/userService";
 import { useNavigate } from "react-router-dom";
-import "./header.css";
+import "./header.scss";
 
 const Header = () => {
     // Utilisation de l'état local pour gérer l'ouverture/fermeture du menu
@@ -73,10 +73,10 @@ const Header = () => {
                     </>
                     ) : (
                         <>
-                            <NavLink to={"/sign_in"} activeClassName="active" role="menuitem">
+                            <NavLink to={"/signIn"} activeClassName="active" role="menuitem">
                                 Connexion
                             </NavLink>
-                            <NavLink to={"/sign_up"} activeClassName="active" role="menuitem">
+                            <NavLink to={"/signUp"} activeClassName="active" role="menuitem">
                                 Inscription
                             </NavLink>
                         </>
@@ -90,5 +90,4 @@ const Header = () => {
     );
 };
 
-// Export du composant Header
 export default Header;

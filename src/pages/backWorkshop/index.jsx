@@ -34,16 +34,16 @@ const BackWorkshop = () => {
             <table className="table">
                 <thead>
                     <tr>
-                        <th style={{ width: "5%" }}>Id</th>
-                        <th style={{ width: "11%" }}>Titre</th>
-                        <th style={{ width: "18%" }}>Description</th>
-                        <th style={{ width: "10%" }}>Date</th>
-                        <th style={{ width: "5%" }}>Heure</th>
-                        <th style={{ width: "5%" }}>Durée</th>
-                        <th style={{ width: "10%" }}>Ville</th>
-                        <th style={{ width: "5%" }}>Prix</th>
-                        <th style={{ width: "10%" }}>Niveau de danse</th>
-                        <th style={{ width: "5%" }}>Nombre maximum</th>
+                        <th style={{ width: "5%" }} aria-label="Identifiant de l'atelier">Id</th>
+                        <th style={{ width: "11%" }} aria-label="Titre de l'atelier">Titre</th>
+                        <th style={{ width: "18%" }} aria-label="Description de l'atelier">Description</th>
+                        <th style={{ width: "10%" }} aria-label="Date de l'atelier">Date</th>
+                        <th style={{ width: "5%" }} aria-label="Heure de l'atelier">Heure</th>
+                        <th style={{ width: "5%" }} aria-label="Durée de l'atelier">Durée</th>
+                        <th style={{ width: "10%" }} aria-label="Ville de l'atelier">Ville</th>
+                        <th style={{ width: "5%" }} aria-label="Prix de l'atelier">Prix</th>
+                        <th style={{ width: "10%" }} aria-label="Niveau de danse de l'atelier">Niveau de danse</th>
+                        <th style={{ width: "5%" }} aria-label="Nombre maximum de participants à l'atelier">Nombre maximum</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,8 +60,8 @@ const BackWorkshop = () => {
                                 <td>{workshop.price}</td>
                                 <td>{workshop.required_dance_level}</td>
                                 <td>{workshop.person_max}</td>
-                                <td style={{ whiteSpace: "nowrap" }}>
-                                    <Link to={`/editWorkshop/${workshop.dancer_workshop_id}`} className="submitButton">
+                                <td>
+                                    <Link to={`/editWorkshop/${workshop.dancer_workshop_id}`} className="submitButton" aria-label="Editer les ateliers">
                                         Editer
                                     </Link>
                                 </td>
@@ -70,8 +70,8 @@ const BackWorkshop = () => {
 
                     {workshops && !workshops.length && (
                         <tr>
-                            <td colSpan="4" className="text-center">
-                                <div className="p-2">Pas d&apos;ateliers ou stages à afficher</div>
+                            <td>
+                                <p>Pas d&apos;ateliers ou stages à afficher</p>
                             </td>
                         </tr>
                     )}

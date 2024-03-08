@@ -35,11 +35,12 @@ const BackMessage = () => {
             <table className="table">
                 <thead>
                     <tr>
-                        <th style={{ width: "10%" }}>Id</th>
-                        <th style={{ width: "10%" }}>Expéditeur</th>
-                        <th style={{ width: "10%" }}>Destinataire</th>
-                        <th style={{ width: "50%" }}>Contenu</th>
-                        <th style={{ width: "5%" }}>Date</th>
+                        <th style={{ width: "10%" }} aria-label="Identifiant de l'utilisateur">Id</th>
+                        <th style={{ width: "10%" }} aria-label="Expéditeur du message">Expéditeur</th>
+                        <th style={{ width: "10%" }} aria-label="Destinataire du message">Destinataire</th>
+                        <th style={{ width: "50%" }} aria-label="Contenu du message">Contenu</th>
+                        <th style={{ width: "5%" }} aria-label="Date du message">Date</th>
+                        <th style={{ width: "15%" }} aria-label="Actions">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,8 +51,8 @@ const BackMessage = () => {
                                 <td>{message.receiver}</td>
                                 <td>{message.content}</td>
                                 <td>{message.date}</td>
-                                <td style={{ whiteSpace: "nowrap" }}>
-                                    <Link to={`/editMessage/${message.message_id}`} className="submitButton">
+                                <td>
+                                    <Link to={`/editMessage/${message.message_id}`} className="submitButton" aria-label="Editer les messages">
                                         Editer
                                     </Link>
                                 </td>
@@ -60,8 +61,8 @@ const BackMessage = () => {
 
                     {messages && !messages.length && (
                         <tr>
-                            <td colSpan="4" className="text-center">
-                                <div className="p-2">Pas de message à afficher</div>
+                            <td>
+                                <p>Pas de message à afficher</p>
                             </td>
                         </tr>
                     )}
