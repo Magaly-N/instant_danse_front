@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Workshop_detail from '../../components/WorkshopDetail';
+import "./registeredWorkshop.scss";
 
 const RegisteredWorkshop = () => {
     // déclaration et initialisation de la variable d'état nommée workshops à l'aide du useStatehook. Il commence par un tableau vide ( null) et fournit un moyen de mettre à jour son contenu ultérieurement à l'aide de la setWorkshops fonction.
@@ -25,7 +26,7 @@ const RegisteredWorkshop = () => {
 
         axios.request(config)
             .then((response) => {
-                setWorkshops(response.data.dancerWorkshops);
+                setWorkshops(response.data.workshops);
 
 
             })

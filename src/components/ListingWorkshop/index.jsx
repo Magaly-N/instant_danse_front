@@ -36,7 +36,7 @@ const ListingWorkshop = () => {
         console.log(workshops);
         //Utilisation de la méthode .map pour parcourir chaque élément(item) du tableau workshops
         return (
-            <div >
+            <div className="inputGroup">
                 {workshops &&
                     workshops.map((item) => (
                         //Renvoie un élément JSX soit le composant nommé Workshop_detail

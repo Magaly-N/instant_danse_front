@@ -16,6 +16,7 @@ const WorkshopDetail = ({ workshop }) => {
             <p>{title + " à " + city + " à " + hour + " le " + day + "/" + month + "/" + year}</p>
             <Link to={`/workshop/${dancer_workshop_id}`}><button className="button">Plus de détails</button></Link>
         </div>
+
     )
 };
 

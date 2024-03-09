@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./backWorkshop.css";
+import "./backWorkshop.scss";
 
 const BackWorkshop = () => {
     const [workshops, setWorkshops] = useState(null);

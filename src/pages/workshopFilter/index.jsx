@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./workshopFilter.css";
+import "./workshopFilter.scss";
 
 const WorkshopFilter = () => {
     const [workshops, setWorkshops] = useState([]);

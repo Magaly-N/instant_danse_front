@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./workshop.css";
+import "./workshop.scss";
 
 const Workshop = () => {
     const { dancer_workshop_id } = useParams();
@@ -16,6 +16,9 @@ const Workshop = () => {
             console.log(actualUser);
         }
 
+    }, []);
+
+    useEffect(() => {
         axios
             .get(
                 `http://localhost:3000/dancer_workshop/readOne?id=${dancer_workshop_id}`
@@ -26,19 +29,24 @@ const Workshop = () => {
             .catch((error) => {
                 console.log(error);
             });
+    }, [dancer_workshop_id]);
 
-        axios
-            .post(
-                `http://localhost:3000/users/isRegistered?userId=${userId}&workshopId=${dancer_workshop_id}`
-            )
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((error) => {
-                console.log(error);
-                setIsRegistered(true);
-            });
-    }, [userId, dancer_workshop_id, isRegistered]);
+    useEffect(() => {
+        if (userId && dancer_workshop_id) {
+            axios
+                .post(
+                    `http://localhost:3000/users/isRegistered?userId=${userId}&workshopId=${dancer_workshop_id}`
+                )
+                .then((response) => {
+                    console.log(response);
+                    setIsRegistered(response.data.isRegistered); // Assuming your response contains a field indicating registration status
+                })
+                .catch((error) => {
+                    console.log(error);
+                    setIsRegistered(true); // Assuming you want to set isRegistered to true by default in case of an error
+                });
+        }
+    }, [userId, dancer_workshop_id]);
 
     const handleRegister = () => {
         axios
@@ -54,27 +62,28 @@ const Workshop = () => {
             });
     };
 
+
     return (
         <div className="main">
             <div className="workshopCard" aria-label="Détails de l'atelier">
                 {workshop ? (
                     <>
                         <h2>{workshop.title}</h2>
-                        <label className="inputLabel" aria-label="Description de l'atelier">Description</label>
+                        <h3 aria-label="Description de l'atelier">Description</h3>
                         <p>{workshop.description}</p>
-                        <label className="inputLabel" aria-label="Date de l'atelier">Date</label>
+                        <h3 aria-label="Date de l'atelier">Date</h3>
                         <p>{workshop.date}</p>
-                        <label className="inputLabel" aria-label="Heure de l'atelier">Heure</label>
+                        <h3 aria-label="Heure de l'atelier">Heure</h3>
                         <p>{workshop.hour}</p>
-                        <label className="inputLabel" aria-label="Durée de l'atelier">Durée</label>
+                        <h3 aria-label="Durée de l'atelier">Durée</h3>
                         <p>{workshop.duration}</p>
-                        <label className="inputLabel" aria-label="Ville de l'atelier">Ville</label>
+                        <h3 aria-label="Ville de l'atelier">Ville</h3>
                         <p>{workshop.city}</p>
-                        <label className="inputLabel" aria-label="Prix de l'atelier">Prix</label>
+                        <h3 aria-label="Prix de l'atelier">Prix</h3>
                         <p>{workshop.price}</p>
-                        <label className="inputLabel" aria-label="Niveau de danse">Niveau de danse</label>
+                        <h3 aria-label="Niveau de danse">Niveau de danse</h3>
                         <p>{workshop.required_dance_level}</p>
-                        <label className="inputLabel" aria-label="Nombre de personnes maximum">Nombre de personnes maximum</label>
+                        <h3 aria-label="Nombre de personnes maximum">Nombre de personnes maximum</h3>
                         <p>{workshop.person_max}</p>
                     </>
                 ) : (

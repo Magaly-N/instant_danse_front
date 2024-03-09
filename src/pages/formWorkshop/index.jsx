@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
-import "./formWorkshop.css";
+import "./formWorkshop.scss";
 
 const FormWorkshop = () => {
     //const { title, description, date, hour, duration, city, price, requiredDanceLevel, personMax } = req.body;
@@ -97,7 +97,7 @@ const FormWorkshop = () => {
         <div className="main">
             <h2>Formulaire de création de stage ou d&apos;atelier</h2>
 
-            <form className="main" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
                 <div className="inputGroup">
                     <label className="inputLabel" id="title" htmlFor="title">Titre du stage ou de l&apos;atelier</label>
                     <input

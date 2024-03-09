@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./backMessage.css";
+import "./backMessage.scss";
 
 const BackMessage = () => {
     const [messages, setMessages] = useState(null);
@@ -31,7 +31,6 @@ const BackMessage = () => {
 
     return (
         <div className="main">
-
             <table className="table">
                 <thead>
                     <tr>

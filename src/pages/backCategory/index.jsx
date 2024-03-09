@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./backCategory.css";
+import "./backCategory.scss";
 
 const BackCategory = () => {
     const [categories, setCategories] = useState(null);

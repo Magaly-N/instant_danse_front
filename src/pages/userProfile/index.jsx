@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from "axios";
 //import UploadImage from "./components/Upload_image";
-import "./userProfile.css";
+import "./userProfile.scss";
 
 const UserProfile = () => {
     const [user, setUser] = useState(null);

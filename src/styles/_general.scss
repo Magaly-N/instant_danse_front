@@ -3,10 +3,8 @@
 }
 
 html {
-    display: flex;
     font-size: 62.5%;
     min-height: 100%;
-    flex-direction: column;
     scroll-behavior: smooth;
 }
 
@@ -33,6 +31,7 @@ body {
 
 h1,
 h2,
+h3,
 p {
     margin: 0;
 }
@@ -42,14 +41,13 @@ nav,
 a {
     font-family: var(--font-family);
     color: var(--text-color);
+    font-weight: var(--font-weight-bold);
 }
 
 h2 {
-    color: var(--text-color-default);
     font-size: var(--font-size-huge);
     text-align: center;
 }
-
 
 img {
     width: 100%;
@@ -79,25 +77,28 @@ tr:nth-child(even) {
     text-shadow: var(--text-shadow);
     font-weight: var(--font-weight-black);
     border-radius: var(--small-radius);
+    margin: var(--margin-m);
     padding: var(--padding-xs);
 }
 
 
 .inputGroup {
+    margin: 0 auto;
     max-width: 70%;
     font-size: var(--font-size-big);
     display: flex;
     flex-direction: column;
-    margin: var(--margin-xxl);
 }
 
 .inputLabel {
     font-size: var(--font-size-large);
+    margin: 1.5rem;
 }
 
 .inputField,
 .inputSelect,
-.inputTextarea {
+.inputTextarea,
+.submitButton {
     font-size: var(--font-size-large);
     padding: var(--padding-s);
     border-radius: var(--basic-radius);
@@ -113,6 +114,7 @@ tr:nth-child(even) {
 }
 
 .workshopCard {
+    margin: 0 auto;
     width: 60%;
     margin: var(--margin-xs);
     padding: var(--padding-s);

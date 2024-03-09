@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./backUser.css";
+import "./backUser.scss";
 
 const BackUser = () => {
     const [users, setUsers] = useState(null);

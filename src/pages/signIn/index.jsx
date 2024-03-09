@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
 import { userService } from "../../utils/userService";
-import "./signIn.css";
+import "./signIn.scss";
 
 
 const SignIn = () => {
