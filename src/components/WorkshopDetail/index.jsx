@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 
 const WorkshopDetail = ({ workshop }) => {
     const { title, city, hour, date, dancer_workshop_id } = workshop;
-    console.log(date);
 
     const extractedDate = convertDate(date);
     const { day, month, year } = extractedDate;

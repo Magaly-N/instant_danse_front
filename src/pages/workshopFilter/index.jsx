@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import convertDate from "../../utils/convertDate";
+import WorkshopDetail from "../../components/WorkshopDetail";
 import "./workshopFilter.scss";
 
 const WorkshopFilter = () => {
@@ -9,8 +11,7 @@ const WorkshopFilter = () => {
     const [cityFilter, setCityFilter] = useState("");
     const [uniqueDates, setUniqueDates] = useState([]);
     const [uniqueCities, setUniqueCities] = useState([]);
-    console.log(uniqueDates);
-    console.log(uniqueCities);
+
     useEffect(() => {
         let data = "";
 
@@ -25,18 +26,24 @@ const WorkshopFilter = () => {
         axios
             .request(config)
             .then((response) => {
-                setWorkshops(response.data.dancerWorkshop || []);
+                setWorkshops(response.data.dancerWorkshops);
+                console.log(response);
+                if (workshops.length > 0) {
+                    const dates = [
+                        ...new Set(workshops.map((workshop) => workshop.date)),
+                    ];
+                    const cities = [
+                        ...new Set(workshops.map((workshop) => workshop.city)),
+                    ];
 
-                const dates = [...new Set(workshops.map((workshop) => workshop.date))];
-                const cities = [...new Set(workshops.map((workshop) => workshop.city))];
-
-                setUniqueDates(dates);
-                setUniqueCities(cities);
+                    setUniqueDates(dates);
+                    setUniqueCities(cities);
+                }
             })
             .catch((error) => {
                 console.log(error);
             });
-    }, [workshops]);
+    }, []);
 
     useEffect(() => {
         // Appliquer les filtres
@@ -64,55 +71,64 @@ const WorkshopFilter = () => {
     return (
         <>
             <div className="main">
-                <label className="inputLabel" htmlFor="dateFilter">Sélectionner une date:</label>
-                <select
-                    className="inputSelect"
-                    id="dateFilter"
-                    value={dateFilter}
-                    onChange={(e) => setDateFilter(e.target.value)}
-                >
-                    <option value="">Dates</option>
-                    {uniqueDates.map((date) => (
-                        <option key={date} value={date}>
-                            {date}
-                        </option>
-                    ))}
-                </select>
+                <div className="card">
+                    <label className="inputLabel" htmlFor="dateFilter">
+                        Sélectionner une date:
+                    </label>
+                    <select
+                        className="inputSelect"
+                        id="dateFilter"
+                        value={dateFilter}
+                        onChange={(e) => setDateFilter(e.target.value)}
+                    >
+                        <option value="">Dates</option>
+                        {uniqueDates.map((date) => {
+                            const formattedDate = convertDate(date);
+                            return (
+                                <option key={date} value={date}>
+                                    {`${formattedDate.day}/${formattedDate.month}/${formattedDate.year}`}
+                                </option>
+                            );
+                        })}
+                    </select>
+                    <div className="card">
+                        <label className="inputLabel" htmlFor="cityFilter">
+                            Sélectionner une ville:
+                        </label>
+                        <select
+                            className="inputSelect"
+                            id="cityFilter"
+                            value={cityFilter}
+                            onChange={(e) => setCityFilter(e.target.value)}
+                        >
+                            <option value="">Ville</option>
+                            {uniqueCities.map((city) => (
+                                <option key={city} value={city}>
+                                    {city}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
 
-                <label className="inputLabel" htmlFor="cityFilter">Sélectionner une ville</label>
-                <select
-                    className="inputSelect"
-                    id="cityFilter"
-                    value={cityFilter}
-                    onChange={(e) => setCityFilter(e.target.value)}
-                >
-                    <option value="">Ville</option>
-                    {uniqueCities.map((city) => (
-                        <option key={city} value={city}>
-                            {city}
-                        </option>
-                    ))}
-                </select>
+                <div className="inputGroup">
+                    <div aria-live="polite"> {/*indique à un lecteur d'écran que les mises à jour du contenu dynamique sur la page sont importantes, mais qu'elles ne nécessitent pas une interruption immédiate de ce que l'utilisateur est en train de faire*/}
+
+                        {filteredWorkshops.length > 0 ? (
+                            filteredWorkshops.map((item) => (
+                                <WorkshopDetail
+                                    className="workshopCard"
+                                    key={item.dancer_workshop_id}
+                                    workshop={item}
+                                    aria-label="Détail de l'atelier"
+                                />
+                            ))
+                        ) : (
+                            <p>Workshops loading...</p>
+                        )}
+                    </div>
+                </div>
             </div>
-            <div aria-live="polite">
-                {filteredWorkshops.length > 0 ? (
-                    filteredWorkshops.map((workshop) => (
-                        <div key={workshop.id} className="workshopCard" aria-label="Détails de l'atelier">
-                            <h2>{workshop.title}</h2>
-                            <p>{workshop.description}</p>
-                            <p>{workshop.date}</p>
-                            <p>{workshop.hour}</p>
-                            <p>{workshop.duration}</p>
-                            <p>{workshop.city}</p>
-                            <p>{workshop.price}</p>
-                            <p>{workshop.required_dance_level}</p>
-                            <p>{workshop.person_max}</p>
-                        </div >
-                    ))
-                ) : (
-                    <p>Workshops loading...</p>
-                )}
-            </div >
         </>
     );
 };

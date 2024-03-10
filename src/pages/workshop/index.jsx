@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import convertDate from "../../utils/convertDate";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./workshop.scss";
@@ -8,6 +9,7 @@ const Workshop = () => {
     const [userId, setUserId] = useState(null);
     const [workshop, setWorkshop] = useState(null);
     const [isRegistered, setIsRegistered] = useState(false);
+    const formattedDate = workshop ? convertDate(workshop.date) : null;
 
     useEffect(() => {
         const actualUser = JSON.parse(localStorage.getItem("user"));
@@ -25,6 +27,7 @@ const Workshop = () => {
             )
             .then((response) => {
                 setWorkshop(response.data.dancerWorkshop);
+                console.log(response);
             })
             .catch((error) => {
                 console.log(error);
@@ -72,7 +75,7 @@ const Workshop = () => {
                         <h3 aria-label="Description de l'atelier">Description</h3>
                         <p>{workshop.description}</p>
                         <h3 aria-label="Date de l'atelier">Date</h3>
-                        <p>{workshop.date}</p>
+                        <p>{formattedDate ? `${formattedDate.day}/${formattedDate.month}/${formattedDate.year}` : 'Invalid Date'}</p>
                         <h3 aria-label="Heure de l'atelier">Heure</h3>
                         <p>{workshop.hour}</p>
                         <h3 aria-label="Durée de l'atelier">Durée</h3>
@@ -82,9 +85,9 @@ const Workshop = () => {
                         <h3 aria-label="Prix de l'atelier">Prix</h3>
                         <p>{workshop.price}</p>
                         <h3 aria-label="Niveau de danse">Niveau de danse</h3>
-                        <p>{workshop.required_dance_level}</p>
+                        <p>{workshop.requiredDanceLevel}</p>
                         <h3 aria-label="Nombre de personnes maximum">Nombre de personnes maximum</h3>
-                        <p>{workshop.person_max}</p>
+                        <p>{workshop.personMax}</p>
                     </>
                 ) : (
                     <p>Loading workshop details...</p>

@@ -1,17 +1,15 @@
 //VERSION TABLETTE
-@media only screen and (min-width: 980px) {
+@media only screen and (min-width: 780px) {
     .card {
         display: flex;
         flex-direction: row;
-        width: 70%;
+        width: 80%;
         gap: 2rem;
     }
 
-    // VERSION DESKTOP
-    @media only screen and (min-width: 1200px) {
-        .card {
-            width: 90%;
-            gap: 3rem;
-        }
-    }
+
+
 }
+
+// VERSION DESKTOP
+@media only screen and (min-width: 1200px) {}

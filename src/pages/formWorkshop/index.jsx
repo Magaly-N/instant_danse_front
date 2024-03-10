@@ -37,7 +37,7 @@ const FormWorkshop = () => {
         axios.request(config)
             .then((response) => {
                 setListcategory(response.data.categoryWorkshops);
-                console.log(listCategory);
+                //console.log(listCategory);
 
             })
             .catch((error) => {

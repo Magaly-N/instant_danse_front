@@ -77,14 +77,14 @@ tr:nth-child(even) {
     text-shadow: var(--text-shadow);
     font-weight: var(--font-weight-black);
     border-radius: var(--small-radius);
-    margin: var(--margin-m);
+    margin: var(--margin-xxs);
     padding: var(--padding-xs);
 }
 
 
 .inputGroup {
     margin: 0 auto;
-    max-width: 70%;
+    width: 90%;
     font-size: var(--font-size-big);
     display: flex;
     flex-direction: column;
@@ -92,7 +92,7 @@ tr:nth-child(even) {
 
 .inputLabel {
     font-size: var(--font-size-large);
-    margin: 1.5rem;
+    margin: 1rem;
 }
 
 .inputField,
@@ -102,11 +102,11 @@ tr:nth-child(even) {
     font-size: var(--font-size-large);
     padding: var(--padding-s);
     border-radius: var(--basic-radius);
-
 }
 
 .card {
     margin: 0 auto;
+    padding: var(--padding-s);
     width: 100%;
     text-align: center;
     border-radius: var(--basic-radius);
@@ -115,9 +115,9 @@ tr:nth-child(even) {
 
 .workshopCard {
     margin: 0 auto;
-    width: 60%;
+    width: 100%;
     margin: var(--margin-xs);
-    padding: var(--padding-s);
+    padding: var(--padding-m);
     text-align: center;
     border-radius: var(--basic-radius);
     background-color: var(--bg-white);

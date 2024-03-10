@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import Workshop_detail from '../../components/WorkshopDetail';
+import WorkshopDetail from '../../components/WorkshopDetail';
 import "./registeredWorkshop.scss";
 
 const RegisteredWorkshop = () => {
@@ -28,7 +28,6 @@ const RegisteredWorkshop = () => {
             .then((response) => {
                 setWorkshops(response.data.workshops);
 
-
             })
             .catch((error) => {
                 console.log(error);
@@ -44,7 +43,7 @@ const RegisteredWorkshop = () => {
                 {workshops &&
                     workshops.map((item) => (
                         //Renvoie un élément JSX soit le composant nommé Workshop_detail
-                        <Workshop_detail
+                        <WorkshopDetail
                             className="workshopCard"
                             key={item.dancer_workshop_id}
                             workshop={item}
