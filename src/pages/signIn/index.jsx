@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
 import { userService } from "../../utils/userService";
+import ReCaptcha from '../../components/Recaptcha';
 import "./signIn.scss";
 
 
@@ -11,8 +12,16 @@ const SignIn = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [token, setToken] = useState('');
+    const [submitEnabled, setsubmitEnabled] = useState(false);
 
     let navigate = useNavigate();
+
+    useEffect(() => {
+        if (token.length) {
+            setsubmitEnabled([true])
+        }
+    })
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -48,6 +57,12 @@ const SignIn = () => {
             }
             )
     }
+
+    const handleToken = (token) => {
+        setToken(token)
+    }
+
+
     return (
         <div className="main">
             <h2>Formulaire de connexion</h2>
@@ -80,8 +95,15 @@ const SignIn = () => {
                         required="required"
                     />
                 </div>
+
+                <div><ReCaptcha siteKey={'6LfWUpQpAAAAAMoVodDRgNjKpsNj5PNtaD2PN04h'} callback={handleToken} /></div>
+
                 <div className="inputGroup">
-                    <input className="submitButton" type="submit" aria-label="Se connecter" />
+                    <input
+                        disabled={!submitEnabled}
+                        className="submitButton"
+                        type="submit"
+                        aria-label="Se connecter" />
                 </div>
             </form>
         </div>

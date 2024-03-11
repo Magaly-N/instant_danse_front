@@ -1,1 +1,5 @@
-/*# sourceMappingURL=workshopFilter.css.map */
+.inputSelect {
+  font-size: var(--font-size-s);
+  margin: var(---margin-m);
+  padding: var(--padding-xs);
+}/*# sourceMappingURL=workshopFilter.css.map */

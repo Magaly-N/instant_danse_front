@@ -81,7 +81,7 @@ const WorkshopFilter = () => {
                         value={dateFilter}
                         onChange={(e) => setDateFilter(e.target.value)}
                     >
-                        <option value="">Dates</option>
+                        <option value="">Date</option>
                         {uniqueDates.map((date) => {
                             const formattedDate = convertDate(date);
                             return (

@@ -1,17 +1,20 @@
+// Importation des hooks useState et useEffect depuis la bibliothèque React, ainsi que axios pour les requêtes HTTP et le composant WorkshopDetail.
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import WorkshopDetail from '../../components/WorkshopDetail';
-import "./registeredWorkshop.scss";
+import "./registeredWorkshop.scss"; // Importation du fichier de style CSS pour ce composant.
 
+// Définition du composant RegisteredWorkshop.
 const RegisteredWorkshop = () => {
-    // déclaration et initialisation de la variable d'état nommée workshops à l'aide du useStatehook. Il commence par un tableau vide ( null) et fournit un moyen de mettre à jour son contenu ultérieurement à l'aide de la setWorkshops fonction.
+    // Déclaration et initialisation de la variable d'état nommée workshops à l'aide du useState hook. Elle commence par un tableau vide (null) et fournit un moyen de mettre à jour son contenu ultérieurement à l'aide de la setWorkshops fonction.
     const [workshops, setWorkshops] = useState(null);
+    // Récupération des données de l'utilisateur depuis le stockage local (localStorage).
     let user = JSON.parse(localStorage.getItem("user"));
     const userId = user.userId;
 
-
+    // Utilisation de useEffect pour effectuer des actions après le rendu initial du composant.
     useEffect(() => {
-
+        // Déclaration de variables pour la requête HTTP.
         let data;
 
         let config = {
@@ -24,33 +27,32 @@ const RegisteredWorkshop = () => {
             data: data
         };
 
+        // Utilisation d'axios pour effectuer la requête HTTP.
         axios.request(config)
             .then((response) => {
+                // Mise à jour de la variable d'état workshops avec les données reçues de la requête.
                 setWorkshops(response.data.workshops);
-
             })
             .catch((error) => {
                 console.log(error);
             });
 
-    }, [])
-    // Structure conditionnelle pour véfifier si il y a un atelier et si le nombre d'atelier est supérieur à 0
+    }, []); // Le tableau vide en tant que dépendance signifie que cet effet ne s'exécute qu'une seule fois après le montage du composant.
+
+    // Structure conditionnelle pour vérifier s'il y a des ateliers et si le nombre d'ateliers est supérieur à 0.
     if (workshops && workshops.length > 0) {
-        console.log(workshops);
-        //Utilisation de la méthode .map pour parcourir chaque élément(item) du tableau workshops
+        // Affichage des ateliers à l'aide de la méthode .map pour parcourir chaque élément du tableau workshops.
         return (
             <div className="main">
                 {workshops &&
                     workshops.map((item) => (
-                        //Renvoie un élément JSX soit le composant nommé Workshop_detail
+                        // Renvoie un élément JSX représentant le composant WorkshopDetail.
                         <WorkshopDetail
                             className="workshopCard"
                             key={item.dancer_workshop_id}
                             workshop={item}
                             aria-label="Détail de l'atelier"
                         />
-                        // key={item.dancer_workshop_id} :attribution d'un key accessoire unique au composant Workshop_detail
-                        // workshop={item} :  Cela transmet le courant item(données d'atelier) comme accessoire au Workshop_detailcomposant
                     ))}
             </div>
         )
@@ -58,4 +60,3 @@ const RegisteredWorkshop = () => {
 }
 
 export default RegisteredWorkshop;
-

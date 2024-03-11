@@ -67,7 +67,7 @@ const Header = () => {
                         <NavLink to={"/userProfile"} activeClassName="active" role="menuitem">
                             Mon compte
                         </NavLink>
-                        <NavLink to="/" onClick={logout} className="active" role="menuitem">
+                        <NavLink to="/" onClick={logout} activeClassName="active" role="menuitem">
                             Se déconnecter
                         </NavLink>
                     </>
@@ -83,7 +83,7 @@ const Header = () => {
                     )}
 
                     {/* Condition pour afficher le lien vers l'espace admin pour les utilisateurs ayant le rôle "admin" */}
-                    {user && user.role === "admin" && <NavLink to={"/backOffice"} className="active">Espace Admin</NavLink>}
+                    {user && user.role === "admin" && <NavLink to={"/backOffice"} activeClassName="active">Espace Admin</NavLink>}
                 </nav>
             </div>
         </div>
