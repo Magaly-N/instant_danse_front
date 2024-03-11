@@ -6,7 +6,7 @@ import "./registeredWorkshop.scss"; // Importation du fichier de style CSS pour 
 
 // Définition du composant RegisteredWorkshop.
 const RegisteredWorkshop = () => {
-    // Déclaration et initialisation de la variable d'état nommée workshops à l'aide du useState hook. Elle commence par un tableau vide (null) et fournit un moyen de mettre à jour son contenu ultérieurement à l'aide de la setWorkshops fonction.
+    // Déclaration et initialisation de la variable d'état nommée workshops à l'aide de useState. Elle commence par un tableau vide (null) et fournit un moyen de mettre à jour son contenu ultérieurement à l'aide de la setWorkshops fonction.
     const [workshops, setWorkshops] = useState(null);
     // Récupération des données de l'utilisateur depuis le stockage local (localStorage).
     let user = JSON.parse(localStorage.getItem("user"));
@@ -30,6 +30,7 @@ const RegisteredWorkshop = () => {
         // Utilisation d'axios pour effectuer la requête HTTP.
         axios.request(config)
             .then((response) => {
+                console.log(response);
                 // Mise à jour de la variable d'état workshops avec les données reçues de la requête.
                 setWorkshops(response.data.workshops);
             })
@@ -39,24 +40,27 @@ const RegisteredWorkshop = () => {
 
     }, []); // Le tableau vide en tant que dépendance signifie que cet effet ne s'exécute qu'une seule fois après le montage du composant.
 
-    // Structure conditionnelle pour vérifier s'il y a des ateliers et si le nombre d'ateliers est supérieur à 0.
-    if (workshops && workshops.length > 0) {
-        // Affichage des ateliers à l'aide de la méthode .map pour parcourir chaque élément du tableau workshops.
-        return (
-            <div className="main">
-                {workshops &&
-                    workshops.map((item) => (
-                        // Renvoie un élément JSX représentant le composant WorkshopDetail.
-                        <WorkshopDetail
-                            className="workshopCard"
-                            key={item.dancer_workshop_id}
-                            workshop={item}
-                            aria-label="Détail de l'atelier"
-                        />
-                    ))}
-            </div>
-        )
-    }
+
+
+    // Affichage des ateliers à l'aide de la méthode .map pour parcourir chaque élément du tableau workshops.
+    return (
+        <div className="main">
+
+            <h2>Mes inscriptions</h2>
+
+            {workshops &&
+                workshops.map((item) => (
+                    // Renvoie un élément JSX représentant le composant WorkshopDetail.
+                    <WorkshopDetail
+                        className="workshopCard"
+                        key={item.dancer_workshop_id}
+                        workshop={item}
+                        aria-label="Détail de l'atelier"
+                    />
+                ))}
+        </div>
+    )
 }
+
 
 export default RegisteredWorkshop;

@@ -67,8 +67,9 @@ const SignUp = () => {
             <h2>Formulaire d&apos;inscription</h2>
             <form onSubmit={handleSubmit}>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="first_name" htmlFor="firstName">Nom</label>
+                    <label className="inputLabel" htmlFor="firstName">Nom</label>
                     <input
+                        id="first_name"
                         aria-label="Entrez votre nom"
                         className="inputField"
                         type="text"
@@ -81,8 +82,9 @@ const SignUp = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="last_name" htmlFor="lastName">Prénom</label>
+                    <label className="inputLabel" htmlFor="lastName">Prénom</label>
                     <input
+                        id="last_name"
                         aria-label="Entrez votre Prénom"
                         className="inputField"
                         type="text"
@@ -95,8 +97,9 @@ const SignUp = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="birthday" htmlFor="birthday">Date de naissance</label>
+                    <label className="inputLabel" htmlFor="birthday">Date de naissance</label>
                     <input
+                        id="birthday"
                         aria-label="Entrez votre date de naissance"
                         className="inputField"
                         type="date"
@@ -109,8 +112,9 @@ const SignUp = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="address" htmlFor="address">Adresse</label>
+                    <label className="inputLabel" htmlFor="address">Adresse</label>
                     <input
+                        id="address"
                         aria-label="Entrez votre adresse"
                         className="inputField"
                         type="text"
@@ -123,8 +127,9 @@ const SignUp = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="postcode" htmlFor="postcode">CP</label>
+                    <label className="inputLabel" htmlFor="postcode">CP</label>
                     <input
+                        id="postcode"
                         aria-label="Entrez votre code postal"
                         className="inputField"
                         type="text"
@@ -137,8 +142,9 @@ const SignUp = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="city" htmlFor="city">Ville</label>
+                    <label className="inputLabel" htmlFor="city">Ville</label>
                     <input
+                        id="city"
                         aria-label="Entrez votre ville"
                         className="inputField"
                         type="text"
@@ -151,8 +157,9 @@ const SignUp = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="phoneNumber" htmlFor="phoneNumber">Numéro de téléphone</label>
+                    <label className="inputLabel" htmlFor="phoneNumber">Numéro de téléphone</label>
                     <input
+                        id="phoneNumber"
                         aria-label="Entrez votre numéro de téléphone"
                         className="inputField"
                         type="tel"
@@ -166,8 +173,9 @@ const SignUp = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="dance_level" htmlFor="danceLevel">Niveau de danse</label>
+                    <label className="inputLabel" htmlFor="danceLevel">Niveau de danse</label>
                     <select
+                        id="dance_level"
                         aria-label="Entrez votre niveau de danse"
                         className="inputField"
                         type="text"
@@ -183,8 +191,9 @@ const SignUp = () => {
                     </select>
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="email" htmlFor="email">Email</label>
+                    <label className="inputLabel" htmlFor="email">Email</label>
                     <input
+                        id="email"
                         aria-label="Entrez votre adresse email"
                         className="inputField"
                         type="email"
@@ -197,8 +206,9 @@ const SignUp = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="password" htmlFor="password">Mot de passe</label>
+                    <label className="inputLabel" htmlFor="password">Mot de passe</label>
                     <input
+                        id="password"
                         aria-label="Entrez votre mot de passe"
                         className="inputField"
                         type="password"
@@ -211,8 +221,9 @@ const SignUp = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="password" htmlFor="password">Confirmation du mot de passe</label>
+                    <label className="inputLabel" htmlFor="password">Confirmation du mot de passe</label>
                     <input
+                        id="password"
                         aria-label="Confirmez votre mot de passe"
                         className="inputField"
                         type="password"

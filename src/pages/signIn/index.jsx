@@ -62,14 +62,14 @@ const SignIn = () => {
         setToken(token)
     }
 
-
     return (
         <div className="main">
             <h2>Formulaire de connexion</h2>
             <form onSubmit={handleSubmit}>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="email" htmlFor="email">Email</label>
+                    <label className="inputLabel" htmlFor="email">Email</label>
                     <input
+                        id="email"
                         aria-label="Entrez votre adresse email"
                         className="inputField"
                         type="email"
@@ -82,8 +82,9 @@ const SignIn = () => {
                     />
                 </div>
                 <div className="inputGroup">
-                    <label className="inputLabel" id="password" htmlFor="password">Mot de passe</label>
+                    <label className="inputLabel" htmlFor="password">Mot de passe</label>
                     <input
+                        id="password"
                         aria-label="Entrez votre mot de passe"
                         className="inputField"
                         type="password"
@@ -96,7 +97,7 @@ const SignIn = () => {
                     />
                 </div>
 
-                <div><ReCaptcha siteKey={'6LfWUpQpAAAAAMoVodDRgNjKpsNj5PNtaD2PN04h'} callback={handleToken} /></div>
+                <div className="captcha"><ReCaptcha siteKey={'6LfWUpQpAAAAAMoVodDRgNjKpsNj5PNtaD2PN04h'} callback={handleToken} /></div>
 
                 <div className="inputGroup">
                     <input

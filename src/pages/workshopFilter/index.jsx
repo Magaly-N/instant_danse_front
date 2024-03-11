@@ -9,8 +9,24 @@ const WorkshopFilter = () => {
     const [filteredWorkshops, setFilteredWorkshops] = useState([]);
     const [dateFilter, setDateFilter] = useState("");
     const [cityFilter, setCityFilter] = useState("");
-    const [uniqueDates, setUniqueDates] = useState([]);
-    const [uniqueCities, setUniqueCities] = useState([]);
+    const [uniqueDates, setUniqueDates] = useState();
+    const [uniqueCities, setUniqueCities] = useState();
+
+    const createOptionDates = () => {
+        const dates = [
+            ...new Set(workshops.map((workshop) => workshop.date)),
+        ];
+        return dates
+    }
+
+    const createOptionCities = () => {
+        const cities = [
+            ...new Set(workshops.map((workshop) => workshop.city)),
+        ];
+
+        return cities
+    }
+
 
     useEffect(() => {
         let data = "";
@@ -27,23 +43,17 @@ const WorkshopFilter = () => {
             .request(config)
             .then((response) => {
                 setWorkshops(response.data.dancerWorkshops);
-                console.log(response);
-                if (workshops.length > 0) {
-                    const dates = [
-                        ...new Set(workshops.map((workshop) => workshop.date)),
-                    ];
-                    const cities = [
-                        ...new Set(workshops.map((workshop) => workshop.city)),
-                    ];
-
-                    setUniqueDates(dates);
-                    setUniqueCities(cities);
+                if (workshops && workshops.length > 0) {
+                    setUniqueDates(createOptionDates())
+                    setUniqueCities(createOptionCities())
                 }
             })
             .catch((error) => {
                 console.log(error);
             });
     }, []);
+
+
 
     useEffect(() => {
         // Appliquer les filtres
@@ -82,7 +92,7 @@ const WorkshopFilter = () => {
                         onChange={(e) => setDateFilter(e.target.value)}
                     >
                         <option value="">Date</option>
-                        {uniqueDates.map((date) => {
+                        {uniqueDates && uniqueDates.map((date) => {
                             const formattedDate = convertDate(date);
                             return (
                                 <option key={date} value={date}>
@@ -102,7 +112,7 @@ const WorkshopFilter = () => {
                             onChange={(e) => setCityFilter(e.target.value)}
                         >
                             <option value="">Ville</option>
-                            {uniqueCities.map((city) => (
+                            {uniqueCities && uniqueCities.map((city) => (
                                 <option key={city} value={city}>
                                     {city}
                                 </option>

@@ -125,16 +125,21 @@ tr:nth-child(even) {
 }
 
 
-/*// VERSION TABLETTE
+// VERSION TABLETTE
 @media only screen and (min-width: 780px) {
     :root {
         --font-size-default: 1rem;
     }
+
+    body {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
-// VERSION DESKTOP
+//VERSION DESKTOP
 @media only screen and (min-width: 1200px) {
     :root {
         --font-size-default: 1.6rem;
     }
-}*/
+}

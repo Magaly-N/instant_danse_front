@@ -392,16 +392,17 @@ tr:nth-child(even) {
   box-shadow: 6px 6px 0 var(--shadow-color), 0 0 0 2px var(--shadow-color);
 }
 
-/*// VERSION TABLETTE
 @media only screen and (min-width: 780px) {
-    :root {
-        --font-size-default: 1rem;
-    }
+  :root {
+    --font-size-default: 1rem;
+  }
+  body {
+    display: flex;
+    flex-direction: row;
+  }
 }
-
-// VERSION DESKTOP
 @media only screen and (min-width: 1200px) {
-    :root {
-        --font-size-default: 1.6rem;
-    }
-}*//*# sourceMappingURL=index.css.map */
+  :root {
+    --font-size-default: 1.6rem;
+  }
+}/*# sourceMappingURL=index.css.map */
