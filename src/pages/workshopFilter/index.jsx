@@ -28,34 +28,36 @@ const WorkshopFilter = () => {
 
             setFilteredWorkshops(filteredByCity);
         }
-    }, [workshops, dateFilter, cityFilter]);
+    }, [dateFilter, cityFilter]);
 
     return (
         <>
             <div className="main">
-                <div className="card">
-                    <label className="inputLabel" htmlFor="dateFilter">
-                        Sélectionner une date:
-                    </label>
-                    <select
-                        className="inputSelect"
-                        id="dateFilter"
-                        value={dateFilter}
-                        onChange={(e) => setDateFilter(e.target.value)}
-                    >
-                        <option value="">Dates</option>
-                        {uniqueDates.map((date) => {
-                            const formattedDate = convertDate(date);
-                            return (
-                                <option key={date} value={date}>
-                                    {`${formattedDate.day}/${formattedDate.month}/${formattedDate.year}`}
-                                </option>
-                            );
-                        })}
-                    </select>
-                    <div className="card">
+                <div className="cardsFilter">
+                    <div className="card cardFilter">
+                        <label className="inputLabel" htmlFor="dateFilter">
+                            Sélectionner une date
+                        </label>
+                        <select
+                            className="inputSelect"
+                            id="dateFilter"
+                            value={dateFilter}
+                            onChange={(e) => setDateFilter(e.target.value)}
+                        >
+                            <option value="">Dates</option>
+                            {uniqueDates.map((date) => {
+                                const formattedDate = convertDate(date);
+                                return (
+                                    <option key={date} value={date}>
+                                        {`${formattedDate.day}/${formattedDate.month}/${formattedDate.year}`}
+                                    </option>
+                                );
+                            })}
+                        </select>
+                    </div>
+                    <div className="card cardFilter">
                         <label className="inputLabel" htmlFor="cityFilter">
-                            Sélectionner une ville:
+                            Sélectionner une ville
                         </label>
                         <select
                             className="inputSelect"
@@ -72,24 +74,21 @@ const WorkshopFilter = () => {
                         </select>
                     </div>
                 </div>
-
-                <div className="inputGroup">
-                    <div aria-live="polite">
-                        {" "}
-                        {/indique à un lecteur d'écran que les mises à jour du contenu dynamique sur la page sont importantes, mais qu'elles ne nécessitent pas une interruption immédiate de ce que l'utilisateur est en train de faire/}
-                        {filteredWorkshops && filteredWorkshops.length > 0 ? (
-                            filteredWorkshops.map((item) => (
-                                <WorkshopDetail
-                                    className="workshopCard"
-                                    key={item.dancer_workshop_id}
-                                    workshop={item}
-                                    aria-label="Détail de l'atelier"
-                                />
-                            ))
-                        ) : (
-                            <p>Workshops loading...</p>
-                        )}
-                    </div>
+                <div className="listWorkshop" aria-live="polite">
+                    {" "}
+                    {/*indique à un lecteur d'écran que les mises à jour du contenu dynamique sur la page sont importantes, mais qu'elles ne nécessitent pas une interruption immédiate de ce que l'utilisateur est en train de faire*/}
+                    {filteredWorkshops && filteredWorkshops.length > 0 ? (
+                        filteredWorkshops.map((item) => (
+                            <WorkshopDetail
+                                className="workshopCard"
+                                key={item.dancer_workshop_id}
+                                workshop={item}
+                                aria-label="Détail de l'atelier"
+                            />
+                        ))
+                    ) : (
+                        <p>Workshops loading...</p>
+                    )}
                 </div>
             </div>
         </>

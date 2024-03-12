@@ -3,13 +3,13 @@ import WorkshopDetail from "../WorkshopDetail";
 import "./listingWorkshop.scss";
 
 const ListingWorkshop = () => {
-    const { workshops } = useWorkshops();
+    const { threeWorkshops } = useWorkshops();
 
     //Utilisation de la méthode .map pour parcourir chaque élément(item) du tableau workshops
     return (
         <div className="listWorkshop">
-            {workshops &&
-                workshops.map((item) => (
+            {threeWorkshops &&
+                threeWorkshops.map((item) => (
                     //Renvoie un élément JSX soit le composant nommé Workshop_detail
                     <WorkshopDetail
                         key={item.dancer_workshop_id}
@@ -22,7 +22,6 @@ const ListingWorkshop = () => {
         </div>
     )
 }
-
 
 export default ListingWorkshop;
 

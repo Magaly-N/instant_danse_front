@@ -34,15 +34,14 @@ const BackWorkshop = () => {
             <table className="table">
                 <thead>
                     <tr>
-                        <th style={{ width: "5%" }} aria-label="Identifiant de l'atelier">Id</th>
-                        <th style={{ width: "11%" }} aria-label="Titre de l'atelier">Titre</th>
-                        <th style={{ width: "18%" }} aria-label="Description de l'atelier">Description</th>
-                        <th style={{ width: "10%" }} aria-label="Date de l'atelier">Date</th>
-                        <th style={{ width: "5%" }} aria-label="Heure de l'atelier">Heure</th>
+                        <th style={{ width: "10%" }} aria-label="Identifiant de l'atelier">Id</th>
+                        <th style={{ width: "15%" }} aria-label="Titre de l'atelier">Titre</th>
+                        <th style={{ width: "15%" }} aria-label="Date de l'atelier">Date</th>
+                        <th style={{ width: "10%" }} aria-label="Heure de l'atelier">Heure</th>
                         <th style={{ width: "5%" }} aria-label="Durée de l'atelier">Durée</th>
-                        <th style={{ width: "10%" }} aria-label="Ville de l'atelier">Ville</th>
-                        <th style={{ width: "5%" }} aria-label="Prix de l'atelier">Prix</th>
-                        <th style={{ width: "10%" }} aria-label="Niveau de danse de l'atelier">Niveau de danse</th>
+                        <th style={{ width: "15%" }} aria-label="Ville de l'atelier">Ville</th>
+                        <th style={{ width: "10%" }} aria-label="Prix de l'atelier">Prix</th>
+                        <th style={{ width: "20%" }} aria-label="Niveau de danse de l'atelier">Niveau de danse</th>
                         <th style={{ width: "5%" }} aria-label="Nombre maximum de participants à l'atelier">Nombre maximum</th>
                     </tr>
                 </thead>
@@ -52,7 +51,6 @@ const BackWorkshop = () => {
                             <tr key={workshop.dancer_workshop_id}>
                                 <td>{workshop.dancer_workshop_id}</td>
                                 <td>{workshop.title}</td>
-                                <td>{workshop.description}</td>
                                 <td>{workshop.date}</td>
                                 <td>{workshop.hour}</td>
                                 <td>{workshop.duration}</td>

@@ -12,8 +12,16 @@ const WorkshopDetail = ({ workshop }) => {
 
     return (
         <div className="workshopCard">
-            <p>{title + " à " + city + " à " + hour + " le " + day + "/" + month + "/" + year}</p>
-            <Link to={`/workshop/${dancer_workshop_id}`}><button className="button">Plus de détails</button></Link>
+            <div className="cardHeader">
+                <h3>{title}</h3>
+            </div>
+            <div className="cardBody">
+                <p>{" à " + city}</p>
+                <p>{" à " + hour + " le " + day + "/" + month + "/" + year}</p>
+            </div>
+            <div className="cardFooter">
+                <Link to={`/workshop/${dancer_workshop_id}`}><button className="button">Plus de détails</button></Link>
+            </div>
         </div>
 
     )

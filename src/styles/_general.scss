@@ -109,8 +109,9 @@ tr:nth-child(even) {
     border-radius: var(--basic-radius);
 }
 
-.cards {
-    max-width: 100%;
+.cards,
+.cardsFilter {
+    width: 100%;
     margin: 0 auto;
     padding: var(--padding-s);
     text-align: center;
@@ -120,7 +121,18 @@ tr:nth-child(even) {
 .card {
     margin: 2rem;
     padding: 1rem;
-    box-shadow: 0 0 15px 0px, inset 0 0 15px 0px;
+    -webkit-box-shadow: 2px 2px 15px 2px #7d7474;
+    box-shadow: 2px 2px 10px 2px #7d7474;
+}
+
+.cardsFilter {
+    width: 60rem;
+}
+
+.cardFilter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .listWorkshop {
@@ -128,6 +140,7 @@ tr:nth-child(even) {
 }
 
 .workshopCard {
+    margin: 1.5rem auto;
     width: 45rem;
     padding: var(--padding-m);
     text-align: center;
@@ -141,6 +154,20 @@ tr:nth-child(even) {
     }
 }
 
+.cardHeader,
+.cardTitle {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardFooter {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 // VERSION TABLETTE
 @media only screen and (min-width: 980px) {
@@ -152,7 +179,8 @@ tr:nth-child(even) {
         margin: 3rem;
     }
 
-    .cards {
+    .cards,
+    .cardsFilter {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -180,7 +208,12 @@ tr:nth-child(even) {
 
     .workshopCard {
         width: 40rem;
-        height: 20rem;
+        height: 25rem;
+    }
+
+    .workshopCardRow {
+        width: 80rem;
+        height: 90rem;
     }
 }
 
@@ -190,9 +223,21 @@ tr:nth-child(even) {
         --font-size-default: 1.6rem;
     }
 
-    .workshopCard {
-        width: 25rem;
-        height: 25rem;
+    .cardText {
+        width: 40rem;
     }
 
+    .cardDescribe {
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8rem;
+        line-height: 3rem;
+    }
+
+    .workshopCardRow {
+        width: 110rem;
+        height: 80rem;
+    }
 }

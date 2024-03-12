@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
+import useWorkshops from '../../hooks/useWorkshops';
 import "./formWorkshop.scss";
 
 const FormWorkshop = () => {
@@ -18,6 +19,8 @@ const FormWorkshop = () => {
     const [personMax, setPersonMax] = useState("");
     const [category_workshop_id, setCategory] = useState("");
     const [listCategory, setListcategory] = useState("");
+
+    const { fetchWorkshops } = useWorkshops();
 
     let navigate = useNavigate();
 
@@ -68,8 +71,9 @@ const FormWorkshop = () => {
 
         axios.request(config)
             .then((response) => {
-                if (response.status === 200) {
+                if (response.status === 201) {
                     console.log("Response succeeded!");
+                    fetchWorkshops();
                     setTitle("");
                     setDescription("");
                     setDate("");
