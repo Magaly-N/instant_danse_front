@@ -18,6 +18,7 @@ import EditUser from "./pages/editUser";
 import BackCategory from "./pages/backCategory";
 import BackWorkshop from "./pages/backWorkshop";
 import BackMessage from "./pages/backMessage";
+import { WorkshopsProvider } from "./context/WorkshopsProvider";
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,35 +27,37 @@ function App() {
   return (
     <Router>
       <div className="container">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/signUp" element={<SignUp />} />
-          <Route path="/signIn" element={<SignIn />} />
-          <Route path="/userProfile" element={<UserProfile />} />
-          <Route path="/formWorkshop" element={<FormWorkshop />} />
-          <Route path="/workshop/:dancer_workshop_id" element={<Workshop />} />
-          <Route path="/workshopFilter" element={<WorkshopFilter />} />
-          <Route path="/registeredWorkshop" element={<RegisteredWorkshop />} />
-          <Route path="/backOffice" element={<BackOffice />} />
-          <Route path="/backUser" element={<BackUser />} />
-          <Route path={`/editUser/:user_id`} element={<EditUser />} />
-          <Route path="/backCategory" element={<BackCategory />} />
-          <Route path="/backWorkshop" element={<BackWorkshop />} />
-          <Route path="/backMessage" element={<BackMessage />} />
-        </Routes>
-        <Footer />
-        <ToastContainer position="top-center"
-          autoClose={1000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover />
+        <WorkshopsProvider>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/signUp" element={<SignUp />} />
+            <Route path="/signIn" element={<SignIn />} />
+            <Route path="/userProfile" element={<UserProfile />} />
+            <Route path="/formWorkshop" element={<FormWorkshop />} />
+            <Route path="/workshop/:dancer_workshop_id" element={<Workshop />} />
+            <Route path="/workshopFilter" element={<WorkshopFilter />} />
+            <Route path="/registeredWorkshop" element={<RegisteredWorkshop />} />
+            <Route path="/backOffice" element={<BackOffice />} />
+            <Route path="/backUser" element={<BackUser />} />
+            <Route path={`/editUser/:user_id`} element={<EditUser />} />
+            <Route path="/backCategory" element={<BackCategory />} />
+            <Route path="/backWorkshop" element={<BackWorkshop />} />
+            <Route path="/backMessage" element={<BackMessage />} />
+          </Routes>
+          <Footer />
+          <ToastContainer position="top-center"
+            autoClose={1000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover />
+        </WorkshopsProvider>
       </div>
     </Router>
   );

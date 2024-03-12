@@ -5,7 +5,7 @@ const userSubject = new BehaviorSubject(
   typeof window !== "undefined" && JSON.parse(localStorage.getItem("user"))
 );
 
-// Fonction pour mettre à jour le userSubject avec les informations de l'utilisateur et et pour stocker l'utilisateur dans le localStorage
+// Fonction pour mettre à jour le userSubject avec les informations de l'utilisateur et pour stocker l'utilisateur dans le localStorage
 function login(user) {
   userSubject.next(user);
   // Convertion d'une variable javascript en string JSON

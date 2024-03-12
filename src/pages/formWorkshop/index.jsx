@@ -97,7 +97,7 @@ const FormWorkshop = () => {
         <div className="main">
             <h2>Formulaire de création de stage ou d&apos;atelier</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form className="formGroup" onSubmit={handleSubmit}>
                 <div className="inputGroup">
                     <label className="inputLabel" id="title" htmlFor="title">Titre du stage ou de l&apos;atelier</label>
                     <input

@@ -50,12 +50,11 @@ const UserProfile = () => {
 
     return (
         <div className="main">
-
             <h2>Mes informations personnelles</h2>
 
             {/*<Upload_image/>*/}
 
-            <form onSubmit={handleSubmit}>
+            <form className="formGroup" onSubmit={handleSubmit}>
                 <div className="inputGroup">
                     <label className="inputLabel" id="address" htmlFor="address">Adresse</label>
                     <input
@@ -131,15 +130,14 @@ const UserProfile = () => {
                         required
                     />
                 </div>
-
-                {isEditing ? (
-                    <button type="submit">Save Changes</button>
-                ) : (
-                    <button type="button" onClick={() => setEditing(true)}>
-                        Edit Profile
-                    </button>
-                )}
             </form>
+            {isEditing ? (
+                <button type="submit">Save Changes</button>
+            ) : (
+                <button type="button" onClick={() => setEditing(true)}>
+                    Edit Profile
+                </button>
+            )}
         </div >
     );
 };

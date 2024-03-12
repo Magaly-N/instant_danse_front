@@ -65,7 +65,7 @@ const SignIn = () => {
     return (
         <div className="main">
             <h2>Formulaire de connexion</h2>
-            <form onSubmit={handleSubmit}>
+            <form className="formGroup" onSubmit={handleSubmit}>
                 <div className="inputGroup">
                     <label className="inputLabel" htmlFor="email">Email</label>
                     <input
@@ -96,18 +96,17 @@ const SignIn = () => {
                         required="required"
                     />
                 </div>
-
-                <div className="captcha"><ReCaptcha siteKey={'6LfWUpQpAAAAAMoVodDRgNjKpsNj5PNtaD2PN04h'} callback={handleToken} /></div>
-
-                <div className="inputGroup">
+                <div>
                     <input
                         disabled={!submitEnabled}
                         className="submitButton"
                         type="submit"
                         aria-label="Se connecter" />
                 </div>
-            </form>
-        </div>
+            </form >
+            <div className="captcha"><ReCaptcha siteKey={'6LfWUpQpAAAAAMoVodDRgNjKpsNj5PNtaD2PN04h'} callback={handleToken} />
+            </div>
+        </div >
 
     )
 }

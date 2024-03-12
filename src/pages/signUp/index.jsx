@@ -65,7 +65,7 @@ const SignUp = () => {
     return (
         <div className="main">
             <h2>Formulaire d&apos;inscription</h2>
-            <form onSubmit={handleSubmit}>
+            <form className="formGroup" onSubmit={handleSubmit}>
                 <div className="inputGroup">
                     <label className="inputLabel" htmlFor="firstName">Nom</label>
                     <input
@@ -220,22 +220,7 @@ const SignUp = () => {
                         required="required"
                     />
                 </div>
-                <div className="inputGroup">
-                    <label className="inputLabel" htmlFor="password">Confirmation du mot de passe</label>
-                    <input
-                        id="password"
-                        aria-label="Confirmez votre mot de passe"
-                        className="inputField"
-                        type="password"
-                        name="password"
-                        placeholder="Confirmez votre mot de passe"
-                        onChange={(e) => {
-                            setPassword(e.target.value);
-                        }}
-                        required="required"
-                    />
-                </div>
-                <div className="inputGroup">
+                <div>
                     <input className="submitButton" type="submit" aria-label="S'inscrire" />
                 </div>
             </form>
