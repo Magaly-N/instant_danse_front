@@ -32,7 +32,7 @@ const RegisteredWorkshop = () => {
             .then((response) => {
                 console.log(response);
                 // Mise à jour de la variable d'état workshops avec les données reçues de la requête.
-                setWorkshops(response.data.workshops);
+                setWorkshops(response.data.workshop);
             })
             .catch((error) => {
                 console.log(error);

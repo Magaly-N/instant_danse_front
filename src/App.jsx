@@ -15,6 +15,7 @@ import RegisteredWorkshop from "./pages/registeredWorkshop";
 import BackOffice from "./pages/backOffice";
 import BackUser from "./pages/backUser";
 import EditUser from "./pages/editUser";
+import EditWorkshop from "./pages/editWorkshop";
 import BackCategory from "./pages/backCategory";
 import BackWorkshop from "./pages/backWorkshop";
 import BackMessage from "./pages/backMessage";
@@ -43,6 +44,7 @@ function App() {
             <Route path="/backOffice" element={<BackOffice />} />
             <Route path="/backUser" element={<BackUser />} />
             <Route path={`/editUser/:user_id`} element={<EditUser />} />
+            <Route path={`/editWorkshop/:dancer_workshop_id`} element={<EditWorkshop />} />
             <Route path="/backCategory" element={<BackCategory />} />
             <Route path="/backWorkshop" element={<BackWorkshop />} />
             <Route path="/backMessage" element={<BackMessage />} />
