@@ -15,13 +15,15 @@ const SignIn = () => {
     const [token, setToken] = useState('');
     const [submitEnabled, setsubmitEnabled] = useState(false);
 
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
+
     let navigate = useNavigate();
 
     useEffect(() => {
         if (token.length) {
             setsubmitEnabled([true])
         }
-    })
+    }, [token])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -31,7 +33,7 @@ const SignIn = () => {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:3000/users/signIn',
+            url: `${VITE_URL_API}/users/signIn`,
             headers: {
                 'Content-Type': 'application/json'
             },
