@@ -1,4 +1,3 @@
-import "./home.scss";
 import Gallery from "../../components/Gallery";
 import SearchCreateWorkshop from "../../components/SearchCreateWorkshop";
 import ListingWorkshop from "../../components/ListingWorkshop";

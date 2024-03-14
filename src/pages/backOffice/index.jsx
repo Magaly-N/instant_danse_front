@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./backOffice.scss";
+import "./backOffice.css";
 
 const BackOffice = () => {
     return (

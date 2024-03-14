@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import convertDate from "../../utils/convertDate";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./workshop.scss";
 
 const Workshop = () => {
     const { dancer_workshop_id } = useParams();
@@ -10,6 +9,8 @@ const Workshop = () => {
     const [workshop, setWorkshop] = useState(null);
     const [isRegistered, setIsRegistered] = useState(false);
     const formattedDate = workshop ? convertDate(workshop.date) : null;
+
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
 
     useEffect(() => {
         const actualUser = JSON.parse(localStorage.getItem("user"));
@@ -23,7 +24,7 @@ const Workshop = () => {
     useEffect(() => {
         axios
             .get(
-                `http://localhost:3000/dancer_workshop/readOne?id=${dancer_workshop_id}`
+                `${VITE_URL_API}/dancer_workshop/readOne?id=${dancer_workshop_id}`
             )
             .then((response) => {
                 setWorkshop(response.data.dancerWorkshop);
@@ -38,7 +39,7 @@ const Workshop = () => {
         if (userId && dancer_workshop_id) {
             axios
                 .post(
-                    `http://localhost:3000/users/isRegistered?userId=${userId}&workshopId=${dancer_workshop_id}`
+                    `${VITE_URL_API}/users/isRegistered?userId=${userId}&workshopId=${dancer_workshop_id}`
                 )
                 .then((response) => {
                     console.log(response);
@@ -54,7 +55,7 @@ const Workshop = () => {
     const handleRegister = () => {
         axios
             .post(
-                `http://localhost:3000/users/sign-up-workshop?userId=${userId}&workshopId=${dancer_workshop_id}`
+                `${VITE_URL_API}/users/sign-up-workshop?userId=${userId}&workshopId=${dancer_workshop_id}`
             )
             .then((response) => {
                 console.log(response);

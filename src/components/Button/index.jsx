@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import PropTypes from "prop-types";
-import "./button.scss";
+import "./button.css";
 
 const Button = (props) => {
     const { onClick, text, type } = props;

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import './footer.scss';
+import './footer.css';
 import Mailto from '../Mailto';
 
 const Footer = () => {

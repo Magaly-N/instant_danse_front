@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./backUser.scss";
 
 const BackUser = () => {
     const [users, setUsers] = useState(null);
@@ -9,10 +8,12 @@ const BackUser = () => {
     useEffect(() => {
         let data;
 
+        const VITE_URL_API = import.meta.env.VITE_URL_API;
+
         let config = {
             method: "get",
             maxBodyLength: Infinity,
-            url: "http://localhost:3000/users/read",
+            url: `${VITE_URL_API}/users/read`,
             headers: {
                 "Content-Type": "application/json",
             },

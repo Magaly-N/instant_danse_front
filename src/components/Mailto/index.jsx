@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import "./mailto.scss"
+import "./mailto.css"
 
 const Mailto = ({ mailto, label }) => {
     const handleClick = (e) => {

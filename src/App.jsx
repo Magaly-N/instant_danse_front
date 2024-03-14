@@ -14,14 +14,12 @@ import WorkshopFilter from "./pages/workshopFilter";
 import RegisteredWorkshop from "./pages/registeredWorkshop";
 import BackOffice from "./pages/backOffice";
 import BackUser from "./pages/backUser";
-import EditUser from "./pages/editUser";
 import EditWorkshop from "./pages/editWorkshop";
 import BackCategory from "./pages/backCategory";
 import BackWorkshop from "./pages/backWorkshop";
 import BackMessage from "./pages/backMessage";
 import { WorkshopsProvider } from "./context/WorkshopsProvider";
 import { ToastContainer } from "react-toastify";
-import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -43,7 +41,6 @@ function App() {
             <Route path="/registeredWorkshop" element={<RegisteredWorkshop />} />
             <Route path="/backOffice" element={<BackOffice />} />
             <Route path="/backUser" element={<BackUser />} />
-            <Route path={`/editUser/:user_id`} element={<EditUser />} />
             <Route path={`/editWorkshop/:dancer_workshop_id`} element={<EditWorkshop />} />
             <Route path="/backCategory" element={<BackCategory />} />
             <Route path="/backWorkshop" element={<BackWorkshop />} />

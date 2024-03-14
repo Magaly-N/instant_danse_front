@@ -1,6 +1,5 @@
 import useWorkshops from "../../hooks/useWorkshops";
 import WorkshopDetail from "../WorkshopDetail";
-import "./listingWorkshop.scss";
 
 const ListingWorkshop = () => {
     const { threeWorkshops } = useWorkshops();

@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./backCategory.scss";
 
 const BackCategory = () => {
     const [categories, setCategories] = useState(null);
     useEffect(() => {
         let data;
 
+        const VITE_URL_API = import.meta.env.VITE_URL_API;
+
         let config = {
             method: "get",
             maxBodyLength: Infinity,
-            url: "http://localhost:3000/category_workshop/read",
+            url: `${VITE_URL_API}/category_workshop/read`,
             headers: {
                 "Content-Type": "application/json",
             },

@@ -2,7 +2,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import WorkshopDetail from '../../components/WorkshopDetail';
-import "./registeredWorkshop.scss"; // Importation du fichier de style CSS pour ce composant.
 
 // Définition du composant RegisteredWorkshop.
 const RegisteredWorkshop = () => {
@@ -11,6 +10,7 @@ const RegisteredWorkshop = () => {
     // Récupération des données de l'utilisateur depuis le stockage local (localStorage).
     let user = JSON.parse(localStorage.getItem("user"));
     const userId = user.userId;
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
 
     // Utilisation de useEffect pour effectuer des actions après le rendu initial du composant.
     useEffect(() => {
@@ -20,7 +20,7 @@ const RegisteredWorkshop = () => {
         let config = {
             method: 'get',
             maxBodyLength: Infinity,
-            url: `http://localhost:3000/users/registeredWorkshop?userId=${userId}`,
+            url: `${VITE_URL_API}/users/registeredWorkshop?userId=${userId}`,
             headers: {
                 'Content-Type': 'application/json'
             },

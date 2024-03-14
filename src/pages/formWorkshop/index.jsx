@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
 import useWorkshops from '../../hooks/useWorkshops';
-import "./formWorkshop.scss";
+import "./formWorkshop.css";
 
 const FormWorkshop = () => {
     //const { title, description, date, hour, duration, city, price, requiredDanceLevel, personMax } = req.body;
@@ -20,6 +20,8 @@ const FormWorkshop = () => {
     const [category_workshop_id, setCategory] = useState("");
     const [listCategory, setListcategory] = useState("");
 
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
+
     const { fetchWorkshops } = useWorkshops();
 
     let navigate = useNavigate();
@@ -30,7 +32,7 @@ const FormWorkshop = () => {
         let config = {
             method: 'get',
             maxBodyLength: Infinity,
-            url: 'http://localhost:3000/category_workshop/read',
+            url: `${VITE_URL_API}/category_workshop/read`,
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -61,7 +63,7 @@ const FormWorkshop = () => {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:3000/dancer_workshop/create',
+            url: `${VITE_URL_API}/dancer_workshop/create`,
             headers: {
                 'Content-Type': 'application/json',
                 Authorization: `Bearer ${token}`,
@@ -90,11 +92,13 @@ const FormWorkshop = () => {
                     }, 3000);
                 }
             })
+
+
             .catch((error) => {
-                const errorMessage = error.response?.data?.message || 'An error occurred';
+                const errorMessage = error.response ? error.response.data.message || 'An error occurred' : 'An error occurred';
                 toast.error(errorMessage);
-            }
-            )
+                // Utilisez la variable error ici, si nécessaire
+            });
     }
     return (
 

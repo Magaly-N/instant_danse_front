@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import convertDate from "../../utils/convertDate";
 import WorkshopDetail from "../../components/WorkshopDetail";
-import "./workshopFilter.scss";
 import useWorkshops from "../../hooks/useWorkshops";
 
 const WorkshopFilter = () => {
@@ -16,7 +15,7 @@ const WorkshopFilter = () => {
             let filteredByDate = workshops;
             if (dateFilter) {
                 filteredByDate = workshops.filter(
-                    (workshop) => workshop.date === dateFilter
+                    (workshop) => workshop.date <= dateFilter
                 );
             }
             let filteredByCity = filteredByDate;
@@ -31,7 +30,7 @@ const WorkshopFilter = () => {
     }, [dateFilter, cityFilter]);
 
     return (
-        <>
+        <div>
             <div className="main">
                 <div className="cardsFilter">
                     <div className="card cardFilter">
@@ -91,7 +90,7 @@ const WorkshopFilter = () => {
                     )}
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

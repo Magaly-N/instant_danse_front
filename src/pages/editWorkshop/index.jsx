@@ -12,6 +12,8 @@ const EditWorkshop = () => {
     const [listCategory, setListcategory] = useState("");
     const [workshop, setWorkshop] = useState(null);
 
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
+
     const { fetchWorkshops } = useWorkshops();
 
     let navigate = useNavigate();
@@ -20,11 +22,11 @@ const EditWorkshop = () => {
         try {
             // Fetch workshops
             const workshopResponse = await axios.get(
-                `http://localhost:3000/dancer_workshop/readOne?id=${dancer_workshop_id}`
+                `${VITE_URL_API}/dancer_workshop/readOne?id=${dancer_workshop_id}`
             );
             setWorkshop(workshopResponse.data.dancerWorkshop);
             const catResponse = await axios.get(
-                "http://localhost:3000/category_workshop/read"
+                `${VITE_URL_API}/category_workshop/read`
             );
             setListcategory(catResponse.data.categoryWorkshops);
         } catch (error) {
@@ -43,7 +45,6 @@ const EditWorkshop = () => {
             ...prevData,
             [name]: value,
         }));
-        console.log(user);
     };
 
     const handleSubmit = (e) => {
@@ -59,7 +60,7 @@ const EditWorkshop = () => {
         let config = {
             method: "post",
             maxBodyLength: Infinity,
-            url: `http://localhost:3000/dancer_workshop/update?id=${dancer_workshop_id}`,
+            url: `${VITE_URL_API}/dancer_workshop/update?id=${dancer_workshop_id}`,
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`,

@@ -9,27 +9,29 @@ const WorkshopsProvider = ({ children }) => {
     const [uniqueDates, setUniqueDates] = useState([]);
     const [uniqueCities, setUniqueCities] = useState([]);
 
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
+
     const fetchWorkshops = async () => {
         try {
             // Fetch workshops
             const workshopsResponse = await axios.get(
-                "http://localhost:3000/dancer_workshop/read"
+                `${VITE_URL_API}/dancer_workshop/read`
             );
             setWorkshops(workshopsResponse.data.dancerWorkshops);
             const threeResponse = await axios.get(
-                "http://localhost:3000/dancer_workshop/readThree"
+                `${VITE_URL_API}/dancer_workshop/readThree`
             );
             setThreeWorkshops(threeResponse.data.dancerWorkshops);
             // Fetch dates
             const datesResponse = await axios.get(
-                "http://localhost:3000/dancer_workshop/readDates"
+                `${VITE_URL_API}/dancer_workshop/readDates`
             );
             // Assuming dates are stored in response.data.dates
             setUniqueDates(datesResponse.data.dates);
 
             // Fetch cities
             const citiesResponse = await axios.get(
-                "http://localhost:3000/dancer_workshop/readCities"
+                `${VITE_URL_API}/dancer_workshop/readCities`
             );
             // Assuming cities are stored in response.data.cities
             setUniqueCities(citiesResponse.data.cities);

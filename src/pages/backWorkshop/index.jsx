@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./backWorkshop.scss";
+import convertDate from "../../utils/convertDate";
 
-const BackWorkshop = () => {
+const BackWorkshop = (workshop) => {
     const [workshops, setWorkshops] = useState(null);
+
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
+
+    const formattedDate = workshop ? convertDate(workshop.date) : null;
+
     useEffect(() => {
         let data;
 
         let config = {
             method: "get",
             maxBodyLength: Infinity,
-            url: "http://localhost:3000/dancer_workshop/read",
+            url: `${VITE_URL_API}/dancer_workshop/read`,
             headers: {
                 "Content-Type": "application/json",
             },
@@ -51,7 +56,7 @@ const BackWorkshop = () => {
                             <tr key={workshop.dancer_workshop_id}>
                                 <td>{workshop.dancer_workshop_id}</td>
                                 <td>{workshop.title}</td>
-                                <td>{workshop.date}</td>
+                                <td>{formattedDate ? `${formattedDate.day}/${formattedDate.month}/${formattedDate.year}` : 'Invalid Date'}</td>
                                 <td>{workshop.hour}</td>
                                 <td>{workshop.duration}</td>
                                 <td>{workshop.city}</td>

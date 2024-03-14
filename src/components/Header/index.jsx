@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { userService } from "../../utils/userService";
 import { useNavigate } from "react-router-dom";
-import "./header.scss";
+import "./header.css";
 
 const Header = () => {
     // Utilisation de l'état local pour gérer l'ouverture/fermeture du menu

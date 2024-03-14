@@ -2,7 +2,7 @@ import { BehaviorSubject } from "rxjs";
 
 // Création d'un sujet observable (BehaviorSubject) pour suivre l'état de l'utilisateur
 const userSubject = new BehaviorSubject(
-  typeof window !== "undefined" && JSON.parse(localStorage.getItem("user"))
+  JSON.parse(localStorage.getItem("user"))
 );
 
 // Fonction pour mettre à jour le userSubject avec les informations de l'utilisateur et pour stocker l'utilisateur dans le localStorage
@@ -27,15 +27,22 @@ function logout() {
   navigateFunction("/");// redirection vers la page de connexion
 }
 
+function update() {
+  localStorage.removeItem("user"); // retrait du user du localStorage
+  userSubject.next(null);
+}
+
 // Export d'un objet contenant les méthodes et propriétés du service utilisateur
 export const userService = {
   // Propriété d'accès pour obtenir la valeur actuelle de l'utilisateur.
   user: userSubject.asObservable(),
   // Méthode pour interagir avec l api et obtenir la valeur actuelle de l'utilisateur
   get userValue() {
+
     return userSubject.value;
   },
   login,
   logout,
   setNavigate,
+  update
 };

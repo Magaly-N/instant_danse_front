@@ -1,4 +1,3 @@
-import "./searchCreateWorkshop.scss";
 import "../Button";
 import { Link } from "react-router-dom";
 

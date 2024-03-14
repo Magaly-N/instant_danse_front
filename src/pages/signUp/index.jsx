@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
-import "./signUp.scss";
 
 const SignUp = () => {
     //const { firstName, lastName, birthday, address, postCode, city, phoneNumber, danceLevel, email, password, role } = req.body;
@@ -18,6 +17,8 @@ const SignUp = () => {
     const [password, setPassword] = useState("");
     const role = "user";
 
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
+
     let navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -28,7 +29,7 @@ const SignUp = () => {
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
-            url: 'http://localhost:3000/users/signUp',
+            url: `${VITE_URL_API}/users/signUp`,
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -52,15 +53,15 @@ const SignUp = () => {
                     setPassword("");
                     toast.success("Inscription validée");
                     setTimeout(() => {
-                        navigate("/");
+                        navigate("/signIn");
                     }, 3000);
                 }
             })
             .catch((error) => {
-                const errorMessage = error.response?.data?.message || 'An error occurred';
+                const errorMessage = error.response ? error.response.data.message || 'An error occurred' : 'An error occurred';
                 toast.error(errorMessage);
-            }
-            )
+                // Utilisez la variable error ici, si nécessaire
+            });
     }
     return (
         <div className="main">

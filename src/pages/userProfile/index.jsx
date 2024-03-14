@@ -8,15 +8,19 @@ import { userService } from "../../utils/userService";
 const UserProfile = () => {
     const [user, setUser] = useState(null);
     let actualUser = JSON.parse(localStorage.getItem("user"));
+
     const id = actualUser.userId;
     const navigate = useNavigate();
+
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
+
     useEffect(() => {
         let data;
 
         let config = {
             method: "get",
             maxBodyLength: Infinity,
-            url: `http://localhost:3000/users/readOneUser?id=${id}`,
+            url: `${VITE_URL_API}/users/readOneUser?id=${id}`,
             headers: {
                 "Content-Type": "application/json",
             },
@@ -47,7 +51,7 @@ const UserProfile = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (id !== undefined || user.role === "admin") {
-            let errorMessage = null;
+            //let errorMessage = null;
             const token = actualUser.token;
             user.userId = id;
             let data = { user };
@@ -56,7 +60,7 @@ const UserProfile = () => {
             let config = {
                 method: "put",
                 maxBodyLength: Infinity,
-                url: "http://localhost:3000/users/updateUser",
+                url: `${VITE_URL_API}/users/updateUser`,
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${token}`,
@@ -78,10 +82,11 @@ const UserProfile = () => {
                     }
                 })
                 .catch((error) => {
-                    errorMessage =
-                        error.response?.data?.message || "An error occurred";
+                    const errorMessage = error.response ? error.response.data.message || 'An error occurred' : 'An error occurred';
                     toast.error(errorMessage);
+                    // Utilisez la variable error ici, si nécessaire
                 });
+
         } else {
             const errorMessage =
                 "Vous ne disposez pas des droits pour cette modification";

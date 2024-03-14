@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./uploadImage.scss";
+import "./uploadImage.css";
 
 const UploadImage = () => {
 
