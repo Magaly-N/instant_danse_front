@@ -17,7 +17,7 @@ const SignUp = () => {
     const [password, setPassword] = useState("");
     const role = "user";
 
-    const VITE_URL_API = import.meta.env.VITE_URL_API;
+    const VITE_URL_API = `import.meta.env.VITE_URL_API`;
 
     let navigate = useNavigate();
 

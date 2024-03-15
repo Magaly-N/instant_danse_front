@@ -49,41 +49,41 @@ const Header = () => {
                 <nav role="menu">
                     {/* Liens de navigation vers différentes sections de l'application */}
                     {/* role="menuitem" => indique que chaque lien est un élément du menu */}
-                    <NavLink exact={"true"} to={"/"} activeClassName="active" role="menuitem">
+                    <NavLink exact={"true"} to={"/"} className={({ isActive }) => (isActive ? "active" : 'none')} role="menuitem">
                         Accueil
                     </NavLink>
-                    <NavLink to={"/workshopFilter"} activeClassName="active" role="menuitem">
+                    <NavLink to={"/workshopFilter"} className={({ isActive }) => (isActive ? "active" : 'none')} role="menuitem">
                         Ateliers
                     </NavLink>
 
 
                     {/* Affichage conditionnel du bouton de déconnexion ou des liens de connexion/inscription */}
-                    {user ? (<><NavLink to={"/registeredWorkshop"} activeClassName="active" role="menuitem">
+                    {user ? (<><NavLink to={"/registeredWorkshop"} className={({ isActive }) => (isActive ? "active" : 'none')} role="menuitem">
                         Mes inscriptions
                     </NavLink>
-                        <NavLink to={"/messages"} activeClassName="active" role="menuitem">
+                        <NavLink to={"/messages"} className={({ isActive }) => (isActive ? "active" : 'none')} role="menuitem">
                             Messages
                         </NavLink>
-                        <NavLink to={"/userProfile"} activeClassName="active" role="menuitem">
+                        <NavLink to={"/userProfile"} className={({ isActive }) => (isActive ? "active" : 'none')} role="menuitem">
                             Mon compte
                         </NavLink>
-                        <NavLink to="/" onClick={logout} activeClassName="active" role="menuitem">
+                        <NavLink to="/" onClick={logout} className={({ isActive }) => (isActive ? "active" : 'none')} role="menuitem">
                             Se déconnecter
                         </NavLink>
                     </>
                     ) : (
                         <>
-                            <NavLink to={"/signIn"} activeClassName="active" role="menuitem">
+                            <NavLink to={"/signIn"} className={({ isActive }) => (isActive ? "active" : 'none')} role="menuitem">
                                 Connexion
                             </NavLink>
-                            <NavLink to={"/signUp"} activeClassName="active" role="menuitem">
+                            <NavLink to={"/signUp"} className={({ isActive }) => (isActive ? "active" : 'none')} role="menuitem">
                                 Inscription
                             </NavLink>
                         </>
                     )}
 
                     {/* Condition pour afficher le lien vers l'espace admin pour les utilisateurs ayant le rôle "admin" */}
-                    {user && user.role === "admin" && <NavLink to={"/backOffice"} activeClassName="active">Espace Admin</NavLink>}
+                    {user && user.role === "admin" && <NavLink to={"/backOffice"} className={({ isActive }) => (isActive ? "active" : 'none')}>Espace Admin</NavLink>}
                 </nav>
             </div>
         </div>

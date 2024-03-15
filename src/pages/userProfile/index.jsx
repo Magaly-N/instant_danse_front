@@ -12,7 +12,7 @@ const UserProfile = () => {
     const id = actualUser.userId;
     const navigate = useNavigate();
 
-    const VITE_URL_API = import.meta.env.VITE_URL_API;
+    const VITE_URL_API = `import.meta.env.VITE_URL_API`;
 
     useEffect(() => {
         let data;

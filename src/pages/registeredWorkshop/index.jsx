@@ -10,6 +10,7 @@ const RegisteredWorkshop = () => {
     // Récupération des données de l'utilisateur depuis le stockage local (localStorage).
     let user = JSON.parse(localStorage.getItem("user"));
     const userId = user.userId;
+    
     const VITE_URL_API = import.meta.env.VITE_URL_API;
 
     // Utilisation de useEffect pour effectuer des actions après le rendu initial du composant.

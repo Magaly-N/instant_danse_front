@@ -10,7 +10,7 @@ const Workshop = () => {
     const [isRegistered, setIsRegistered] = useState(false);
     const formattedDate = workshop ? convertDate(workshop.date) : null;
 
-    const VITE_URL_API = import.meta.env.VITE_URL_API;
+    const VITE_URL_API = `import.meta.env.VITE_URL_API`;
 
     useEffect(() => {
         const actualUser = JSON.parse(localStorage.getItem("user"));

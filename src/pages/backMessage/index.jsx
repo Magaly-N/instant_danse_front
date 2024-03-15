@@ -4,13 +4,17 @@ import { Link } from "react-router-dom";
 
 const BackMessage = () => {
     const [messages, setMessages] = useState(null);
+
+    const VITE_URL_API =
+        import.meta.env.VITE_URL_API;
+
     useEffect(() => {
         let data;
 
         let config = {
             method: "get",
             maxBodyLength: Infinity,
-            url: "http://localhost:3000/message/read",
+            url: "${VITE_URL_API}/message/read",
             headers: {
                 "Content-Type": "application/json",
             },
