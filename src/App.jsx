@@ -26,9 +26,9 @@ import "react-toastify/dist/ReactToastify.css";
 function App() {
   return (
     <Router>
+      <Header />
       <div className="container">
         <WorkshopsProvider>
-          <Header />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/privacy" element={<Privacy />} />
@@ -48,7 +48,6 @@ function App() {
             <Route path="/backWorkshop" element={<BackWorkshop />} />
             <Route path="/backMessage" element={<BackMessage />} />
           </Routes>
-          <Footer />
           <ToastContainer position="top-center"
             autoClose={1000}
             hideProgressBar={false}
@@ -60,6 +59,7 @@ function App() {
             pauseOnHover />
         </WorkshopsProvider>
       </div>
+      <Footer />
     </Router>
   );
 }

@@ -1,0 +1,25 @@
+.logo {
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+
+    &-webp {
+        display: none;
+        /* Masque l'image WebP par défaut */
+    }
+
+    &-jpg {
+        display: inline-block;
+        /* Assure que l'image JPEG est affichée */
+    }
+
+    /* Si l'image WebP n'est pas chargée (donc l'image JPEG est affichée), affiche l'image WebP */
+    .logo-link:empty &-webp {
+        display: inline-block;
+    }
+
+    /* Si l'image JPEG n'est pas chargée (donc l'image WebP est affichée), masque l'image JPEG */
+    .logo-link:empty &-jpg {
+        display: none;
+    }
+}

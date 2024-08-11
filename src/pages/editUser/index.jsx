@@ -7,7 +7,9 @@ import { userService } from "../../utils/userService";
 
 const EditUser = () => {
 
+    // Récupération de l'identifiant de l'utilisateur depuis les paramètres d'URL
     const id = useParams();
+
     const [user, setUser] = useState(null);
     let actualUser = JSON.parse(localStorage.getItem("user"));
 
@@ -15,6 +17,7 @@ const EditUser = () => {
 
     const VITE_URL_API = import.meta.env.VITE_URL_API;
 
+    // UseEffect pour charger les informations de l'utilisateur depuis l'API lors du montage du composant
     useEffect(() => {
         let data;
 
@@ -39,7 +42,7 @@ const EditUser = () => {
             });
     }, []);
 
-    // Handle input changes
+    // Fonction pour gérer les changements dans les champs de saisie
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setUser((prevData) => ({
@@ -49,6 +52,7 @@ const EditUser = () => {
         console.log(user);
     };
 
+    // Fonction pour soumettre le formulaire de modification des informations utilisateur
     const handleSubmit = (e) => {
         e.preventDefault();
         if (id !== undefined || user.role === "admin") {

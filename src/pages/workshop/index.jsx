@@ -1,26 +1,32 @@
-import { useParams } from "react-router-dom";
-import convertDate from "../../utils/convertDate";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
+import convertDate from "../../utils/convertDate";
 
 const Workshop = () => {
+    // Récupération du paramètre d'URL correspondant à l'identifiant de l'atelier
     const { dancer_workshop_id } = useParams();
+
     const [userId, setUserId] = useState(null);
     const [workshop, setWorkshop] = useState(null);
     const [isRegistered, setIsRegistered] = useState(false);
     const formattedDate = workshop ? convertDate(workshop.date) : null;
 
-    const VITE_URL_API = `import.meta.env.VITE_URL_API`;
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
 
+    // Utilisation de useEffect pour charger les détails de l'atelier lors du rendu initial
     useEffect(() => {
+        // Récupération des informations de l'utilisateur actuel depuis le stockage local
         const actualUser = JSON.parse(localStorage.getItem("user"));
+
         if (actualUser && actualUser !== undefined) {
-            setUserId(actualUser.userId);
+            setUserId(actualUser.userId); // Mise à jour de l'identifiant de l'utilisateur dans l'état
             console.log(actualUser);
         }
 
     }, []);
 
+    // Utilisation de useEffect pour charger les détails de l'atelier lorsque l'identifiant de l'atelier change
     useEffect(() => {
         axios
             .get(
@@ -35,6 +41,7 @@ const Workshop = () => {
             });
     }, [dancer_workshop_id]);
 
+    // Utilisation de useEffect pour vérifier si l'utilisateur est déjà inscrit à cet atelier
     useEffect(() => {
         if (userId && dancer_workshop_id) {
             axios
@@ -43,15 +50,16 @@ const Workshop = () => {
                 )
                 .then((response) => {
                     console.log(response);
-                    setIsRegistered(response.data.isRegistered); // Assuming your response contains a field indicating registration status
+                    setIsRegistered(response.data.isRegistered);
                 })
                 .catch((error) => {
                     console.log(error);
-                    setIsRegistered(true); // Assuming you want to set isRegistered to true by default in case of an error
+                    setIsRegistered(true);
                 });
         }
     }, [userId, dancer_workshop_id]);
 
+    // Fonction pour gérer l'inscription de l'utilisateur à l'atelier
     const handleRegister = () => {
         axios
             .post(

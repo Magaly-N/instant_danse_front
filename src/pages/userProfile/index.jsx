@@ -7,12 +7,13 @@ import { userService } from "../../utils/userService";
 
 const UserProfile = () => {
     const [user, setUser] = useState(null);
+    // Récupération des informations de l'utilisateur actuel depuis le stockage local
     let actualUser = JSON.parse(localStorage.getItem("user"));
 
     const id = actualUser.userId;
     const navigate = useNavigate();
 
-    const VITE_URL_API = `import.meta.env.VITE_URL_API`;
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
 
     useEffect(() => {
         let data;
@@ -38,7 +39,7 @@ const UserProfile = () => {
             });
     }, []);
 
-    // Handle input changes
+    // Fonction pour gérer les changements dans les champs de saisie
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setUser((prevData) => ({
@@ -48,6 +49,7 @@ const UserProfile = () => {
         console.log(user);
     };
 
+    // Fonction pour soumettre le formulaire de modification des informations
     const handleSubmit = (e) => {
         e.preventDefault();
         if (id !== undefined || user.role === "admin") {

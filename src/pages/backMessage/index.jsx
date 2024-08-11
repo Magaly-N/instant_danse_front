@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 const BackMessage = () => {
     const [messages, setMessages] = useState(null);
 
-    const VITE_URL_API =
-        import.meta.env.VITE_URL_API;
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
 
     useEffect(() => {
         let data;

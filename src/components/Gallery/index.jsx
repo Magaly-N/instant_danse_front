@@ -1,7 +1,8 @@
 import Slideshow from "../Slideshow";
-import "./gallery.css";
+import "./gallery.scss";
 
 const Gallery = () => {
+
     return (
         <div>
             <div className="dancers" role="group" aria-label="Images de danseurs">

@@ -1,18 +1,24 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import convertDate from "../../utils/convertDate";
+import { useState, useEffect } from "react"; // Importation des hooks useState et useEffect depuis React
+import axios from "axios"; // Importation du module axios pour effectuer des requêtes HTTP
+import { Link } from "react-router-dom"; // Importation du composant Link de react-router-dom pour créer des liens
+import convertDate from "../../utils/convertDate"; // Importation de la fonction de conversion de date depuis un fichier utilitaire
 
-const BackWorkshop = (workshop) => {
+// Définition du composant BackWorkshop
+const BackWorkshop = () => {
+    // État local pour stocker les ateliers récupérés depuis l'API
     const [workshops, setWorkshops] = useState(null);
 
+    // Récupération de l'URL de l'API depuis les variables d'environnement (Vite.js)
     const VITE_URL_API = import.meta.env.VITE_URL_API;
 
+    // Formatage de la date de l'atelier (si elle est disponible)
     const formattedDate = workshop ? convertDate(workshop.date) : null;
 
+    // Utilisation de useEffect pour exécuter une action dès que le composant est monté
     useEffect(() => {
         let data;
 
+        // Configuration de la requête Axios pour récupérer les ateliers depuis l'API
         let config = {
             method: "get",
             maxBodyLength: Infinity,
@@ -23,21 +29,25 @@ const BackWorkshop = (workshop) => {
             data: data,
         };
 
+        // Exécution de la requête Axios pour récupérer les ateliers
         axios
             .request(config)
             .then((response) => {
-                console.log(response);
+                // Mise à jour de l'état local avec les ateliers récupérés depuis l'API
                 setWorkshops(response.data.dancerWorkshops);
             })
             .catch((error) => {
-                console.log(error);
+                console.log(error); // Gestion des erreurs
             });
-    }, []);
+    }, []); // Utilisation du tableau de dépendances vide pour exécuter useEffect une seule fois après le montage du composant
 
+    // Rendu du composant
     return (
         <div className="main">
+            {/* Tableau pour afficher les ateliers */}
             <table className="table">
                 <thead>
+                    {/* En-têtes du tableau */}
                     <tr>
                         <th style={{ width: "10%" }} aria-label="Identifiant de l'atelier">Id</th>
                         <th style={{ width: "15%" }} aria-label="Titre de l'atelier">Titre</th>
@@ -51,12 +61,13 @@ const BackWorkshop = (workshop) => {
                     </tr>
                 </thead>
                 <tbody>
+                    {/* Mappage des ateliers récupérés dans le tableau */}
                     {workshops &&
                         workshops.map((workshop) => (
                             <tr key={workshop.dancer_workshop_id}>
                                 <td>{workshop.dancer_workshop_id}</td>
                                 <td>{workshop.title}</td>
-                                <td>{formattedDate ? `${formattedDate.day}/${formattedDate.month}/${formattedDate.year}` : 'Invalid Date'}</td>
+                                <td>{formattedDate ? `${formattedDate.day}/${formattedDate.month}/${formattedDate.year}` : 'Date invalide'}</td>
                                 <td>{workshop.hour}</td>
                                 <td>{workshop.duration}</td>
                                 <td>{workshop.city}</td>
@@ -64,6 +75,7 @@ const BackWorkshop = (workshop) => {
                                 <td>{workshop.required_dance_level}</td>
                                 <td>{workshop.person_max}</td>
                                 <td>
+                                    {/* Lien pour éditer l'atelier */}
                                     <Link to={`/editWorkshop/${workshop.dancer_workshop_id}`} className="submitButton" aria-label="Editer les ateliers">
                                         Editer
                                     </Link>
@@ -71,17 +83,18 @@ const BackWorkshop = (workshop) => {
                             </tr>
                         ))}
 
+                    {/* Affichage d'un message en l'absence d'ateliers */}
                     {workshops && !workshops.length && (
                         <tr>
                             <td>
-                                <p>Pas d&apos;ateliers ou stages à afficher</p>
+                                <p>Pas d'ateliers ou stages à afficher</p>
                             </td>
                         </tr>
                     )}
                 </tbody>
-            </table >
+            </table>
         </div>
     );
 };
 
-export default BackWorkshop;
+export default BackWorkshop; // Exportation du composant BackWorkshop

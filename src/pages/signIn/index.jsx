@@ -4,7 +4,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { userService } from "../../utils/userService";
 import ReCaptcha from '../../components/Recaptcha';
-import "./signIn.css";
+import "./signIn.scss";
 
 
 const SignIn = () => {
@@ -19,12 +19,14 @@ const SignIn = () => {
 
     let navigate = useNavigate();
 
+    // UseEffect pour vérifier si un token a été reçu du captcha et autoriser la soumission du formulaire
     useEffect(() => {
         if (token.length) {
-            setsubmitEnabled([true])
+            setsubmitEnabled(true)
         }
     }, [token])
 
+    // Fonction appelé lors de la soumission du formulaire
     const handleSubmit = (e) => {
         e.preventDefault();
         let data = { email, password }
@@ -42,8 +44,10 @@ const SignIn = () => {
 
         axios.request(config)
             .then((response) => {
+                // Si la requête réussit (statut 200), effectue les actions suivantes
                 if (response.status === 200) {
                     console.log("Response succeeded!");
+                    // Appelle la fonction de service userService.login pour connecter l'utilisateur avec les données reçues
                     userService.login(response.data.user);
                     setEmail("");
                     setPassword("");
@@ -60,6 +64,7 @@ const SignIn = () => {
             )
     }
 
+    // Fonction handleToken appelée lorsqu'un token est obtenu à partir du captcha
     const handleToken = (token) => {
         setToken(token)
     }

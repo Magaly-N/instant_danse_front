@@ -17,7 +17,7 @@ const SignUp = () => {
     const [password, setPassword] = useState("");
     const role = "user";
 
-    const VITE_URL_API = `import.meta.env.VITE_URL_API`;
+    const VITE_URL_API = import.meta.env.VITE_URL_API;
 
     let navigate = useNavigate();
 
@@ -60,7 +60,7 @@ const SignUp = () => {
             .catch((error) => {
                 const errorMessage = error.response ? error.response.data.message || 'An error occurred' : 'An error occurred';
                 toast.error(errorMessage);
-                // Utilisez la variable error ici, si nécessaire
+
             });
     }
     return (

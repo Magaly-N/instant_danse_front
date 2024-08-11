@@ -1,0 +1,22 @@
+@charset "UTF-8";
+.logo {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  /* Si l'image WebP n'est pas chargée (donc l'image JPEG est affichée), affiche l'image WebP */
+  /* Si l'image JPEG n'est pas chargée (donc l'image WebP est affichée), masque l'image JPEG */
+}
+.logo-webp {
+  display: none;
+  /* Masque l'image WebP par défaut */
+}
+.logo-jpg {
+  display: inline-block;
+  /* Assure que l'image JPEG est affichée */
+}
+.logo-link:empty .logo-webp {
+  display: inline-block;
+}
+.logo-link:empty .logo-jpg {
+  display: none;
+}/*# sourceMappingURL=logo.css.map */

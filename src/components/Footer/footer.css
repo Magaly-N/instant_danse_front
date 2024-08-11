@@ -23,11 +23,7 @@
 .footer p {
   font-size: var(--font-size-medium);
 }
-.footer .barre {
-  font-weight: bold;
-  color: var(--text-color);
-}
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 980px) {
   .footer .privacy-terms {
     display: flex;
     flex-direction: row;

@@ -32,7 +32,7 @@
   font-size: var(--font-size-big);
   margin-bottom: 10px;
 }
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 980px) {
   .header .navbar nav {
     display: flex;
     flex-direction: row;

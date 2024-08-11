@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 import { toast } from "react-toastify";
 import useWorkshops from '../../hooks/useWorkshops';
-import "./formWorkshop.css";
+import "./formWorkshop.scss";
 
 const FormWorkshop = () => {
     //const { title, description, date, hour, duration, city, price, requiredDanceLevel, personMax } = req.body;
@@ -22,10 +22,12 @@ const FormWorkshop = () => {
 
     const VITE_URL_API = import.meta.env.VITE_URL_API;
 
+    // Hook pour charger les workshops
     const { fetchWorkshops } = useWorkshops();
 
     let navigate = useNavigate();
 
+    // UseEffect pour charger la liste des catégories de workshop lors du montage du composant
     useEffect(() => {
         let data;
 
@@ -41,7 +43,7 @@ const FormWorkshop = () => {
 
         axios.request(config)
             .then((response) => {
-                setListcategory(response.data.categoryWorkshops);
+                setListcategory(response.data.categoryWorkshops); // Mise à jour de la liste des catégories
                 //console.log(listCategory);
 
             })
@@ -49,17 +51,19 @@ const FormWorkshop = () => {
                 console.log(error);
             });
 
-    }, [listCategory])
+    }, [listCategory]) // Déclenché à chaque changement de listCategory
 
-
+    // Fonction pour soumettre le formulaire de création de workshop
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // Données à envoyer dans la requête POST
         let data = { title, description, date, hour, duration, city, price, requiredDanceLevel, personMax, category_workshop_id }
         data = JSON.stringify(data);
         let user = JSON.parse(localStorage.getItem("user"));
         const token = user.token;
 
+        // Configuration de la requête POST
         let config = {
             method: 'post',
             maxBodyLength: Infinity,
@@ -75,7 +79,8 @@ const FormWorkshop = () => {
             .then((response) => {
                 if (response.status === 201) {
                     console.log("Response succeeded!");
-                    fetchWorkshops();
+                    fetchWorkshops(); // Rechargement de la liste des workshops après création
+                    // Réinitialisation des champs du formulaire
                     setTitle("");
                     setDescription("");
                     setDate("");
@@ -97,7 +102,6 @@ const FormWorkshop = () => {
             .catch((error) => {
                 const errorMessage = error.response ? error.response.data.message || 'An error occurred' : 'An error occurred';
                 toast.error(errorMessage);
-                // Utilisez la variable error ici, si nécessaire
             });
     }
     return (

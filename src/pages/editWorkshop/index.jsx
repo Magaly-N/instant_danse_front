@@ -18,13 +18,16 @@ const EditWorkshop = () => {
 
     let navigate = useNavigate();
 
+    // Fonction pour récupérer les données du workshop à éditer
     const fetchWorkshopCat = async () => {
         try {
-            // Fetch workshops
+
             const workshopResponse = await axios.get(
                 `${VITE_URL_API}/dancer_workshop/readOne?id=${dancer_workshop_id}`
             );
             setWorkshop(workshopResponse.data.dancerWorkshop);
+
+            // Récupération de la liste des catégories de workshop
             const catResponse = await axios.get(
                 `${VITE_URL_API}/category_workshop/read`
             );
@@ -34,11 +37,12 @@ const EditWorkshop = () => {
         }
     };
 
+    // UseEffect pour charger les données du workshop lors du montage du composant
     useEffect(() => {
         fetchWorkshopCat();
     }, []);
 
-    // Handle input changes
+    // Fonction pour gérer les changements dans les champs de saisie
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setWorkshop((prevData) => ({
@@ -47,12 +51,14 @@ const EditWorkshop = () => {
         }));
     };
 
+    // Fonction pour soumettre le formulaire de modification du workshop
     const handleSubmit = (e) => {
         e.preventDefault();
 
         let data = {
             workshop,
         };
+
         data = JSON.stringify(data);
         let user = JSON.parse(localStorage.getItem("user"));
         const token = user.token;
@@ -73,12 +79,12 @@ const EditWorkshop = () => {
             .then((response) => {
                 if (response.status === 201) {
                     console.log("Response succeeded!");
-                    fetchWorkshops();
-                    setWorkshop(null);
+                    fetchWorkshops(); // Recharge la liste des workshops après modification
+                    setWorkshop(null); // Réinitialiser les données du workshop
                     toast.success("Stage/atelier modifié");
                     setTimeout(() => {
                         navigate("/");
-                    }, 3000);
+                    }, 3000); //Redirige vers la page d'accueil après 3 secondes
                 }
             })
             .catch((error) => {

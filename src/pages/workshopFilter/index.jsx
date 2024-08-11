@@ -4,27 +4,32 @@ import WorkshopDetail from "../../components/WorkshopDetail";
 import useWorkshops from "../../hooks/useWorkshops";
 
 const WorkshopFilter = () => {
+    // Utilisation du hook useWorkshops pour obtenir les ateliers et les informations de filtrage
     const { workshops, uniqueDates, uniqueCities } = useWorkshops();
+
     const [dateFilter, setDateFilter] = useState("");
     const [cityFilter, setCityFilter] = useState("");
     const [filteredWorkshops, setFilteredWorkshops] = useState([]);
 
-    // Appliquer les filtres
+    // Applique les filtres lorsque les filtres ou les ateliers changent
     useEffect(() => {
         if (workshops) {
             let filteredByDate = workshops;
+            // Filtre les ateliers par date si une date est sélectionnée
             if (dateFilter) {
                 filteredByDate = workshops.filter(
                     (workshop) => workshop.date <= dateFilter
                 );
             }
             let filteredByCity = filteredByDate;
+            // Filtre les ateliers par ville si une ville est sélectionnée
             if (cityFilter) {
                 filteredByCity = filteredByDate.filter(
                     (workshop) => workshop.city === cityFilter
                 );
             }
 
+            // Mise à jour des ateliers filtrés
             setFilteredWorkshops(filteredByCity);
         }
     }, [dateFilter, cityFilter]);
@@ -35,7 +40,7 @@ const WorkshopFilter = () => {
                 <div className="cardsFilter">
                     <div className="card cardFilter">
                         <label className="inputLabel" htmlFor="dateFilter">
-                            Sélectionner une date
+                            Recherche par date
                         </label>
                         <select
                             className="inputSelect"
@@ -56,7 +61,7 @@ const WorkshopFilter = () => {
                     </div>
                     <div className="card cardFilter">
                         <label className="inputLabel" htmlFor="cityFilter">
-                            Sélectionner une ville
+                            Recherche par ville
                         </label>
                         <select
                             className="inputSelect"
