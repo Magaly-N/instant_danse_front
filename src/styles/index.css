@@ -1,7 +1,6 @@
 *,
 ::after,
 ::before {
-  box-sizing: inherit;
   padding: 0;
   margin: 0;
 }
@@ -9,7 +8,7 @@
 :where(:root) {
   line-height: 1.15;
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif*/
 }
 
 :where(main) {
@@ -66,6 +65,8 @@
 
 :where(button, [type=button], [type=reset], [type=submit]) {
   -webkit-appearance: button;
+  -moz-appearance: button;
+       appearance: button;
   padding: 1px 6px;
 }
 
@@ -105,6 +106,8 @@
 
 :where([type=search]) {
   -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+       appearance: textfield;
   outline-offset: -2px;
 }
 
@@ -227,6 +230,7 @@
   --bg-light-beige: #EFDECD;
   --bg-white: #fff;
   --bg-blue: #596BA8;
+  --bg-light-grey:#f2f2f2;
   --grey-brown: #7d7474;
   --text-color-default: #333;
   --text-color: #eeedf0;
@@ -342,7 +346,7 @@ td {
 }
 
 tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background-color: var(--bg-light-grey);
 }
 
 .button {

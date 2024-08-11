@@ -39,6 +39,7 @@
     /* Firefox */
     &[type="number"] {
         -moz-appearance: textfield;
+        appearance: none;
     }
 
     /* Safari */
