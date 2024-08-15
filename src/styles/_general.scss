@@ -159,6 +159,10 @@ tr:nth-child(even) {
     }
 }
 
+.workshopCardDescribe {
+    height: 75rem;
+}
+
 .cardHeader,
 .cardTitle {
     margin-bottom: 1rem;
@@ -174,33 +178,19 @@ tr:nth-child(even) {
     justify-content: center;
 }
 
-// VERSION MOBILE
-@media only screen and (min-width: 480px) {
-
-    .workshopCardRow {
-        width: 30rem;
-        height: 100rem;
-    }
-}
-
 // VERSION TABLETTE
-@media only screen and (min-width: 980px) {
-    h2 {
-        font-size: var(--font-size-big);
-        text-align: center;
-    }
-
-    .card,
-    .cardFilter {
-        width: 80rem;
-    }
-
+@media only screen and (min-width: 768px) {
+ 
     .cards,
     .cardsFilter {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+    }
 
+    .workshopCardDescribe {
+        width: 70rem;
+        height: 45rem;
     }
 
     .formGroup,
@@ -210,6 +200,19 @@ tr:nth-child(even) {
         justify-content: space-around;
         align-items: center;
 
+    }
+}
+
+// VERSION SMALL DESKTOP
+@media only screen and (min-width: 992px) {
+    h2 {
+        font-size: var(--font-size-big);
+        text-align: center;
+    }
+
+    .card,
+    .cardFilter {
+        width: 80rem;
     }
 
     .inputLabel {
@@ -228,13 +231,13 @@ tr:nth-child(even) {
         height: 25rem;
     }
 
-    .workshopCardRow {
+    .workshopCardDescribe {
         width: 80rem;
-        height: 90rem;
+        height: 45rem;
     }
 }
 
-//VERSION DESKTOP
+//VERSION LARGE DESKTOP
 @media only screen and (min-width: 1200px) {
 
     .cardText {
@@ -250,8 +253,8 @@ tr:nth-child(even) {
         line-height: 3rem;
     }
 
-    .workshopCardRow {
+    .workshopCardDescribe {
         width: 110rem;
-        height: 80rem;
+        height: 55rem;
     }
 }
