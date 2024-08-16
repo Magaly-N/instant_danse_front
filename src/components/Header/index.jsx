@@ -40,7 +40,7 @@ const Header = () => {
         <header>
             <div className="header" role="navigation" aria-label="Navigation principale">
                 <div className="logo-title">
-                    <div><Logo /></div>
+                    <div className="logo"><Logo /></div>
                     <h1>Instant Danse</h1>
                 </div>
                 <div className={`navbar ${isMenuOpen ? "active" : ""}`} role="menubar">
