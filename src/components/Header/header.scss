@@ -41,7 +41,7 @@
 
 
         // VERSION TABLETTE
-        @media only screen and (min-width: 980px) {
+        @media only screen and (min-width: 768px) {
             nav {
                 display: flex;
                 flex-direction: row;
@@ -53,12 +53,13 @@
             }
         }
 
-        // VERSION DESKTOP
-        @media only screen and (min-width: 1200px) {
+        // VERSION SMALL AND LARGE DESKTOP
+        @media only screen and (min-width: 992px) {
             nav {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-around;
+                font-size: var(--font-size-huge);
             }
 
             .menu-icon {

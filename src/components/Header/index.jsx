@@ -37,10 +37,12 @@ const Header = () => {
     }, []);
 
     return (
-        <div>
+        <header>
             <div className="header" role="navigation" aria-label="Navigation principale">
-                <Logo />
-                <h1>Instant Danse</h1>
+                <div className="logo_title">
+                    <Logo />
+                    <h1>Instant Danse</h1>
+                </div>
                 <div className={`navbar ${isMenuOpen ? "active" : ""}`} role="menubar">
                     {/*aria-haspopup="true" => indique qu'il y a un menu associé à ce bouton */}
                     {/*aria-expanded={isMenuOpen} => indique si le menu est ouvert ou fermé */}
@@ -88,7 +90,7 @@ const Header = () => {
                     </nav>
                 </div>
             </div>
-        </div>
+        </header>
     );
 };
 
