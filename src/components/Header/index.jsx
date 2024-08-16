@@ -39,8 +39,8 @@ const Header = () => {
     return (
         <header>
             <div className="header" role="navigation" aria-label="Navigation principale">
-                <div className="logo_title">
-                    <Logo />
+                <div className="logo-title">
+                    <div><Logo /></div>
                     <h1>Instant Danse</h1>
                 </div>
                 <div className={`navbar ${isMenuOpen ? "active" : ""}`} role="menubar">
