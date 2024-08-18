@@ -27,7 +27,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <div className="container">
+      <main className="container">
         <WorkshopsProvider>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -58,7 +58,7 @@ function App() {
             draggable
             pauseOnHover />
         </WorkshopsProvider>
-      </div>
+      </main>
       <Footer />
     </Router>
   );

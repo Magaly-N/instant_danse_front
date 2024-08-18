@@ -64,7 +64,7 @@ const SignUp = () => {
             });
     }
     return (
-        <div className="main">
+        <div>
             <h2>Formulaire d&apos;inscription</h2>
             <form className="formGroup" onSubmit={handleSubmit}>
                 <div className="inputGroup">
@@ -225,7 +225,7 @@ const SignUp = () => {
                     <input className="submitButton" type="submit" aria-label="S'inscrire" />
                 </div>
             </form>
-        </div >
+        </div>
     );
 };
 

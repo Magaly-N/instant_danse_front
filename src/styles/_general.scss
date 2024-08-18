@@ -18,24 +18,24 @@ body {
     line-height: 1.5;
 }
 
-.header,
-.footer {
+header,
+footer {
     width: 100%;
     background-color: var(--bg-blue);
 }
 
-.footer {
+footer {
     margin-top: 3rem;
 }
 
-.container {
+/*.container {
     width: 100%;
     margin: 0 auto;
 
-}
+}*/
 
-.main {
-    width: 100%;
+main {
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -110,8 +110,8 @@ tr:nth-child(even) {
 .inputSelect,
 .inputTextarea,
 .submitButton {
-    width: 22rem;
-    height: 5rem;
+    width: 20rem;
+    height: 4rem;
     padding: var(--padding-xs);
     border-radius: var(--basic-radius);
 }
@@ -201,6 +201,14 @@ tr:nth-child(even) {
         align-items: center;
 
     }
+
+    .inputField,
+    .inputSelect,
+    .inputTextarea {
+        width: 40rem;
+        height: 4em;
+    }
+
 }
 
 // VERSION SMALL DESKTOP
@@ -219,12 +227,7 @@ tr:nth-child(even) {
         font-size: var(--font-size-small);
     }
 
-    .inputField,
-    .inputSelect,
-    .inputTextarea {
-        width: 40rem;
-        height: 4em;
-    }
+  
 
     .workshopCard {
         width: 40rem;

@@ -4,7 +4,7 @@ import Mailto from '../Mailto';
 
 const Footer = () => {
     return (
-        <div className="footer">
+        <footer>
             <h1>Contactez-nous</h1>
             <div className="contact">
                 <Mailto className="email" label="Email: instantdanse@hotmail.fr" mailto="mailto:instantdanse@hotmail.fr" aria-label="Envoyer un email à Instant Danse" />
@@ -19,7 +19,7 @@ const Footer = () => {
                 </Link>
             </div>
             <p>&copy; 2024 Instant Danse. Tous droits réservés.</p>
-        </div>
+        </footer>
 
 
     );

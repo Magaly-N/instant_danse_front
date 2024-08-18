@@ -70,7 +70,7 @@ const SignIn = () => {
     }
 
     return (
-        <div className="main">
+        <div>
             <h2>Formulaire de connexion</h2>
             <form className="formGroup" onSubmit={handleSubmit}>
                 <div className="inputGroup">
@@ -113,7 +113,7 @@ const SignIn = () => {
             </form >
             <div className="captcha"><ReCaptcha siteKey={'6LfWUpQpAAAAAMoVodDRgNjKpsNj5PNtaD2PN04h'} callback={handleToken} />
             </div>
-        </div >
+        </div>
 
     )
 }

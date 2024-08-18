@@ -97,7 +97,7 @@ const UserProfile = () => {
     };
 
     return (
-        <div className="main">
+        <div>
             <h2>Mes informations personnelles</h2>
 
             <form onSubmit={handleSubmit}>

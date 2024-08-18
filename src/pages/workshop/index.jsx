@@ -76,7 +76,7 @@ const Workshop = () => {
 
 
     return (
-        <div className="main">
+        <div>
             <div className="workshopCard workshopCardDescribe" aria-label="Détails de l'atelier">
                 {workshop ? (
                     <>

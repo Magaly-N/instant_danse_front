@@ -1,7 +1,7 @@
 
 const Privacy = () => {
     return (
-        <div className="main">
+        <div>
             <div>Privacy</div>
         </div>
 

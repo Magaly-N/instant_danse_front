@@ -36,7 +36,7 @@ const WorkshopFilter = () => {
 
     return (
         <div>
-            <div className="main">
+            <div>
                 <div className="cardsFilter">
                     <div className="card cardFilter">
                         <label className="inputLabel" htmlFor="dateFilter">

@@ -45,7 +45,7 @@ const RegisteredWorkshop = () => {
 
     // Affichage des ateliers à l'aide de la méthode .map pour parcourir chaque élément du tableau workshops.
     return (
-        <div className="main">
+        <div>
 
             <h2>Mes inscriptions</h2>
 
