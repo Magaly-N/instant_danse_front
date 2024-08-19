@@ -4,7 +4,7 @@ import "./gallery.scss";
 const Gallery = () => {
 
     return (
-        <div>
+        <div className="gallery">
             <div className="dancers" role="group" aria-label="Images de danseurs">
                 <source srcSet="img\img1.webp" type="image/webp" alt="Quatres femmes qui danse dans un studio de danse" title="4 femmes qui danse dans un studio de danse" />
                 <img src="img\img1.jpg" alt="Quatres femmes qui dansent dans un studio de danse" title="4 femmes qui danse dans un studio de danse" />
