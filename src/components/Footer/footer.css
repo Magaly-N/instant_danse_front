@@ -1,30 +1,30 @@
-.footer {
+footer {
   padding: var(--padding-xs);
   align-items: center;
   text-align: center;
 }
-.footer .email,
-.footer .phone,
-.footer .privacy,
-.footer .terms {
+footer .email,
+footer .phone,
+footer .privacy,
+footer .terms {
   text-decoration: none;
   display: block;
 }
-.footer .email:hover,
-.footer .phone:hover,
-.footer .privacy:hover,
-.footer .terms:hover {
+footer .email:hover,
+footer .phone:hover,
+footer .privacy:hover,
+footer .terms:hover {
   text-decoration: underline;
 }
-.footer .privacy,
-.footer .terms {
+footer .privacy,
+footer .terms {
   color: var(--text-color);
 }
-.footer p {
+footer p {
   font-size: var(--font-size-medium);
 }
 @media only screen and (min-width: 980px) {
-  .footer .privacy-terms {
+  footer .privacy-terms {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -32,15 +32,15 @@
     margin: 0;
     padding: var(--padding-xxs);
   }
-  .footer .privacy-terms .email,
-  .footer .privacy-terms .phone,
-  .footer .privacy-terms .privacy,
-  .footer .privacy-terms .terms {
+  footer .privacy-terms .email,
+  footer .privacy-terms .phone,
+  footer .privacy-terms .privacy,
+  footer .privacy-terms .terms {
     margin-right: 8px;
   }
 }
 @media only screen and (min-width: 1200px) {
-  .footer p {
+  footer p {
     display: flex;
     flex-direction: flex-end;
   }

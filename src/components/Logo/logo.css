@@ -1,8 +1,8 @@
 @charset "UTF-8";
 .logo {
-  width: 5rem;
-  height: 5rem;
-  display: flex;
+  width: 6rem;
+  height: 6rem;
+  display: inline-block;
   /* Si l'image WebP n'est pas chargée (donc l'image JPEG est affichée), affiche l'image WebP */
   /* Si l'image JPEG n'est pas chargée (donc l'image WebP est affichée), masque l'image JPEG */
 }
@@ -10,13 +10,20 @@
   display: none;
   /* Masque l'image WebP par défaut */
 }
-.logo-jpg {
+.logo-png {
   display: inline-block;
   /* Assure que l'image JPEG est affichée */
 }
 .logo-link:empty .logo-webp {
   display: inline-block;
 }
-.logo-link:empty .logo-jpg {
+.logo-link:empty .logo-png {
   display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .logo {
+    height: 7rem;
+    width: 7rem;
+  }
 }/*# sourceMappingURL=logo.css.map */

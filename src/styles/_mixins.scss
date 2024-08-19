@@ -5,7 +5,13 @@
     padding: 0 var(--container-padding);
 }
 
-@mixin flex($direction: "row", $wrap: "wrap") {
+@mixin flexRow($direction: "row", $wrap: "wrap") {
+    display: flex;
+    flex-wrap: #{$wrap};
+    flex-direction: #{$direction};
+}
+
+@mixin flexColumn($direction: "column", $wrap: "wrap") {
     display: flex;
     flex-wrap: #{$wrap};
     flex-direction: #{$direction};

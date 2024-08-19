@@ -36,7 +36,7 @@ const WorkshopFilter = () => {
 
     return (
         <div>
-            <div className="cardsFilter">
+            <div className="workshopFilters">
                 <div className="card cardFilter">
                     <label className="inputLabel" htmlFor="dateFilter">
                         Recherche par date
@@ -77,7 +77,7 @@ const WorkshopFilter = () => {
                     </select>
                 </div>
             </div>
-            
+
             <div className="listWorkshop" aria-live="polite">
                 {" "}
                 {/*indique à un lecteur d'écran que les mises à jour du contenu dynamique sur la page sont importantes, mais qu'elles ne nécessitent pas une interruption immédiate de ce que l'utilisateur est en train de faire*/}
