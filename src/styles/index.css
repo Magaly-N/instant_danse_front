@@ -417,10 +417,10 @@ tr:nth-child(even) {
 }
 
 .workshopCard {
-  margin: 1.5rem auto;
-  width: 25rem;
-  height: 18rem;
-  padding: var(--padding-m);
+  width: 34rem;
+  height: 16rem;
+  margin: 1rem auto;
+  padding: var(--padding-s);
   text-align: center;
   border-radius: var(--basic-radius);
   background-color: var(--bg-white);
@@ -438,14 +438,11 @@ tr:nth-child(even) {
 .cardHeader,
 .cardTitle,
 .cardBody {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
   justify-content: center;
 }
 
 .cardFooter {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -482,8 +479,8 @@ tr:nth-child(even) {
     text-align: center;
   }
   .workshopCard {
-    width: 40rem;
-    height: 25rem;
+    width: 42rem;
+    height: 16rem;
   }
   .cardHeader,
   .cardBody {
@@ -495,6 +492,9 @@ tr:nth-child(even) {
   }
 }
 @media only screen and (min-width: 1200px) {
+  .card {
+    width: 42rem;
+  }
   .cardText {
     width: 40rem;
   }
