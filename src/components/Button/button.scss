@@ -58,8 +58,9 @@ button {
     display: inline-block;
     background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
     color: white;
-    font-size: 18px;
-    border: none;
+    font-size: 1.8rem;
+    padding:1rem 2.4rem;
+    border-radius: var(--basic-radius);
     margin: 5rem;
     cursor: pointer;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -78,10 +79,10 @@ button {
     }
 }
 
-@media only screen and (min-width: 980px) {
+/*@media only screen and (min-width: 980px) {
 
     .submitButton {
         font-size: 25px;
         margin: 6rem;
     }
-}
+}*/

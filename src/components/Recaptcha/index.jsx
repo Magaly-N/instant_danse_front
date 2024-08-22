@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import "./recaptcha.scss";
 
 // Définition du composant ReCaptcha
 const ReCaptcha = ({ siteKey, callback }) => {
@@ -48,7 +49,7 @@ const ReCaptcha = ({ siteKey, callback }) => {
 
     // Rendu du composant
     return (
-        <div ref={recaptchaRef}></div>
+        <div ref={recaptchaRef} className="custom-captcha"></div>
     );
 };
 

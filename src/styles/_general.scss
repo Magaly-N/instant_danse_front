@@ -91,7 +91,6 @@ tr:nth-child(even) {
 
 .formGroup {
     text-align: center;
-    width: 100%;
 }
 
 .inputGroup {
@@ -103,13 +102,12 @@ tr:nth-child(even) {
 
 .inputLabel {
     margin-top: 1rem;
-   font-size: var(--font-size-medium);
+    font-size: var(--font-size-medium);
 }
 
 .inputField,
 .inputSelect,
-.inputTextarea,
-.submitButton {
+.inputTextarea {
     width: 20rem;
     height: 4rem;
     padding: var(--padding-xs);
@@ -205,11 +203,16 @@ tr:nth-child(even) {
         align-items: center;
     }
 
+.formGroup{
+    max-width: 82rem;
+    margin: 0 auto;
+}
+
     .inputField,
     .inputSelect,
     .inputTextarea {
         width: 32rem;
-        height: 4em;
+        height: 4rem;
     }
 }
 
@@ -245,6 +248,11 @@ tr:nth-child(even) {
 
     .cardText {
         width: 40rem;
+    }
+
+    .workshopCard {
+        width: 50rem;
+        height: 16rem;
     }
 
     .cardDescribe {

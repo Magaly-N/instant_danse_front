@@ -4,8 +4,6 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { userService } from "../../utils/userService";
 import ReCaptcha from '../../components/Recaptcha';
-import "./signIn.scss";
-
 
 const SignIn = () => {
     //const { email, password }
